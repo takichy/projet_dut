@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="padding: 25px;">
+<!-- <div class="container"> -->
+                <!-- formulaire de connexion avec un compte deja existe  -->
+  <div class="" style="width: 330px;background-color: #fffdfd;">
+    <form class="form-horizontal" action=" " method="post"  id="contact_form" style="padding: 15px;">
+      <legend class="form-signin-heading">Bienvenu</legend>
+          <!-- mail -->
+        <div class=" form-group">
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                <input style="width: 238px;" name="username"  placeholder="Email Address" class="form-control" type="text"  required="" autofocus="">
+              </div>
+            </div>
+        </div>
+        <!--     password -->
+        <div class="form-group">
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                  <input style="width: 238px;" name="password"  placeholder="Password" required="" class="form-control" type="password" required="" autofocus="">  
+            </div>
+          </div>
+        </div>
+
+      <label class="checkbox">
+        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Enregistrer mon compte
+      </label></br>
+      <form method="get" href="../projet" action="../projet/index.php">
+        <button class="btn btn-lg btn-primary btn-block" onclick="window.location.href = '../projet'"  type="submit" style="width: 272px;">Connexion</button>
+      </form>
+    </form>
+  </div>
+                <!-- formulaire de creation d'un nouveau compte -->     
+  <div class="" style=" width: 325px;background-color: #fffdfd;margin-left: 900px;margin-top: -298px;">
+    <form class="form-horizontal" action=" " method="post"  id="contact_form" style="padding: 15px;">
+      <legend class="form-signin-heading">Crée votre compte gratuitement </legend>
+
+                <!-- Text input NOM-->
+        <div class="form-group">
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input style="width: 238px;" name="last_name" placeholder="Nom de famille" class="form-control"  type="text">
+            </div>
+          </div>
+        </div>
+
+                <!-- Text input PRENOM-->
+        <div class="form-group">
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input style="width: 238px;" name="last_name" placeholder="Prenom" class="form-control"  type="text">
+            </div>
+          </div>
+        </div>
+
+                <!-- Text input E-MAIL-->
+        <div class="form-group">
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                <input style="width: 238px;" name="email" placeholder="votre E-Mail" class="form-control"  type="text">
+            </div>
+          </div>
+        </div>
+                <!--     password -->
+        <div class="form-group">
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                  <input style="width: 238px;" name="password"  placeholder="nouveau mot de passe" required="" class="form-control" type="password" required="" autofocus="">  
+            </div>
+          </div>
+        </div>
+                <!-- enregistrement de compte connecter  -->
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Enregistrer mon compte
+        </label></br>
+
+          <!--   boutton validr  -->
+      <form method="get" href="../projet" action="../projet/index.php">
+        <button class="btn btn-lg btn-primary btn-block" onclick="window.location.href = '../projet'" type="submit" style="width: 272px;">Crée un compte</button>
+      </form>
+
+    </form>
+  </div>
+<!-- </div> -->
+</body>
+</html>

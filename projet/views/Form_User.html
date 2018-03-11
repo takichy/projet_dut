@@ -1,0 +1,115 @@
+<body>
+	<div class="container">
+
+		<form class="well form-horizontal" action="http://localhost:1337/insert" method="POST"  id="contact_form">
+			<fieldset>
+				<!-- Form Name legend -->
+				<legend>A Propos de vous </legend>
+
+				
+
+				<!-- Text input NOM-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" >Nom </label> 
+				    <div class="col-md-4 inputGroupContainer">
+				    <div class="input-group">
+				  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				  <input name="last_name" placeholder="Nom" class="form-control"  type="text">
+				    </div>
+				  </div>
+				</div>
+
+						
+				<!-- Text input PRENOM-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" >Prenom</label> 
+				    <div class="col-md-4 inputGroupContainer">
+				    <div class="input-group">
+				  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				  <input name="last_name" placeholder="Prenom" class="form-control"  type="text">
+				    </div>
+				  </div>
+				</div>
+
+				
+				<!-- Text input E-MAIL-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">E-Mail</label>  
+				    <div class="col-md-4 inputGroupContainer">
+				    <div class="input-group">
+				        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+				  <input name="email" placeholder="Votre-Adresse" class="form-control"  type="text">
+				    </div>
+				  </div>
+				</div>
+
+
+				<!-- Text input TELEPHONE-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">Telephone #</label>  
+				    <div class="col-md-4 inputGroupContainer">
+				    <div class="input-group">
+				        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+				 		 <input name="phone" placeholder="(212)645462285" class="form-control" type="text">
+				    </div>
+				  </div>
+				</div>
+
+				<!-- Text input ADRESSE-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">Adresse</label>  
+				    <div class="col-md-4 inputGroupContainer">
+				    <div class="input-group">
+				        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+				  <input name="address" placeholder="Addresse" class="form-control" type="text">
+				    </div>
+				  </div>
+				</div>
+
+
+				<!-- Text input pays-->
+ 				<div class="form-group">
+				  <label class="col-md-4 control-label" for="pays">Pays</label>  
+				    <div class="col-md-4 inputGroupContainer">
+				    <div class="input-group">
+				        <span class="input-group-addon"><i class="fas fa-globe"></i></span>
+				        <select id="countries_states1" class="form-control input-medium bfh-countries" data-country="US"></select>
+				    </div>
+				  </div>
+				</div>
+
+
+				<!-- Text input VILLE-->
+ 				<div class="form-group">
+				  <label class="col-md-4 control-label" for="ville">Ville</label>  
+				    <div class="col-md-4 inputGroupContainer">
+				    <div class="input-group">
+				        <span class="input-group-addon"><i class="fas fa-globe"></i></span>
+				        <select id="countries_states1" class="form-control input-medium bfh-countries" data-country="US"></select>
+				    </div>
+				  </div>
+				</div>
+
+
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">Code Postal</label>  
+				    <div class="col-md-4 inputGroupContainer">
+				    <div class="input-group">
+				        <span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
+				  <input name="zip" placeholder="Code Postal" class="form-control"  type="text">
+				    </div>
+				</div>
+				</div>
+
+				<!-- Button -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label"></label>
+				  <div class="col-md-4">
+				    <button type="submit" class="btn btn-warning" >Valider <span class="glyphicon glyphicon-send"></span></button>
+				  </div>
+				</div>
+			</fieldset>
+		</form>
+	</div><!-- /.container -->
+</body>

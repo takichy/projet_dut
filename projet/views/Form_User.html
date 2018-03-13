@@ -1,7 +1,7 @@
 <body>
 	<div class="container">
 
-		<form class="well form-horizontal" action="http://localhost:1337/insert" method="POST"  id="contact_form">
+		<form class="well form-horizontal" onSubmit="return send_value(event);" method="POST" id="contact_form">
 			<fieldset>
 				<!-- Form Name legend -->
 				<legend>A Propos de vous </legend>
@@ -26,7 +26,7 @@
 				    <div class="col-md-4 inputGroupContainer">
 				    <div class="input-group">
 				  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-				  <input name="last_name" placeholder="Prenom" class="form-control"  type="text">
+				  <input name="first_name" placeholder="Prenom" class="form-control"  type="text">
 				    </div>
 				  </div>
 				</div>

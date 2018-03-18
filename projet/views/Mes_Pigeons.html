@@ -1,8 +1,7 @@
 <head>
 	<script src="Views/js/lumino.glyphs.js"></script>
 	<script>
-		var pigeons = getPigeonById(1);
-		console.log("pigeons", pigeons)
+		getPigeonById(1);
 	</script>
 	<style>
 			.row{
@@ -996,6 +995,7 @@
 		<table class="table table-hover:black table-striped table-bordered" style="margin-top: 5px;">
 		  <thead class="thead-dark">
 		    <tr>
+		    	<th scope="col">TEST</th>
 		      <th scope="col">N° de Bague</th>
 		      <th scope="col">Année</th>
 		      <th scope="col">Nom</th>
@@ -1012,10 +1012,11 @@
 		  </thead>
 
 		  <tbody class="well">
-		    <tr>
+		    <tr id="tablePigeons">
+
 		      <th scope="row">N124578</th>
 		      <td>2014</td>
-		      <td>pigeon1</td>
+		      <td>THIS IS IT ...... <div id="get"></div></td>
 		      <td>Jaune</td>
 		      <td>male</td>
 		      <td>TAKICHY</td>

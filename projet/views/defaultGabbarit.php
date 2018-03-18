@@ -25,8 +25,8 @@
 		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 		<script src="https://code.highcharts.com/highcharts.js"></script>
 		<script src="https://code.highcharts.com/modules/data.js"></script>
-		<script src="/pfe/projet_dut/projet/views/js/send_data.js"></script>
-		<script src="/pfe/projet_dut/projet/views/js/get_data.js"></script>
+		<script src="../projet/views/js/send_data.js"></script>
+		<script src="../projet/views/js/get_data.js"></script>
 		<script src="main.js"></script>
 		<style>
 

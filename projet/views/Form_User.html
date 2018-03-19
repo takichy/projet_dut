@@ -1,12 +1,16 @@
+<head>
+	<script>
+		getUserById(1);
+	</script>
+</head>
 <body>
 	<div class="container">
-		<div id="message"></div>
+		<div id="message_success" class="alert alert-success d-none"></div>
+		<div id="message_error" class="alert alert-danger d-none"></div>
 		<form class="well form-horizontal" onSubmit="return send_user(event);" method="POST" id="contact_form">
 			<fieldset>
 				<!-- Form Name legend -->
 				<legend>A Propos de vous </legend>
-
-				
 
 				<!-- Text input NOM-->
 				<div class="form-group">
@@ -14,11 +18,10 @@
 				    <div class="col-md-4 inputGroupContainer">
 				    <div class="input-group">
 				  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-				  <input name="last_name" placeholder="Nom" class="form-control"  type="text">
+				  <input id="last_name" name="last_name" placeholder="Nom" class="form-control"  type="text">
 				    </div>
 				  </div>
 				</div>
-
 						
 				<!-- Text input PRENOM-->
 				<div class="form-group">
@@ -26,23 +29,21 @@
 				    <div class="col-md-4 inputGroupContainer">
 				    <div class="input-group">
 				  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-				  <input name="first_name" placeholder="Prenom" class="form-control"  type="text">
+				  <input id="first_name" name="first_name" placeholder="Prenom" class="form-control"  type="text">
 				    </div>
 				  </div>
 				</div>
 
-				
 				<!-- Text input E-MAIL-->
 				<div class="form-group">
 				  <label class="col-md-4 control-label">E-Mail</label>  
 				    <div class="col-md-4 inputGroupContainer">
 				    <div class="input-group">
 				        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-				  <input name="email" placeholder="Votre-Adresse" class="form-control"  type="text">
+				  <input id="email" name="email" placeholder="Votre-Adresse" class="form-control"  type="text">
 				    </div>
 				  </div>
 				</div>
-
 
 				<!-- Text input TELEPHONE-->
 				<div class="form-group">
@@ -50,7 +51,7 @@
 				    <div class="col-md-4 inputGroupContainer">
 				    <div class="input-group">
 				        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-				 		 <input name="phone" placeholder="(212)645462285" class="form-control" type="text">
+				 		 <input id="phone" name="phone" placeholder="(212)645462285" class="form-control" type="text">
 				    </div>
 				  </div>
 				</div>
@@ -61,11 +62,10 @@
 				    <div class="col-md-4 inputGroupContainer">
 				    <div class="input-group">
 				        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-				  <input name="address" placeholder="Addresse" class="form-control" type="text">
+				  <input id="address" name="address" placeholder="Addresse" class="form-control" type="text">
 				    </div>
 				  </div>
 				</div>
-
 
 				<!-- Text input pays-->
  				<div class="form-group">
@@ -73,11 +73,10 @@
 				    <div class="col-md-4 inputGroupContainer">
 				    <div class="input-group">
 				        <span class="input-group-addon"><i class="fas fa-globe"></i></span>
-				        <select id="countries_states1" class="form-control input-medium bfh-countries" data-country="US"></select>
+				        <input id="countries_states" name="countries_states" placeholder="pays" class="form-control input-medium bfh-countries" type="text">
 				    </div>
 				  </div>
 				</div>
-
 
 				<!-- Text input VILLE-->
  				<div class="form-group">
@@ -85,7 +84,7 @@
 				    <div class="col-md-4 inputGroupContainer">
 				    <div class="input-group">
 				        <span class="input-group-addon"><i class="fas fa-globe"></i></span>
-				        <select id="countries_states1" class="form-control input-medium bfh-countries" data-country="US"></select>
+				       <input id="countries_city" name="countries_city" placeholder="ville" class="form-control input-medium bfh-countries" type="text"></select>
 				    </div>
 				  </div>
 				</div>
@@ -93,13 +92,13 @@
 
 				<!-- Text input-->
 				<div class="form-group">
-				  <label class="col-md-4 control-label">Code Postal</label>  
+				    <label class="col-md-4 control-label">Code Postal</label>  
 				    <div class="col-md-4 inputGroupContainer">
 				    <div class="input-group">
 				        <span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
-				  <input name="zip" placeholder="Code Postal" class="form-control"  type="text">
+				        <input id="zip" name="zip" placeholder="Code Postal" class="form-control"  type="text">
 				    </div>
-				</div>
+					</div>
 				</div>
 
 				<!-- Button -->

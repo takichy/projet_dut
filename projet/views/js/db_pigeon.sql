@@ -2,10 +2,10 @@
 -- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 27 mars 2018 à 17:39
--- Version du serveur :  5.6.34-log
--- Version de PHP :  7.1.5
+-- Host: 127.0.0.1:3306
+-- Generation Time: Mar 27, 2018 at 08:33 PM
+-- Server version: 5.6.34-log
+-- PHP Version: 7.1.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `db_pigeon`
+-- Database: `db_pigeon`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `contact`
+-- Table structure for table `contact`
 --
 
 CREATE TABLE `contact` (
@@ -37,10 +37,17 @@ CREATE TABLE `contact` (
   `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id_contact`, `nom`, `mail`, `telephone`, `objet`, `message`) VALUES
+(3, 'elouarti nezha', 'mojako-mojako@live.com', 645460088, 'probleme', 'probbbbbkgjgfh');
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `pigeon`
+-- Table structure for table `pigeon`
 --
 
 CREATE TABLE `pigeon` (
@@ -67,10 +74,18 @@ CREATE TABLE `pigeon` (
   `eclos` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `pigeon`
+--
+
+INSERT INTO `pigeon` (`couleur`, `numero_bague`, `id_user`, `annee_naissance`, `sexe`, `etat`, `souche`, `nom_pigeon`, `pigeonnier`, `num_bague_pere`, `num_bague_mere`, `annee_naiss_pere`, `annee_naiss_mere`, `supplement`, `date_nv_naiss`, `copain`, `serie`, `nid`, `commentaire`, `pose`, `eclos`) VALUES
+('', 0, 1, 0000, '', '', '', '', '', 0, 0, 0000, 0000, '', '0000-00-00', '', '', '', '', '', ''),
+('bleu', 123456, 1, 2012, 'female', 'active', 'souche', '', '', 0, 0, 0000, 0000, '', '0000-00-00', '', '', '', '', '', '');
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -86,30 +101,30 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `nom`, `prenom`, `mail`, `telephone`, `adresse`, `pays`, `ville`, `code_postal`) VALUES
 (1, 'oulidi omali', 'abdelhay', 'abdelhayoulidiomali@gmail.com', 645460088, 'rue 50 boulevard narjiss', 'maroc', 'fes', 30080);
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `contact`
+-- Indexes for table `contact`
 --
 ALTER TABLE `contact`
   ADD PRIMARY KEY (`id_contact`);
 
 --
--- Index pour la table `pigeon`
+-- Indexes for table `pigeon`
 --
 ALTER TABLE `pigeon`
   ADD UNIQUE KEY `numero_bague` (`numero_bague`);
 
 --
--- Index pour la table `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`),
@@ -117,16 +132,16 @@ ALTER TABLE `user`
   ADD UNIQUE KEY `mail` (`mail`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `contact`
+-- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id_contact` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_contact` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT pour la table `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;

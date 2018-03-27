@@ -31,3 +31,15 @@ function getUserById(id) {
     });
     return false;
 };
+
+function getTotalById(id) { 
+
+    $.ajax({
+        url: `http://localhost:1337/selectTotal/${id}`,
+        success: function (data) {
+            console.log(data);
+            $('#totalStatistique').html(`${data}`);
+        }
+    });
+    return false;
+};

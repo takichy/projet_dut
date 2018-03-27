@@ -2,6 +2,7 @@
 	<script src="Views/js/lumino.glyphs.js"></script>
 	<script>
 		getPigeonById(1);
+		getTotalById(1);
 	</script>
 	<style>
 			.row{
@@ -927,9 +928,9 @@
 </head>
 <body>
 							
-	<div class="container col-sm-9 col-sm-offset-3  col-lg-9 " >								
+	<div class=" col-sm-9 col-sm-offset-3  col-lg-12 " >								
 			
-			<div class="row col-md-12" style="margin-left:-290px;">
+			<div class="row col-md-12" style="margin-left:-290px;"> 
 				
 				<div class=" col-xs-12 col-md-12 col-lg-3">
 					<div class="panel panel-blue panel-widget ">
@@ -938,7 +939,7 @@
 								<svg class="glyph stroked bag"><use xlink:href=""></use></svg>
 							</div>
 							<div class="col-sm-9 col-lg-7 widget-right">
-								<div class="large">8</div>
+								<div class="large" id="totalStatistique"><!-- <div id="get"></div> --></div>
 								<div class="text-muted">Total</div>
 							</div>
 						</div>
@@ -994,7 +995,7 @@
 		<table class="table table-hover:black table-striped table-bordered" style="margin-top: 5px;">
 			<thead class="thead-dark">
 			  <tr>
-			      <th scope="col">TEST</th>
+			    <!--   <th scope="col">TEST</th> -->
 			      <th scope="col">N° de Bague</th>
 			      <th scope="col">Année</th>
 			      <th scope="col">Nom</th>

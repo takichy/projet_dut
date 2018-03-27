@@ -1,115 +1,108 @@
 <body>
    	<div class="container">
-		<form class="well form-horizontal" onSubmit="return send_user(event);" method="post"  id="form_naissance">
+   		<div id="nv_naissance_message_success" class="alert alert-success d-none"></div>
+		<div id="nv_naissance_message_error" class="alert alert-danger d-none"></div>
+		<form class="well form-horizontal" onSubmit="return send_naissance(event);" method="post" id="naissance_form">
 			<fieldset>
 				<legend>Nouvelle naissance</legend>
 
-								<!-- Text input-->
+				<!-- Text input-->
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="couleur" >Date </label> 
 				    <div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
 				 			 <span class="input-group-addon"><i class="glyphicon "></i></span>
-				 			 <input name="" placeholder="Date" class="form-control"  type="text">
+				 			  <input class="form-control" type="date" value="2011-08-19" id="date_nv_naiss">
 				 	   </div>
 				 	 </div>
 				</div>
 
-								<!-- Text input-->
+				<!-- Text input-->
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="sexe" >Copain </label> 
 				    <div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
 				 			 <span class="input-group-addon"><i class="glyphicon "></i></span>
-				 			 <input name="" placeholder="Copain" class="form-control"  type="text">
+				 			 <input name="" placeholder="Copain" class="form-control"  type="text" id="copain" >
 				 	   </div>
 				 	 </div>
 				</div>
 
-								<!-- Text input-->
+				<!-- Text input-->
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="souche" >Série </label> 
 				    <div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
 				 			 <span class="input-group-addon"><i class="glyphicon "></i></span>
-				 			 <input name="" placeholder="Série" class="form-control"  type="text">
+				 			 <input name="" placeholder="Série" class="form-control"  type="text" id="serie" >
 				 	   </div>
 				 	 </div>
 				</div>
 
-								<!-- Text input-->
+				<!-- Text input-->
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="pigeonnier" >Nid </label> 
 				    <div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
 				 			 <span class="input-group-addon"><i class="glyphicon "></i></span>
-				 			 <input name="" placeholder="Nid" class="form-control"  type="text">
+				 			 <input name="" placeholder="Nid" class="form-control"  type="text" id="nid" >
 				 	   </div>
 				 	 </div>
 				</div>
 
-
-												<!-- Text input-->
+				<!-- Text input-->
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="supplement" >Commentaire </label> 
 				    <div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
 				 			 <span class="input-group-addon"><i class="glyphicon "></i></span>
-				 			 <textarea name="" class = "form-control" id="Supplement"></textarea>
+				 			 <textarea name="" class = "form-control" id="commentaire"></textarea>
 				 	   </div>
 				 	 </div>
 				</div>
 
-
-
-								<!-- Text input-->
+				<!-- Text input-->
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="pere" >Posé </label> 
 				    <div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
 				 			 <span class="input-group-addon"><i class="glyphicon "></i></span>
-				 			 <input name="" placeholder="Posé" class="form-control"  type="text">
+				 			 <input name="" placeholder="Posé" class="form-control"  type="text" id="pose" >
 				 	   </div>
 				 	 </div>
 				</div>
 
-								<!-- Text input-->
+				<!-- Text input-->
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="mere" >Eclos </label> 
 				    <div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
 				 			 <span class="input-group-addon"><i class="glyphicon "></i></span>
-				 			 <input name="" placeholder="Eclos" class="form-control"  type="text">
+				 			 <input name="" placeholder="Eclos" class="form-control"  type="text" id="eclos" >
 				 	   </div>
 				 	 </div>
 				</div>
 
-
-
-												<!-- Text input-->
+				<!-- Text input-->
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="mere" >N° de bague </label> 
 				    <div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
 				 			 <span class="input-group-addon"><i class="glyphicon "></i></span>
-				 			 <input name="" placeholder="N° de bague" class="form-control"  type="text">
+				 			 <input name="" placeholder="N° de bague" class="form-control"  type="text" id="num_bague_nv" >
 				 	   </div>
 				 	 </div>
 				</div>
 
-												<!-- Button -->
+				<!-- Button -->
 				<div class="form-group">
 				  <label class="col-md-4 control-label"></label>
 				  <div class="col-md-4">
-				    <button type="submit" class="btn btn-warning" >Ajouter <span class="glyphicon glyphicon-send"></span></button>
+				    <button type="submit" class="btn btn-warning" >Valider <span class="glyphicon glyphicon-send"></span></button>
 				  </div>
 				</div>
 				
-
               </div>
-
-
-
 			</fieldset>
 		</form>
    	</div>

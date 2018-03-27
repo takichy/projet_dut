@@ -1,6 +1,8 @@
 <body>
    	<div class="container">
-		<form class="well form-horizontal" action=" " method="post"  id="contact_form">
+		<div id="nvaqui_message_success" class="alert alert-success d-none"></div>
+		<div id="nvaqui_message_error" class="alert alert-danger d-none"></div>
+		<form class="well form-horizontal" onSubmit="return send_nvaqui(event);" method="POST" id="pigeon_form">
 			<fieldset>
 				<legend>Nouvelle Acquisition</legend>
 
@@ -12,7 +14,8 @@
 				    	<div class="col-md-4 inputGroupContainer">
 				    		<div class="input-group">
 				 				<span class="input-group-addon"><i class="glyphicon glyphicon-text-color"></i></span>
-				 			 	<input name="" placeholder="Couleur" class="form-control"  type="text">
+				 			 	<!-- <input name="" placeholder="Couleur" class="form-control"  type="text"> -->
+				 			 	 <input class="form-control" type="color" value="#563d7c" id="couleur">
 				 		    </div>
 				 	    </div>
 					</div></br>
@@ -22,13 +25,13 @@
 				  		<div class="col-md-4 inputGroupContainer">
 					    	<div class="input-group">
 					    		<span class="input-group-addon"><i class="fab fa-earlybirds"></i></span>
-					    		<input name="" placeholder="N° de Bague" class="form-control"  type="text">
+					    		<input name="" placeholder="N° de Bague" id="numero_bague" class="form-control"  type="text">
 					    	</div>
 				    	</div>
 				    	 <label class=" control-label" for="" ></label> 
 				    	<div class="col-md-2 inputGroupContainer">
 					    	<div class="input-group">
-					    		<input name="" placeholder="Année" class="form-control"  type="text">
+					    		<input name="" placeholder="Année" id="annee_naissance" class="form-control"  type="text">
 					    	</div>
 				    	</div>
 				    </div>
@@ -40,7 +43,7 @@
 					<div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
 				    		 <span class="input-group-addon"><i class="fas fa-transgender"></i></span>
-							<select class="form-control form-control-lg">
+							<select class="form-control form-control-lg" id="sexe">
 							  <option data-icon="fas fa-female">Male</option>
 							  <option data-icon="glyphicon glyphicon-heart">Female</option>
 							</select>
@@ -54,7 +57,7 @@
 					<div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
 				    		<span class="input-group-addon"><i class="glyphicon "></i></span>
-							<select class="form-control form-control-lg">
+							<select class="form-control form-control-lg" id="etat">
 							  <option data-icon="glyphicon ">Active</option>
 							  <option data-icon="glyphicon ">Vendu</option>
 							  <option data-icon="glyphicon ">Perdu</option>
@@ -72,7 +75,7 @@
 				    <div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
 				 			 <span class="input-group-addon"><i class="glyphicon "></i></span>
-				 			 <input name="" placeholder="souche" class="form-control"  type="text">
+				 			 <input name="" placeholder="souche" class="form-control"  type="text" id="souche">
 				 	   </div>
 				 	</div>
 				</div>
@@ -83,7 +86,7 @@
 				    <div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
 				 			 <span class="input-group-addon"><i class="glyphicon "></i></span>
-				 			 <input name="" placeholder="Nom" class="form-control"  type="text">
+				 			 <input id="nom_pigeon" name="" placeholder="Nom" class="form-control"  type="text">
 				 	   </div>
 				 	</div>
 				</div>
@@ -94,7 +97,7 @@
 				    <div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
 				 			 <span class="input-group-addon"><i class="glyphicon glyphicon-user "></i></span>
-				 			 <input name="" placeholder="pigeonnier" class="form-control"  type="text">
+				 			 <input id="pigeonnier" name="" placeholder="pigeonnier" class="form-control"  type="text">
 				 	   </div>
 				 	 </div>
 				</div>
@@ -106,13 +109,13 @@
 				  		<div class="col-md-4 inputGroupContainer">
 					    	<div class="input-group">
 					    		<span class="input-group-addon"><i class="fab fa-earlybirds"></i></span>
-					    		<input name="" placeholder="N° Bague de père" class="form-control"  type="text">
+					    		<input id="num_bague_pere" name="" placeholder="N° Bague de père" class="form-control"  type="text">
 					    	</div>
 				    	</div>
 				    	 <label class=" control-label" for="" ></label> 
 				    	<div class="col-md-2 inputGroupContainer">
 					    	<div class="input-group">
-					    		<input name="" placeholder="Année" class="form-control"  type="text">
+					    		<input name="" placeholder="Année" id="annee_naiss_pere" class="form-control"  type="text">
 					    	</div>
 				    	</div>
 				    </div>
@@ -125,13 +128,13 @@
 				  		<div class="col-md-4 inputGroupContainer">
 					    	<div class="input-group">
 					    		<span class="input-group-addon"><i class="fab fa-earlybirds"></i></span>
-					    		<input name="" placeholder="N° Bague de mère" class="form-control"  type="text">
+					    		<input id="num_bague_mere" name="" placeholder="N° Bague de mère" class="form-control"  type="text">
 					    	</div>
 				    	</div>
 				    	 <label class=" control-label" for="" ></label> 
 				    	<div class="col-md-2 inputGroupContainer">
 					    	<div class="input-group">
-					    		<input name="" placeholder="Année" class="form-control"  type="text">
+					    		<input id="annee_naiss_mere" name="" placeholder="Année" class="form-control"  type="text">
 					    	</div>
 				    	</div>
 				    </div>
@@ -143,19 +146,20 @@
 				    <div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
 				 			 <span class="input-group-addon"><i class="glyphicon "></i></span>
-				 			 <textarea name=""  placeholder="Supplément" class = "form-control" id="Supplement"></textarea>
+				 			 <textarea id="supplement" name=""  placeholder="Supplément" class = "form-control" id="Supplement"></textarea>
 				 	   </div>
 				 	 </div>
 				</div>
 
 				<!-- image input-->
-				<div class="form-group">
+                <!--<div class="form-group">
                   <label class="col-md-4 control-label" for="image" >Image</label> 
 	                  <div class="col-md-4">
 	                    <input type="file" name="" value="image de pigeon" id="browse_file" form-control-file">
 	                  </div>
                 </div>
-				
+				 -->
+				 
 				<!-- Button -->
 				<div class="form-group">
 				  <label class="col-md-4 control-label"></label>
@@ -163,7 +167,7 @@
 				    <button type="submit" class="btn btn-warning" >Ajouter <span class="glyphicon glyphicon-send"></span></button>
 				  </div>
 				</div>
-
+				
 			</fieldset>
 		</form>
    	</div>

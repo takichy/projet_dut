@@ -1,3 +1,3 @@
 <?php
-$vue = "vI.html";
+$vue = "contact_form.html";
 ?>

@@ -1,3 +1,2 @@
 <?php
 $vue = "Statistique.html";
-?>

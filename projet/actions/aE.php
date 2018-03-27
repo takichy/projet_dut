@@ -1,3 +1,2 @@
 <?php
 $vue = "vE.html";
-?>

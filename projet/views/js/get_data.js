@@ -1,11 +1,10 @@
 function getPigeonById(id) { 
-
     $.ajax({
         url: `http://localhost:1337/selectPigeon/${id}`,
         success: function (data) {
-            data.forEach(function (d ) {
+            data.forEach(function (d) {
                 console.log(d)
-                $('#tablePigeons').html(`<td>${d.nom}</td><td>${d.adresse}</td><td>${d.mail}</td>`);
+                $('#tablePigeons').html(`<td>${d.numero_bague}</td><td>${d.annee_naissance}</td><td>${d.nom_pigeon}</td><td>${d.couleur}</td><td>${d.sexe}</td><td>${d.pigeonnier}</td><td>${d.souche}</td><td>${d.etat}</td><td>${d.num_bague_pere}</td><td>${d.num_bague_mere}</td><td>${d.supplement}</td>`);
             })
         }
     });
@@ -39,6 +38,42 @@ function getTotalById(id) {
         success: function (data) {
             console.log(data);
             $('#totalStatistique').html(`${data}`);
+        }
+    });
+    return false;
+};
+
+function getTotalFemaleById(id) { 
+
+    $.ajax({
+        url: `http://localhost:1337/selectFemales/${id}`,
+        success: function (data) {
+            console.log(data);
+            $('#totalFemales').html(`${data.rows}`);
+        }
+    });
+    return false;
+};
+
+function getTotalMalesById(id) { 
+
+    $.ajax({
+        url: `http://localhost:1337/selectMales/${id}`,
+        success: function (data) {
+            console.log(data);
+            $('#totalMales').html(`${data}`);
+        }
+    });
+    return false;
+};
+
+function getTotalJeunesById(id) { 
+
+    $.ajax({
+        url: `http://localhost:1337/selectJeunes/${id}`,
+        success: function (data) {
+            console.log(data);
+            $('#totalJeunes').html(`${data}`);
         }
     });
     return false;

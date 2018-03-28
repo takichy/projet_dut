@@ -1,152 +1,127 @@
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Table Pagination</title>
-	<link ref="bootstrap.min.css" rel="stylesheet"/>
-	<script src="jquery.min.js"></script>
-	<script src="bootstrap.min.js"></script>
-	<script>
-		var table = '#mytable'
-			$('#maxRows').on('change',function()
-			{
-				$('.pagination').html('')
-				var trnum = 0 ;
-				var maxRows = parseInt($(this).val())
-				var totalRows = $(table+'tbody tr').length
-				$(table +'tr:gt(0)').each(function()
-				{
-					trnum++;
-					if (trnum>maxRows) 
-					{
-						$(this).hide()
-					}
-					if (trnum <= maxRows) 
-					{
-						$(this).Show()
-					}
-				})
-					if (totalRows > maxRows)
-					{
-						var pagenum = Math.ceil(totalRows/maxRows)
-						for(var i=1;i<pagenum;)
-						{
-							$('.agination').append('<li data-page="'+i+'">\<span>'+ i++ +'<span class="sr-only">(current)</span></span>\</li>').Show()
-						}
-					}
-
-				    $('.pagination li:first-child').addClass('active')
-					$('.pagination li').on ('click',function()
-					{
-						var pageNum = $(this).attr('data-page')
-						var trIndex =0;
-						$('.pagination li').removeClass('active')
-						$(this).addClass('active')
-						$(table +'tr:gt(0)').each(function()
-						{
-							trIndex++;
-							if (trIndex > (maxRows+pageNum) || trIndex <= ((maxRows+pageNum)-maxRows))
-							{
-								$(this).hide()
-							}
-							else
-							{
-								$(this).show()
-							}
-						})
-				    })
-		   })
-
-		$(function()
-		{
-			$('table tr:eq(0)').prepend('<th>ID</th>')
-			var id=0;
-			$('table tr:gt(0)').each function()
-			{
-				id++;
-				$(this).prepend('<td>'+id+'</td>')
-			})
-		})
-	</script>
-</head>
-
 <body>
-	<div class="container" style="margin-top: 35px">
-		<h4>Select number of row </h4>
-		<div class="from-group">
-			<select name="state" id="maxRows" class="from-control" style="width:150px;">
-				<option value="5000">Show All</option>
-				<option value="5">5</option>
-				<option value="10">10</option>
-				<option value="15">15</option>
-				<option value="20">20</option>
-				<option value="50">50</option>
-				<option value="75">75</option>
-				<option value="100">100</option>
-			</select>
-		</div>
-		<table id="mytable" class="table table-bordered table-striped">
-			<thead>
-				<tr>
-			      <th>name</th>
-			      <th>email</th>
-			      <th>phone</th>
-			      <th>adress</th>
-				</tr>
-			</thead>
-			<tbody>
-			    <tr>
-			      <td>2014</td>
-			      <td>pigeon1</td>
-			      <td>Jaune</td>
-			      <td>male</td>
-			    </tr>
+	<div class="container">
+		<div id="user_message_success" class="alert alert-success d-none"></div>
+		<div id="user_message_error" class="alert alert-danger d-none"></div>
+		<form class="well form-horizontal" onSubmit="" method="POST" id="vaccination_form">
+			<fieldset>
+				<!-- Form Name legend -->
+				<legend>Vaccination </legend>
 
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>nom44</td><td>pijozfz@gmail.com</td><td>64548795</td><td>bloc e fh sqfd</td></tr>
-			    <tr><td>mamak</td><td>pijozfz@gmail.com</td><td>64548795</td><td>a fuck you awlad l97ab</td></tr>
+				<!-- Text input N bague-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" >N° Bague</label> 
+				    <div class="col-md-4 inputGroupContainer">
+				        <div class="input-group">
+				    		<span class="input-group-addon"><i class="glyphicon "></i></span>
+							<select class="form-control form-control-lg" id="etat">
+							  <option data-icon="glyphicon ">21548</option>
+							  <option data-icon="glyphicon ">54548</option>
+							  <option data-icon="glyphicon ">587496</option>
+							  <option data-icon="glyphicon ">587426</option>
+							  <option data-icon="glyphicon ">48579</option>
+							  <option data-icon="glyphicon ">1255</option>
+							</select>
+				 	    </div>
+				  </div>
+				</div>
+						
+				<!-- Text input Pigeonnier-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" >Pigeonnier</label> 
+				    <div class="col-md-4 inputGroupContainer">
+				    <div class="input-group">
+				 		<span class="input-group-addon"><i class="glyphicon"></i></span>
+				 		<input id="pigeonnier" name="" placeholder="pigeonnier" class="form-control"  type="text">
+				    </div>
+				  </div>
+				</div>
+
+				<!-- Text input date de vaccination-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">Date</label>  
+				    <div class="col-md-4 inputGroupContainer">
+				    <div class="input-group">
+				 		<span class="input-group-addon"><i class="glyphicon "></i></span>
+				 		<input class="form-control" type="date" value="2011-08-19" id="date_vaccination">
+				    </div>
+				  </div>
+				</div>
+
+				<!-- Text input Description-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">Description</label>  
+				    <div class="col-md-4 inputGroupContainer">
+				    <div class="input-group">
+				 		<span class="input-group-addon"><i class="glyphicon "></i></span>
+				 		<textarea id="description" name=""  placeholder="description" class = "form-control" id="Description"></textarea>
+				    </div>
+				  </div>
+				</div>
+
+				<!-- Text input Terminé par-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label">Terminé par</label>  
+				    <div class="col-md-4 inputGroupContainer">
+				    <div class="input-group">
+				        <span class="input-group-addon"><i class="glyphicon"></i></span>
+						<input id="termine_par" name="termine_par" placeholder="" class="form-control" type="text">
+				    </div>
+				  </div>
+				</div>
+
+				<!-- Text input Médication-->
+ 				<div class="form-group">
+				  <label class="col-md-4 control-label" for="pays">Médication</label>  
+				    <div class="col-md-4 inputGroupContainer">
+				    <div class="input-group">
+				        <span class="input-group-addon"><i class="glyphicon"></i></span>
+				        <input id="Medication" name="Medication" placeholder="" class="form-control" type="text">
+				    </div>
+				  </div>
+				</div>
+
+				<!-- Text input Dosage-->
+ 				<div class="form-group">
+				  <label class="col-md-4 control-label" for="pays">Dosage</label>  
+				    <div class="col-md-4 inputGroupContainer">
+				    <div class="input-group">
+				        <span class="input-group-addon"><i class="glyphicon "></i></span>
+				        <input id="Dosage" name="Dosage" placeholder="" class="form-control" type="text">
+				    </div>
+				  </div>
+				</div>
 
 
-			</tbody>
-		</table>
+				<!-- Text input commentaire-->
+				<div class="form-group">
+				    <label class="col-md-4 control-label">Commentaire</label>  
+				    <div class="col-md-4 inputGroupContainer">
+				        <div class="input-group">
+				 			 <span class="input-group-addon"><i class="glyphicon "></i></span>
+				 			 <textarea id="commentaire" name=""  placeholder="commentaire" class = "form-control" ></textarea>
+				 	    </div>
+					</div>
+				</div>
 
-		<div class="pagination-container">
-			<nav>
-				<ul class="pagination"></ul>
-			</nav>
-			
-		</div>
-	</div>
+				<!-- Text input vaccination-->
+				<div class="form-group">
+				    <label class="col-md-4 control-label"></label>  
+				    <div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+						    <input type="checkbox" class="form-check-input" id="exampleCheck1">&nbsp;&nbsp;&nbsp;&nbsp;
+						    <label class="form-check-label" for="exampleCheck1">Vaccination</label>
+						</div>
+					</div>
+				</div>
+
+				<!-- Button -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label"></label>
+				  <div class="col-md-4">
+				    <button type="submit" class="btn btn-warning" >Valider <span class="glyphicon glyphicon-send"></span></button>
+				  </div>
+				</div>
+			</fieldset>
+		</form>
+	</div><!-- /.container -->
 </body>

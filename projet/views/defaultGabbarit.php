@@ -387,7 +387,7 @@
 					<li>
 						<a  href = "index.php?action=F">
 							<span><i class="fas fa-align-justify"></i></span>
-							<span>Vacsination</span>
+							<span>Vaccination</span>
 						</a>
 					</li>
 

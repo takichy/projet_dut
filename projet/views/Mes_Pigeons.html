@@ -3,6 +3,9 @@
 	<script>
 		getPigeonById(1);
 		getTotalById(1);
+		getTotalFemaleById(1);
+		getTotalMalesById(1);
+		getTotalJeunesById(1);
 	</script>
 	<style>
 			.row{
@@ -926,10 +929,8 @@
 			}
 	</style>	
 </head>
-<body>
-							
-	<div class=" col-sm-9 col-sm-offset-3  col-lg-12 " >								
-			
+<body>				
+	<div class=" col-sm-9 col-sm-offset-3  col-lg-12 " >
 			<div class="row col-md-12" style="margin-left:-290px;"> 
 				
 				<div class=" col-xs-12 col-md-12 col-lg-3">
@@ -939,7 +940,7 @@
 								<svg class="glyph stroked bag"><use xlink:href=""></use></svg>
 							</div>
 							<div class="col-sm-9 col-lg-7 widget-right">
-								<div class="large" id="totalStatistique"><!-- <div id="get"></div> --></div>
+								<div class="large" id="totalStatistique"></div>
 								<div class="text-muted">Total</div>
 							</div>
 						</div>
@@ -953,7 +954,7 @@
 								<svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>
 							</div>
 							<div class="col-sm-9 col-lg-7 widget-right">
-								<div class="large">3</div>
+								<div class="large" id="totalMales"></div>
 								<div class="text-muted">Mâles</div>
 							</div>
 						</div>
@@ -967,7 +968,7 @@
 								<svg class="glyph stroked female-user"><use xlink:href="#stroked-female-user"></use></svg>
 							</div>
 							<div class="col-sm-9 col-lg-7 widget-right">
-								<div class="large">3</div>
+								<div class="large" id="totalFemales" ></div>
 								<div class="text-muted">Femelles</div>
 							</div>
 						</div>
@@ -981,7 +982,7 @@
 								<svg class="glyph stroked app-window-with-content"><use xlink:href=""></use></svg>
 							</div>
 							<div class="col-sm-9 col-lg-7 widget-right">
-								<div class="large">2</div>
+								<div class="large" id="totalJeunes" ></div>
 								<div class="text-muted">Jeunes</div>
 							</div>
 						</div>
@@ -995,7 +996,6 @@
 		<table class="table table-hover:black table-striped table-bordered" style="margin-top: 5px;">
 			<thead class="thead-dark">
 			  <tr>
-			    <!--   <th scope="col">TEST</th> -->
 			      <th scope="col">N° de Bague</th>
 			      <th scope="col">Année</th>
 			      <th scope="col">Nom</th>
@@ -1011,8 +1011,8 @@
 			  </tr>
 			</thead>
 
-			<tbody class="well">
-			    <tr id="tablePigeons">
+			<tbody class="well" id="tablePigeons" >
+			    <tr>
 			    	<th scope="row"></th>
 			    	<td></td>
 			    	<td>THIS IS IT ...... <div id="get"></div></td>
@@ -1033,7 +1033,7 @@
 			    	<td></td>
 			    	<td></td>
 			    	<td></td>
-			    	<td><img src="./images/pigeon1.jpg" style="width: 130px;height: 100px;"></td>
+			    	<!-- <td><img src="./images/pigeon1.jpg" style="width: 130px;height: 100px;"></td> -->
 			    </tr>
 
 			    <tr>

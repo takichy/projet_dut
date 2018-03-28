@@ -2,7 +2,7 @@
    	<div class="container">
 		<div id="nvaqui_message_success" class="alert alert-success d-none"></div>
 		<div id="nvaqui_message_error" class="alert alert-danger d-none"></div>
-		<form class="well form-horizontal" onSubmit="return send_nvaqui(event);" method="POST" id="contact_form">
+		<form class="well form-horizontal" onSubmit="return send_nvaqui(event);" method="POST" id="nouvelle_acquisition_form">
 			<fieldset>
 				<legend>Nouvelle Acquisition</legend>
 
@@ -46,6 +46,7 @@
 							<select class="form-control form-control-lg" id="sexe">
 							  <option data-icon="fas fa-female">Male</option>
 							  <option data-icon="glyphicon glyphicon-heart">Female</option>
+							  <option data-icon="glyphicon">Jeune</option>
 							</select>
 				 	   </div>
 				 	</div>
@@ -146,7 +147,7 @@
 				    <div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
 				 			 <span class="input-group-addon"><i class="glyphicon "></i></span>
-				 			 <textarea id="supplement" name=""  placeholder="Supplément" class = "form-control" id="Supplement"></textarea>
+				 			 <textarea name=""  placeholder="Supplément" class = "form-control" id="Supplement"></textarea>
 				 	   </div>
 				 	 </div>
 				</div>

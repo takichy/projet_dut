@@ -36,8 +36,11 @@ function getTotalById(id) {
     $.ajax({
         url: `http://localhost:1337/selectTotal/${id}`,
         success: function (data) {
-            console.log(data);
-            $('#totalStatistique').html(`${data}`);
+            console.log("this is my value", data);
+            $('#totalStatistique').html(`${data[0].totalStatique}`);
+        },
+        error: function (e) {
+            console.log("this is an error", e);
         }
     });
     return false;
@@ -87,7 +90,7 @@ function getVaccinationById(id) {
             var d = data[0];
             console.log(d);
             $('#pigeonnier').val(`${d.pigeonnier}`);
-            $('#date_vaccination').val(`${d.date_vaccination}`);
+            $('#date_vaccination').val(`${new Date(d.date_vaccination)}`);
             $('#description').val(`${d.description}`);
             $('#termine_par').val(`${d.termine_par}`);
             $('#Medication').val(`${d.medication}`);

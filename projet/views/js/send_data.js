@@ -95,3 +95,27 @@ function send_message(e) {
     });
     return false;
 };
+
+function send_vaccination(e) { 
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:1337/updateVaccination/5557849',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        data: $(`form#${e.target.id}`).serialize(),
+        success: function (data) {
+            console.log(data);
+            $('#vaccination_message_success').html("message sent successful");
+            $("#vaccination_message_success").addClass("d-block");
+            $("#vaccination_message_success").removeClass("d-none");
+        },
+        error : function (error) {
+            $('#vaccination_message_error').html("message error");
+            $("#vaccination_message_error").addClass("d-block");
+            $("#vaccination_message_error").removeClass("d-none");
+        },
+    });
+    return false;
+};

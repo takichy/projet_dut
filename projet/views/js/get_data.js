@@ -78,3 +78,23 @@ function getTotalJeunesById(id) {
     });
     return false;
 };
+
+function getVaccinationById(id) { 
+
+    $.ajax({
+        url: `http://localhost:1337/selectVaccination/${id}`,
+        success: function (data) {
+            var d = data[0];
+            console.log(d);
+            $('#pigeonnier').val(`${d.pigeonnier}`);
+            $('#date_vaccination').val(`${d.date_vaccination}`);
+            $('#description').val(`${d.description}`);
+            $('#termine_par').val(`${d.termine_par}`);
+            $('#Medication').val(`${d.medication}`);
+            $('#Dosage').val(`${d.dosage}`);
+            $('#commentaire_vaccination').val(`${d.commentaire_vaccination}`);
+
+        }
+    });
+    return false;
+};

@@ -7,3 +7,10 @@ git pull
 git stash 
 git pull 
 git stash apply
+======
+//
+git add .
+git commit -m "fff"
+git pull --rebase
+git push
+

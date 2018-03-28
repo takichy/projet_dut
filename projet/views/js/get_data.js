@@ -90,7 +90,7 @@ function getVaccinationById(id) {
             var d = data[0];
             console.log(d);
             $('#pigeonnier').val(`${d.pigeonnier}`);
-            $('#date_vaccination').val(`${new Da(d.date_vaccination)}`);
+            $('#date_vaccination').val(`${new Date(d.date_vaccination)}`);
             $('#description').val(`${d.description}`);
             $('#termine_par').val(`${d.termine_par}`);
             $('#Medication').val(`${d.medication}`);

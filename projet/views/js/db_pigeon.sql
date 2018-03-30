@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 27, 2018 at 08:33 PM
+-- Generation Time: Mar 30, 2018 at 07:49 PM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.1.5
 
@@ -42,7 +42,8 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id_contact`, `nom`, `mail`, `telephone`, `objet`, `message`) VALUES
-(3, 'elouarti nezha', 'mojako-mojako@live.com', 645460088, 'probleme', 'probbbbbkgjgfh');
+(3, 'elouarti nezha', 'mojako-mojako@live.com', 645460088, 'probleme', 'probbbbbkgjgfh'),
+(4, 'abdelhay oulidi omali', 'abdelhayoulidiomali@gmail.com', 645460088, 'probelm', 'fuck you');
 
 -- --------------------------------------------------------
 
@@ -65,22 +66,39 @@ CREATE TABLE `pigeon` (
   `annee_naiss_pere` year(4) NOT NULL,
   `annee_naiss_mere` year(4) NOT NULL,
   `supplement` text NOT NULL,
-  `date_nv_naiss` date NOT NULL,
+  `date_nv_naiss` date DEFAULT NULL,
   `copain` text NOT NULL,
   `serie` text NOT NULL,
   `nid` text NOT NULL,
   `commentaire` text NOT NULL,
   `pose` text NOT NULL,
-  `eclos` text NOT NULL
+  `eclos` text NOT NULL,
+  `date_vaccination` date NOT NULL,
+  `description` text NOT NULL,
+  `termine_par` text NOT NULL,
+  `medication` text NOT NULL,
+  `dosage` text NOT NULL,
+  `commentaire_vaccination` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pigeon`
 --
 
-INSERT INTO `pigeon` (`couleur`, `numero_bague`, `id_user`, `annee_naissance`, `sexe`, `etat`, `souche`, `nom_pigeon`, `pigeonnier`, `num_bague_pere`, `num_bague_mere`, `annee_naiss_pere`, `annee_naiss_mere`, `supplement`, `date_nv_naiss`, `copain`, `serie`, `nid`, `commentaire`, `pose`, `eclos`) VALUES
-('', 0, 1, 0000, '', '', '', '', '', 0, 0, 0000, 0000, '', '0000-00-00', '', '', '', '', '', ''),
-('bleu', 123456, 1, 2012, 'female', 'active', 'souche', '', '', 0, 0, 0000, 0000, '', '0000-00-00', '', '', '', '', '', '');
+INSERT INTO `pigeon` (`couleur`, `numero_bague`, `id_user`, `annee_naissance`, `sexe`, `etat`, `souche`, `nom_pigeon`, `pigeonnier`, `num_bague_pere`, `num_bague_mere`, `annee_naiss_pere`, `annee_naiss_mere`, `supplement`, `date_nv_naiss`, `copain`, `serie`, `nid`, `commentaire`, `pose`, `eclos`, `date_vaccination`, `description`, `termine_par`, `medication`, `dosage`, `commentaire_vaccination`) VALUES
+('', 1, 1, 2018, 'Male', 'Active', 'souche', 'nom', 'abdelhay', 741852, 258369, 2016, 2017, 'undefined', NULL, '', '', '', '', '', '', '0000-00-00', '', '', '', '', ''),
+('', 2, 1, 2018, 'Male', 'Active', 'souche', 'nom', 'abdelhay', 741852, 258369, 2016, 2017, 'undefined', NULL, '', '', '', '', '', '', '0000-00-00', '', '', '', '', ''),
+('', 3, 1, 2018, 'Male', 'Active', 'souche', 'nom', 'abdelhay', 741852, 258369, 2016, 2017, 'undefined', NULL, '', '', '', '', '', '', '0000-00-00', '', '', '', '', ''),
+('', 4, 1, 2018, 'Male', 'Active', 'souche', 'nom', 'abdelhay', 741852, 258369, 2016, 2017, 'undefined', NULL, '', '', '', '', '', '', '0000-00-00', '', '', '', '', ''),
+('undefined', 5, 1, 2018, 'Male', 'Active', 'souche', 'nom', 'abdelhay', 741852, 258369, 2016, 2017, 'undefined', NULL, '', '', '', '', '', '', '0000-00-00', '', '', '', '', ''),
+('undefined', 6, 1, 2018, 'Jeune', 'Active', 'souche', 'nom', 'abdelhay', 741852, 258369, 2016, 2017, 'undefined', NULL, '', '', '', '', '', '', '0000-00-00', '', '', '', '', ''),
+('undefined', 7, 1, 2018, 'Male', 'Active', 'souche', 'nom', 'abdelhay', 741852, 258369, 2016, 2017, 'undefined', NULL, '', '', '', '', '', '', '0000-00-00', '', '', '', '', ''),
+('undefined', 8, 1, 2018, 'Male', 'Active', 'souche', 'nom', 'abdelhay', 741852, 258369, 2016, 2017, 'undefined', NULL, '', '', '', '', '', '', '0000-00-00', '', '', '', '', ''),
+('', 55, 1, 0000, 'Female', '', '', '', 'abdelhay', 0, 0, 0000, 0000, '', '2018-03-08', 'copain', 'serie', 'nid', 'commentaire', 'posé', 'eclos', '0000-00-00', 'description', 'termine', 'medication', 'dosage', 'commentaire vaccination'),
+('undefined', 78, 1, 2018, 'Male', 'Active', 'souche', 'nom', 'abdelhay', 741852, 258369, 2016, 2017, 'undefined', NULL, '', '', '', '', '', '', '0000-00-00', '', '', '', '', ''),
+('', 85, 1, 0000, 'Female', '', '', '', '', 0, 0, 0000, 0000, '', '0000-00-00', 'copain', 'serie', 'nid', 'jhhh', 'posé', 'eclos', '0000-00-00', '', '', '', '', ''),
+('undefined', 102, 1, 2018, 'Jeune', 'Vendu', 'souche', 'nom', 'pigeonnier', 301, 201, 2016, 2017, 'supplement ', NULL, '', '', '', '', '', '', '0000-00-00', '', '', '', '', ''),
+('undefined', 879, 1, 2018, 'Male', 'Active', 'souche', 'nom', 'abdelhay', 741852, 258369, 2016, 2017, 'undefined', NULL, '', '', '', '', '', '', '0000-00-00', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -139,7 +157,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id_contact` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_contact` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `user`
 --

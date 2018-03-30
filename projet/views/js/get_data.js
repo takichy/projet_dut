@@ -46,57 +46,61 @@ function getTotalById(id) {
     return false;
 };
 
-function getTotalFemaleById(id) { 
-
-    $.ajax({
-        url: `http://localhost:1337/selectFemales/${id}`,
-        success: function (data) {
-            console.log(data);
-            $('#totalFemales').html(`${data.rows}`);
-        }
-    });
-    return false;
-};
-
-function getTotalMalesById(id) { 
-
+function getTotalMalesById(id) {
     $.ajax({
         url: `http://localhost:1337/selectMales/${id}`,
         success: function (data) {
-            console.log(data);
-            $('#totalMales').html(`${data}`);
+            console.log("this is my value", data);
+            $('#totalMales').html(`${data[0].totalMales}`);
+        },
+        error: function (e) {
+            console.log("this is an error", e);
         }
     });
     return false;
 };
 
-function getTotalJeunesById(id) { 
-
+function getTotalJeunesById(id) {
     $.ajax({
         url: `http://localhost:1337/selectJeunes/${id}`,
         success: function (data) {
-            console.log(data);
-            $('#totalJeunes').html(`${data}`);
+            console.log("this is my value", data);
+            $('#totalJeunes').html(`${data[0].totalJeunes}`);
+        },
+        error: function (e) {
+            console.log("this is an error", e);
         }
     });
     return false;
 };
 
-function getVaccinationById(id) { 
+function getTotalFemalesById(id) {
+    $.ajax({
+        url: `http://localhost:1337/selectFemales/${id}`,
+        success: function (data) {
+            console.log("this is my value", data);
+            $('#totalFemales').html(`${data[0].totalFemales}`);
+        },
+        error: function (e) {
+            console.log("this is an error", e);
+        }
+    });
+    return false;
+};
 
+function getVaccinationById(id) {
     $.ajax({
         url: `http://localhost:1337/selectVaccination/${id}`,
         success: function (data) {
             var d = data[0];
             console.log(d);
             $('#pigeonnier').val(`${d.pigeonnier}`);
-            $('#date_vaccination').val(`${new Date(d.date_vaccination)}`);
+            $('#date_vaccination').val(`${d.date_vaccination}`);
             $('#description').val(`${d.description}`);
             $('#termine_par').val(`${d.termine_par}`);
-            $('#Medication').val(`${d.medication}`);
-            $('#Dosage').val(`${d.dosage}`);
+            $('#medication').val(`${d.medication}`);
+            $('#dosage').val(`${d.dosage}`);
             $('#commentaire_vaccination').val(`${d.commentaire_vaccination}`);
-
         }
     });
     return false;

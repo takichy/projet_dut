@@ -27,7 +27,7 @@ function send_nvaqui(e) {
     console.log($(`form#${e.target.id}`).serialize())
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:1337/insertPigeon',
+        url: 'http://localhost:1337/insertPigeon/1',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -52,7 +52,7 @@ function send_naissance(e) {
     console.log($(`form#${e.target.id}`).serialize())
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:1337/insertNaissance',
+        url: 'http://localhost:1337/insertNaissance/1',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -100,7 +100,7 @@ function send_vaccination(e) {
     e.preventDefault();
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:1337/updateVaccination/5557849',
+        url: 'http://localhost:1337/updateVaccination/55',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },

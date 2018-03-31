@@ -2,16 +2,17 @@ function getPigeonById(id) {
     $.ajax({
         url: `http://localhost:1337/selectPigeon/${id}`,
         success: function (data) {
+            var pigeons = '';
             data.forEach(function (d) {
-                console.log(d)
-                $('#tablePigeons').html(`<td>${d.numero_bague}</td><td>${d.annee_naissance}</td><td>${d.nom_pigeon}</td><td>${d.couleur}</td><td>${d.sexe}</td><td>${d.pigeonnier}</td><td>${d.souche}</td><td>${d.etat}</td><td>${d.num_bague_pere}</td><td>${d.num_bague_mere}</td><td>${d.supplement}</td>`);
-            })
+                pigeons += `<tr><td>${d.numero_bague}</td><td>${d.annee_naissance}</td><td><a data-toggle="modal" data-target="#myModal">${d.nom_pigeon}</a></td><td>${d.couleur}</td><td>${d.sexe}</td><td>${d.pigeonnier}</td><td>${d.souche}</td><td>${d.etat}</td><td>${d.num_bague_pere}</td><td>${d.num_bague_mere}</td><td>${d.supplement}</td></tr>`;
+            });
+            $('#tablePigeons').html(pigeons)
         }
     });
     return false;
 };
 
-function getAllPigeon() { 
+/*function getAllPigeon() { 
     $.ajax({
         url: `http://localhost:1337/selectAllPigeon`,
         success: function (data) {
@@ -24,7 +25,7 @@ function getAllPigeon() {
     });
     return false;
 };
-
+*/
 function getUserById(id) { 
 
     $.ajax({
@@ -40,6 +41,29 @@ function getUserById(id) {
             $('#countries_states').val(`${d.pays}`);
             $('#countries_city').val(`${d.ville}`);
             $('#zip').val(`${d.code_postal}`);
+        }
+    });
+    return false;
+};
+
+function getPigeonUp(id) { 
+    $.ajax({
+        url: `http://localhost:1337/selectPigeonUpdate/${id}`,
+        success: function (data) {
+            var d = data[0];
+            console.log(d);
+            $('#numero_bague').val(`${d.numero_bague}`);
+            $('#annee_naissance').val(`${d.annee_naissance}`);
+            $('#sexe').val(`${d.sexe}`);
+            $('#etat').val(`${d.etat}`);
+            $('#souche').val(`${d.souche}`);
+            $('#nom_pigeon').val(`${d.nom_pigeon}`);
+            $('#pigeonnier').val(`${d.pigeonnier}`);
+            $('#num_bague_pere').val(`${d.num_bague_pere}`);
+            $('#annee_naiss_pere').val(`${d.annee_naiss_pere}`);
+            $('#num_bague_mere').val(`${d.num_bague_mere}`);
+            $('#annee_naiss_mere').val(`${d.annee_naiss_mere}`);
+            $('#supplement').val(`${d.supplement}`);
         }
     });
     return false;

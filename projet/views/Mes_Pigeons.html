@@ -1,8 +1,8 @@
 <head>
 	<script src="Views/js/lumino.glyphs.js"></script>
 	<script>
-		// getPigeonById(1);
-		getAllPigeon();
+		getPigeonById(1);
+/*		getAllPigeon();*/
 		getTotalById(1);
 		getTotalMalesById(1);
 		getTotalJeunesById(1);
@@ -930,9 +930,10 @@
 			}
 	</style>	
 </head>
-<body>				
-	<div class=" col-sm-9 col-sm-offset-3  col-lg-12 " >
-			<div class="row col-md-12" style="margin-left:-290px;"> 
+<body>	
+	<div class=" col-sm-12 col-lg-12 " >
+			<div class="row col-md-12"> 
+				<a href=""></a>
 				
 				<div class=" col-xs-12 col-md-12 col-lg-3">
 					<div class="panel panel-blue panel-widget ">
@@ -989,9 +990,8 @@
 						</div>
 					</div>
 				</div>
-
 			</div><!--/.row-->
-	</div>	<!--/.main-->
+	</div>	<!--/.main-->			
 	
  	<div class="container" style="min-width: 1100px">
 		<table class="table table-hover:black table-striped table-bordered" style="margin-top: 5px;">
@@ -1013,18 +1013,194 @@
 			</thead>
 
 			<tbody class="well" id="tablePigeons" >
-			    <tr>
-			    </tr>
-
-			    <tr>
-			    </tr>
-			    
-			    <tr>
-			    </tr>
-
-			    <tr>
-			    </tr>
 			</tbody>
 		</table>
+	</div>
+
+	<div class="container">
+		<script>
+			getPigeonUp(102);
+		</script>
+	    <!-- Modal -->
+		<div class="modal fade" id="myModal" role="dialog">
+	    	<div class="modal-dialog"> 
+		     	<!-- Modal content-->
+	            <div class="modal-content">
+				    <!-- body modal -->
+				    <div id="update_message_success" class="alert alert-success d-none"></div>
+					<div id="update_message_error" class="alert alert-danger d-none"></div>
+				    <div class="modal-body">
+					    	<form class="well form-horizontal" onSubmit="return send_update(event);" method="POST" id="update_acquisition_form">
+								<fieldset>
+									<legend>A propos </legend>
+									
+									<!-- couleur input-->
+								        <!--<div class="form-group">
+											<label class="col-md-4 control-label" for="couleur" >Couleur </label> 
+										    <div class="col-md-6 inputGroupContainer">
+												<div class="input-group">
+													<span class="input-group-addon"><i class="glyphicon glyphicon-text-color"></i></span>
+													<input class="form-control" name="couleur" type="color" value="#191970" id="couleur">
+										 		</div>
+										 	</div>
+									</div> -->
+
+									<!-- nom pigeon second input-->
+									<div class="form-group">
+									    	<label class="col-md-4 control-label" for="numero_bague" >N° Bague</label> 
+									  		<div class="col-md-6 inputGroupContainer">
+										    	<div class="input-group">
+										    		<span class="input-group-addon"><i class="fab fa-earlybirds"></i></span>
+										    		<input name="numero_bague" placeholder="N° de Bague" id="numero_bague" class="form-control" type="text">
+										    	</div>
+									    	</div>
+									</div>
+
+									<!-- annee de naissance pigeon second input-->
+									<div class="form-group" >
+									    	<label class="col-md-4 control-label" for="annee_naissance" >Annee de naissance</label> 
+									    	<div class="col-md-6 inputGroupContainer">
+										    	<div class="input-group">
+										    		<span class="input-group-addon"><i class="glyphicon "></i></span>
+										    		<input name="annee_naissance" placeholder="Année" id="annee_naissance" class="form-control"  type="text">
+										    	</div>
+									    	</div>
+									</div>
+
+									<!-- sexe input-->
+									<div class="form-group">
+										    <label class="col-md-4 control-label" for="sexe" >Sexe </label> 
+											<div class="col-md-6 inputGroupContainer">
+										    	<div class="input-group">
+										    		<span class="input-group-addon"><i class="fas fa-transgender"></i></span>
+													<select name="sexe" class="form-control form-control-lg" id="sexe">
+													  <option data-icon="fas fa-female">Male</option>
+													  <option data-icon="glyphicon glyphicon-heart">Female</option>
+													  <option data-icon="glyphicon">Jeune</option>
+													</select>
+										 	    </div>
+										 	</div>
+									</div>
+
+									<!-- etat input-->
+									<div class="form-group">
+											<label class="col-md-4 control-label" for="etat" >État </label> 
+											<div class="col-md-6 inputGroupContainer">
+										    	<div class="input-group">
+										    		<span class="input-group-addon"><i class="glyphicon "></i></span>
+													<select name="etat" class="form-control form-control-lg" id="etat">
+													  <option data-icon="glyphicon ">Active</option>
+													  <option data-icon="glyphicon ">Vendu</option>
+													  <option data-icon="glyphicon ">Perdu</option>
+													  <option data-icon="glyphicon ">Éleveure</option>
+													  <option data-icon="glyphicon ">En prêt</option>
+													  <option data-icon="glyphicon ">Veuf</option>
+													</select>
+										 	    </div>
+										 	</div>
+									</div>
+
+									<!-- souche input-->
+									<div class="form-group">
+									    <label class="col-md-4 control-label" for="souche" >Souche </label> 
+									    <div class="col-md-6 inputGroupContainer">
+									    	<div class="input-group">
+									 			<span class="input-group-addon"><i class="glyphicon "></i></span>
+									 			<input name="souche" placeholder="souche" class="form-control"  type="text" id="souche">
+									 	    </div>
+									 	</div>
+									</div>
+
+									<!-- nom_pigeon input-->
+									<div class="form-group">
+									    <label class="col-md-4 control-label" for="nom_pigeon" > </label> 
+									    <div class="col-md-6 inputGroupContainer">
+									    	<div class="input-group">
+									 			<span class="input-group-addon"><i class="glyphicon "></i></span>
+									 			<input id="nom_pigeon" name="nom_pigeon" placeholder="Nom" class="form-control"  type="text">
+									 	    </div>
+									 	</div>
+									</div>
+
+									<!-- pigeonier input-->
+									<div class="form-group">
+									    <label class="col-md-4 control-label" for="pigeonnier" >Pigeonnier </label> 
+									    <div class="col-md-6 inputGroupContainer">
+									    	<div class="input-group">
+									 			<span class="input-group-addon"><i class="glyphicon glyphicon-user "></i></span>
+									 			<input id="pigeonnier" name="pigeonnier" placeholder="pigeonnier" class="form-control"  type="text">
+									 	    </div>
+									 	</div>
+									</div>
+
+									<!-- père input-->
+									<div class="form-group">
+									  <label class="col-md-4 control-label" for="num_bague_pere" >Père </label> 
+									  		<div class="col-md-6 inputGroupContainer">
+										    	<div class="input-group">
+										    		<span class="input-group-addon"><i class="fab fa-earlybirds"></i></span>
+										    		<input id="num_bague_pere" name="num_bague_pere" placeholder="N° Bague de père" class="form-control"  type="text">
+										    	</div>
+									    	</div>
+									</div>
+
+									<!-- annee de naissance pere -->
+									<div class="form-group" >
+										    <label class="col-md-4 control-label" for="annee_naiss_pere" ></label> 
+									    	<div class="col-md-6 inputGroupContainer">
+										    	<div class="input-group">
+										    		<input name="annee_naiss_pere" placeholder="Année" id="annee_naiss_pere" class="form-control"  type="text">
+										    	</div>
+									    	</div>
+									</div>
+
+									<!-- mère input-->
+									<div class="form-group">
+									        <label class="col-md-4 control-label" for="num_bague_mere" >Mère </label> 
+									  		<div class="col-md-6 inputGroupContainer">
+										    	<div class="input-group">
+										    		<span class="input-group-addon"><i class="fab fa-earlybirds"></i></span>
+										    		<input id="num_bague_mere" name="num_bague_mere" placeholder="N° Bague de mère" class="form-control"  type="text">
+										    	</div>
+									    	</div>
+									</div>
+
+									<!-- annee de naissance pere -->
+									<div class="form-group">
+									    <label class="col-md-4 control-label" for="annee_naiss_mere" ></label> 
+								    	<div class="col-md-6 inputGroupContainer">
+									    	<div class="input-group">
+									    		<input id="annee_naiss_mere" name="annee_naiss_mere" placeholder="Année" class="form-control"  type="text">
+									    	</div>
+								    	</div>
+									</div>
+
+									<!-- supplément input-->
+									<div class="form-group">
+									    <label class="col-md-4 control-label" for="supplement" >Supplément </label> 
+									    <div class="col-md-6 inputGroupContainer">
+									    	<div class="input-group">
+									 			<span class="input-group-addon"><i class="glyphicon "></i></span>
+									 			<textarea name="supplement"  placeholder="Supplément" class = "form-control" id="supplement"></textarea>
+									 	    </div>
+									 	</div>
+									</div>
+							    </fieldset>
+			                </form>
+				    </div>
+
+				    <!-- footer modal -->
+				    <div class="modal-footer">
+				        <!-- Button -->
+						<div class="form-group">
+							<label class="col-md-4 control-label"></label>
+							<div class="col-md-4">
+								<button type="submit" class="btn btn-warning" >Ajouter <span class="glyphicon glyphicon-send"></span></button>
+							</div>
+						</div>
+				    </div>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>

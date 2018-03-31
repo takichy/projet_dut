@@ -9,11 +9,15 @@ function send_user(e) {
         },
         data: $(`form#${e.target.id}`).serialize(),
         success: function (data) {
+            $('#user_message_error').removeClass("d-block");
+            $('#user_message_error').addClass("d-none");
             $('#user_message_success').html("votre message bien envoyer");
             $('#user_message_success').addClass("d-block");
             $('#user_message_success').removeClass("d-none");
         },
         error : function (error) {
+            $('#user_message_success').addClass("d-none");
+            $('#user_message_success').removeClass("d-block");
             $('#user_message_error').html("erreur!! ");
             $('#user_message_error').addClass("d-block");
             $('#user_message_error').removeClass("d-none");
@@ -32,16 +36,19 @@ function send_nvaqui(e) {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
         data: $(`form#${e.target.id}`).serialize(),
-            success: function (data) {
-            console.log(data);
+        success: function (data) {
+            $('#nvaqui_message_error').removeClass("d-block");
+            $('#nvaqui_message_error').addClass("d-none");
             $('#nvaqui_message_success').html("votre message bien envoyer");
-            $("#nvaqui_message_success").addClass("d-block");
-            $("#nvaqui_message_success").removeClass("d-none");
+            $('#nvaqui_message_success').addClass("d-block");
+            $('#nvaqui_message_success').removeClass("d-none");
         },
         error : function (error) {
+            $('#nvaqui_message_success').addClass("d-none");
+            $('#nvaqui_message_success').removeClass("d-block");
             $('#nvaqui_message_error').html("erreur!! ");
-            $("#nvaqui_message_error").addClass("d-block");
-            $("#nvaqui_message_error").removeClass("d-none");
+            $('#nvaqui_message_error').addClass("d-block");
+            $('#nvaqui_message_error').removeClass("d-none");
         },
     });
     return false;
@@ -58,12 +65,15 @@ function send_naissance(e) {
         },
         data: $(`form#${e.target.id}`).serialize(),
         success: function (data) {
-            console.log(data);
+            $('#nv_naissance_message_error').removeClass("d-block");
+            $('#nv_naissance_message_error').addClass("d-none");
             $('#nv_naissance_message_success').html("votre message bien envoyer");
             $('#nv_naissance_message_success').addClass("d-block");
             $('#nv_naissance_message_success').removeClass("d-none");
         },
         error : function (error) {
+            $('#nv_naissance_message_success').addClass("d-none");
+            $('#nv_naissance_message_success').removeClass("d-block");
             $('#nv_naissance_message_error').html("erreur!! ");
             $('#nv_naissance_message_error').addClass("d-block");
             $('#nv_naissance_message_error').removeClass("d-none");
@@ -82,15 +92,18 @@ function send_message(e) {
         },
         data: $(`form#${e.target.id}`).serialize(),
         success: function (data) {
-            console.log(data);
-            $('#contact_message_success').html("message sent successful");
-            $("#contact_message_success").addClass("d-block");
-            $("#contact_message_success").removeClass("d-none");
+            $('#contact_message_error').removeClass("d-block");
+            $('#contact_message_error').addClass("d-none");
+            $('#contact_message_success').html("votre message bien envoyer");
+            $('#contact_message_success').addClass("d-block");
+            $('#contact_message_success').removeClass("d-none");
         },
         error : function (error) {
-            $('#contact_message_error').html("message error");
-            $("#contact_message_error").addClass("d-block");
-            $("#contact_message_error").removeClass("d-none");
+            $('#contact_message_success').addClass("d-none");
+            $('#contact_message_success').removeClass("d-block");
+            $('#contact_message_error').html("erreur!! ");
+            $('#contact_message_error').addClass("d-block");
+            $('#contact_message_error').removeClass("d-none");
         },
     });
     return false;
@@ -106,15 +119,18 @@ function send_vaccination(e) {
         },
         data: $(`form#${e.target.id}`).serialize(),
         success: function (data) {
-            console.log(data);
-            $('#vaccination_message_success').html("message sent successful");
-            $("#vaccination_message_success").addClass("d-block");
-            $("#vaccination_message_success").removeClass("d-none");
+            $('#vaccination_message_error').removeClass("d-block");
+            $('#vaccination_message_error').addClass("d-none");
+            $('#vaccination_message_success').html("votre message bien envoyer");
+            $('#vaccination_message_success').addClass("d-block");
+            $('#vaccination_message_success').removeClass("d-none");
         },
         error : function (error) {
-            $('#vaccination_message_error').html("message error");
-            $("#vaccination_message_error").addClass("d-block");
-            $("#vaccination_message_error").removeClass("d-none");
+            $('#vaccination_message_success').addClass("d-none");
+            $('#vaccination_message_success').removeClass("d-block");
+            $('#vaccination_message_error').html("erreur!! ");
+            $('#vaccination_message_error').addClass("d-block");
+            $('#vaccination_message_error').removeClass("d-none");
         },
     });
     return false;

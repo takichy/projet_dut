@@ -11,6 +11,20 @@ function getPigeonById(id) {
     return false;
 };
 
+function getAllPigeon() { 
+    $.ajax({
+        url: `http://localhost:1337/selectAllPigeon`,
+        success: function (data) {
+            var pigeons = '';
+            data.forEach(function (d) {
+                pigeons += `<tr><td>${d.numero_bague}</td><td>${d.annee_naissance}</td><td>${d.nom_pigeon}</td><td>${d.couleur}</td><td>${d.sexe}</td><td>${d.pigeonnier}</td><td>${d.souche}</td><td>${d.etat}</td><td>${d.num_bague_pere}</td><td>${d.num_bague_mere}</td><td>${d.supplement}</td></tr>`;
+            });
+            $('#tablePigeons').html(pigeons)
+        }
+    });
+    return false;
+};
+
 function getUserById(id) { 
 
     $.ajax({

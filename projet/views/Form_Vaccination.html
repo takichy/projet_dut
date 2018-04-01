@@ -1,13 +1,30 @@
 <head>
 	<script>
-		getVaccinationById(55);
+			getPigeonVaccinerById(1);
+		function getval(sel){
+			getVaccinationById(sel.value);
+		}
+
+		function sendAffectation(){
+			var elmt1 = document.getElementById("vaccination1_form");
+			var elmt2 = document.getElementById("vaccination2_form");
+
+			elmt2.style.visibility = "visible";
+			elmt2.addclass="d-block";
+			elmt2.removeClass="d-none";
+
+			elmt1.style.visibility = "hidden";
+			elmt1.addclass="d-none";
+			elmt1.removeClass="d-block";
+		}		
 	</script>
 </head>
 <body>
-	<div class="container">
+	<div class="container d-block" id="form_modif" >
 		<div id="vaccination_message_success" class="alert alert-success d-none"></div>
 		<div id="vaccination_message_error" class="alert alert-danger d-none"></div>
-		<form class="well form-horizontal" onSubmit="return send_vaccination(event);" method="POST" id="vaccination_form">
+		
+		<form class="well form-horizontal d-block" onSubmit="return send_vaccination(event);" method="POST" id="vaccination1_form">
 			<fieldset>
 				<!-- Form Name legend -->
 				<legend>Vaccination </legend>
@@ -18,8 +35,8 @@
 				    <div class="col-md-4 inputGroupContainer">
 				        <div class="input-group">
 				    		<span class="input-group-addon"><i class="glyphicon "></i></span>
-							<select class="form-control form-control-lg" id="numero_bague" name="numero_bague">
-							  <option data-icon="glyphicon ">21548</option>
+							<select class="form-control form-control-lg" id="numero_bague" name="numero_bague" onchange="getval(this);">
+							  <option data-icon="glyphicon" value="" ></option>
 							</select>
 				 	    </div>
 				    </div>
@@ -37,7 +54,7 @@
 				</div>
 
 				<!-- Text input date de vaccination-->
-<!-- 				<div class="form-group">
+				<div class="form-group">
 				    <label class="col-md-4 control-label" for="date_vaccination">Date</label>  
 				    <div class="col-md-4 inputGroupContainer">
 					    <div class="input-group">
@@ -45,19 +62,113 @@
 					 		<input class="form-control" type="date" value="2011-08-19" id="date_vaccination" name="date_vaccination">
 					    </div>
 				    </div>
-				</div> -->
+				</div>
+
+				<!-- Text input Description-->
+				<div class="form-group">
+				    <label class="col-md-4 control-label" for="description">Description</label>  
+				    <div class="col-md-4 inputGroupContainer">
+					    <div class="input-group">
+					 		<span class="input-group-addon"><i class="glyphicon "></i></span>
+					 		<textarea  placeholder="description" class = "form-control" id="description" name="description"></textarea>
+					    </div>
+				    </div>
+				</div>
+
+				<!-- Text input Terminé par-->
+				<div class="form-group">
+				    <label class="col-md-4 control-label" for="termine_par">Terminé par</label>  
+				    <div class="col-md-4 inputGroupContainer">
+					    <div class="input-group">
+					        <span class="input-group-addon"><i class="glyphicon"></i></span>
+							<input id="termine_par" name="termine_par" placeholder="" class="form-control" type="text">
+					    </div>
+				    </div>
+				</div>
+
+				<!-- Text input Médication-->
+ 				<div class="form-group">
+				    <label class="col-md-4 control-label" for="medication">Médication</label>  
+				    <div class="col-md-4 inputGroupContainer">
+					    <div class="input-group">
+					        <span class="input-group-addon"><i class="glyphicon"></i></span>
+					        <input id="medication" name="medication" placeholder="" class="form-control" type="text">
+					    </div>
+				    </div>
+				</div>
+
+				<!-- Text input Dosage-->
+ 				<div class="form-group">
+				    <label class="col-md-4 control-label" for="dosage">Dosage</label>  
+				    <div class="col-md-4 inputGroupContainer">
+					    <div class="input-group">
+					        <span class="input-group-addon"><i class="glyphicon "></i></span>
+					        <input id="dosage" name="dosage" placeholder="" class="form-control" type="text">
+					    </div>
+				    </div>
+				</div>
+
+				<!-- Text input commentaire-->
+				<div class="form-group">
+				    <label class="col-md-4 control-label" for="commentaire_vaccination">Commentaire</label>  
+				    <div class="col-md-4 inputGroupContainer">
+				        <div class="input-group">
+				 			 <span class="input-group-addon"><i class="glyphicon "></i></span>
+				 			 <textarea id="commentaire_vaccination" name="commentaire_vaccination"  placeholder="commentaire" class = "form-control" ></textarea>
+				 	    </div>
+					</div>
+				</div>
+
+				<!-- Button -->
+				<div class="form-group">
+					<label class="col-md-4 control-label"></label>
+					<div class="col-md-4">
+						<button type="submit" class="btn btn-warning" >Valider <span class="glyphicon glyphicon-send"></span></button>
+			
+						<button type="button" class="btn btn-warning" onclick="sendAffectation()" >Affecter vaccination <span class="glyphicon glyphicon-send"></span></button>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+
+		<form class="well form-horizontal d-none" onSubmit="" method="POST" id="vaccination2_form" style="visibility: hidden;" >
+			<fieldset>
+				<!-- Form Name legend -->
+				<legend>Vaccination </legend>
+
+				<!-- Text input N bague-->
+				<div class="form-group">
+				    <label class="col-md-4 control-label" for="numero_bague" >N° Bague</label> 
+				    <div class="col-md-4 inputGroupContainer">
+				        <div class="input-group">
+				    		<span class="input-group-addon"><i class="glyphicon "></i></span>
+							<select class="form-control form-control-lg" id="numero_bague" name="numero_bague" onchange="getval(this);">
+							  <option data-icon="glyphicon" value="" ></option>
+							</select>
+				 	    </div>
+				    </div>
+				</div>
+						
+				<!-- Text input Pigeonnier-->
+				<div class="form-group">
+				    <label class="col-md-4 control-label" for="pigeonnier">Pigeonnier</label> 
+				    <div class="col-md-4 inputGroupContainer">
+					    <div class="input-group">
+					 		<span class="input-group-addon"><i class="glyphicon"></i></span>
+					 		<input id="pigeonnier" name="pigeonnier" placeholder="pigeonnier" class="form-control"  type="text">
+					    </div>
+				    </div>
+				</div>
 
 				<!-- Text input date de vaccination-->
 				<div class="form-group">
 				    <label class="col-md-4 control-label" for="date_vaccination">Date</label>  
 				    <div class="col-md-4 inputGroupContainer">
-						<div class="input-group date" data-provide="datepicker">
-							<div class="input-group-addon">
-						        <span class="glyphicon glyphicon-th"></span>
-						    </div>
-						    <input id="date_vaccination" name="date_vaccination" type="date" class="form-control">
-						</div>
-					</div>
+					    <div class="input-group">
+					 		<span class="input-group-addon"><i class="glyphicon "></i></span>
+					 		<input class="form-control" type="date" value="2011-08-19" id="date_vaccination" name="date_vaccination">
+					    </div>
+				    </div>
 				</div>
 
 				<!-- Text input Description-->
@@ -116,7 +227,7 @@
 				</div>
 
 				<!-- Text input vaccination-->
-				<!-- <div class="form-group">
+				<div class="form-group" >
 				    <label class="col-md-4 control-label"></label>  
 				    <div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
@@ -125,17 +236,19 @@
 						</div>
 					</div>
 				</div>
-                 -->
 
 				<!-- Button -->
 				<div class="form-group">
 					<label class="col-md-4 control-label"></label>
 					<div class="col-md-4">
 						<button type="submit" class="btn btn-warning" >Valider <span class="glyphicon glyphicon-send"></span></button>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<button type="button" class="btn btn-warning" onclick="sendAffectation()" >Affecter vaccin <span class="glyphicon glyphicon-send"></span></button>
 					</div>
 				</div>
 			</fieldset>
 		</form>
+
 	</div>
 	<!-- /.container -->
 </body>

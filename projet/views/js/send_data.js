@@ -135,3 +135,31 @@ function send_vaccination(e) {
     });
     return false;
 };
+
+function send_update(e) { 
+    e.preventDefault();
+    console.log($(`form#${e.target.id}`).serialize())
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:1337/updatePigeon/1',
+         headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        data: $(`form#${e.target.id}`).serialize(),
+        success: function (data) {
+            $('#update_message_error').removeClass("d-block");
+            $('#update_message_error').addClass("d-none");
+            $('#update_message_success').html("votre message bien envoyer");
+            $('#update_message_success').addClass("d-block");
+            $('#update_message_success').removeClass("d-none");
+        },
+        error : function (error) {
+            $('#update_message_success').addClass("d-none");
+            $('#update_message_success').removeClass("d-block");
+            $('#update_message_error').html("erreur!! ");
+            $('#update_message_error').addClass("d-block");
+            $('#update_message_error').removeClass("d-none");
+        },
+    });
+    return false;
+};

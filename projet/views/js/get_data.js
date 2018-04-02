@@ -4,8 +4,8 @@ function getPigeonById(id) {
         success: function (data) {
             var pigeons = '';
             data.forEach(function (d) {
-                pigeons += `<tr onClick="getvalue(this.value)">
-                                <td value="">${d.numero_bague}</td>
+                pigeons += `<tr onClick="getvalue(${d.numero_bague})">
+                                <td>${d.numero_bague}</td>
                                 <td>${d.annee_naissance}</td>
                                 <td>${d.nom_pigeon}</td>
                                 <td>${d.couleur}</td>
@@ -24,9 +24,8 @@ function getPigeonById(id) {
     return false;
 };
 
-function getvalue(sel){
-     console.log(sel)
-    alert(sel);
+function getvalue(id){
+     console.log(id)
     /*getVaccinationById(sel.value);*/
 }
 

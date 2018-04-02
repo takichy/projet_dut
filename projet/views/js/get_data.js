@@ -4,13 +4,31 @@ function getPigeonById(id) {
         success: function (data) {
             var pigeons = '';
             data.forEach(function (d) {
-                pigeons += `<tr><td>${d.numero_bague}</td><td>${d.annee_naissance}</td><td><i><u><a data-toggle="modal" data-target="#myModal"> ${d.nom_pigeon}</a></u></i></td><td>${d.couleur}</td><td>${d.sexe}</td><td>${d.pigeonnier}</td><td>${d.souche}</td><td>${d.etat}</td><td>${d.num_bague_pere}</td><td>${d.num_bague_mere}</td><td>${d.supplement}</td></tr>`;
+                pigeons += `<tr onClick="getvalue(this.value)">
+                                <td value="">${d.numero_bague}</td>
+                                <td>${d.annee_naissance}</td>
+                                <td>${d.nom_pigeon}</td>
+                                <td>${d.couleur}</td>
+                                <td>${d.sexe}</td>
+                                <td>${d.pigeonnier}</td>
+                                <td>${d.souche}</td>
+                                <td>${d.etat}</td>
+                                <td>${d.num_bague_pere}</td>
+                                <td>${d.num_bague_mere}</td>
+                                <td>${d.supplement}</td>
+                            </tr>`;
             });
             $('#tablePigeons').html(pigeons)
         }
     });
     return false;
 };
+
+function getvalue(sel){
+     console.log(sel)
+    alert(sel);
+    /*getVaccinationById(sel.value);*/
+}
 
 function getPigeonVaccinerById(id) { 
     $.ajax({

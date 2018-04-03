@@ -25,6 +25,9 @@
 		<script src="../projet/views/js/send_data.js"></script>
 		<script src="../projet/views/js/get_data.js"></script>
 		<style>
+			.input{
+				z-index: 0;
+			}
 
 			.footer-bottom {
 				bottom: 0;
@@ -69,7 +72,7 @@
 				position: absolute;
 				/*position: absolute;*/
 				width: 100%;
-				z-index: 3;
+				z-index: 8;
 				height: 44px;
 				background-color: #fff;
 				border-bottom: 3px solid #2d3d51;
@@ -134,13 +137,14 @@
 			/* side navigation styles */
 			.side-nav {
 				position: fixed;
-				width: 100%;
-				height: 100%;
+				width: 46%;
+    			height: 950px;
 				background-color: #35475e;
 				z-index: 1;
 				display: none;
 			}
 			.side-nav.visible {
+				z-index: 4;
 				display: block;
 			}
 			.side-nav ul {

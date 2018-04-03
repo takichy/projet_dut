@@ -1,3 +1,16 @@
+<head>
+	<script>
+		function encodeImageFileAsURL(element) {
+		    var file = element.files[0];
+		    var reader = new FileReader();
+	        reader.onloadend = function() {
+         	   console.log('RESULT', reader.result)
+      		  }
+   			 reader.readAsDataURL(file);
+   			 return reader.result;
+		}
+	</script>
+</head>
 <body>
    	<div class="container">
 		<div id="nvaqui_message_success" class="alert alert-success d-none"></div>
@@ -8,7 +21,7 @@
 
 				<!-- couleur input-->
 				<div class="form-group">
-					<div class="row">
+					<!-- <div class="row">
 						<label class="col-md-4 control-label" for="couleur" >Couleur </label> 
 					    <div class="col-md-4 inputGroupContainer">
 							<div class="input-group">
@@ -16,7 +29,7 @@
 								<input class="form-control" name="couleur" type="color" value="#191970" id="couleur">
 					 		</div>
 					 	</div>
-				    </div></br>
+				    </div></br> -->
 					
 					<!-- couleur second input-->
 					<label class="col-md-4 control-label" for="numero_bague" ></label> 
@@ -27,17 +40,17 @@
 					    		<input name="numero_bague" placeholder="N° de Bague" id="numero_bague" class="form-control" type="text">
 					    	</div>
 				    	</div>
-				    	<label class=" control-label" for="annee_naissance" ></label> 
+				    	<!-- <label class=" control-label" for="annee_naissance" ></label> 
 				    	<div class="col-md-2 inputGroupContainer">
 					    	<div class="input-group">
 					    		<input name="annee_naissance" placeholder="Année" id="annee_naissance" class="form-control"  type="text">
 					    	</div>
-				    	</div>
+				    	</div> -->
 				    </div>
 				</div>
 
 				<!-- sexe input-->
-				<div class="form-group">
+<!-- 				<div class="form-group">
 				    <label class="col-md-4 control-label" for="sexe" >Sexe </label> 
 					<div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
@@ -49,10 +62,10 @@
 							</select>
 				 	    </div>
 				 	</div>
-				</div>
+				</div> -->
 
 				<!-- etat input-->
-				<div class="form-group">
+<!-- 				<div class="form-group">
 					<label class="col-md-4 control-label" for="etat" >État </label> 
 					<div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
@@ -67,10 +80,10 @@
 							</select>
 				 	    </div>
 				 	</div></br>
-				</div>
+				</div> -->
 
 				<!-- souche input-->
-				<div class="form-group">
+<!-- 				<div class="form-group">
 				    <label class="col-md-4 control-label" for="souche" >Souche </label> 
 				    <div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
@@ -78,10 +91,10 @@
 				 			<input name="souche" placeholder="souche" class="form-control"  type="text" id="souche">
 				 	    </div>
 				 	</div>
-				</div>
+				</div> -->
 
 				<!-- nom_pigeon input-->
-				<div class="form-group">
+<!-- 				<div class="form-group">
 				    <label class="col-md-4 control-label" for="nom_pigeon" > </label> 
 				    <div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
@@ -89,10 +102,10 @@
 				 			<input id="nom_pigeon" name="nom_pigeon" placeholder="Nom" class="form-control"  type="text">
 				 	    </div>
 				 	</div>
-				</div>
+				</div> -->
 
 				<!-- pigeonier input-->
-				<div class="form-group">
+<!-- 				<div class="form-group">
 				    <label class="col-md-4 control-label" for="pigeonnier" >Pigeonnier </label> 
 				    <div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
@@ -100,10 +113,10 @@
 				 			<input id="pigeonnier" name="pigeonnier" placeholder="pigeonnier" class="form-control"  type="text">
 				 	    </div>
 				 	</div>
-				</div>
+				</div> -->
 
 				<!-- père input-->
-				<div class="form-group">
+<!-- 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="num_bague_pere" >Père </label> 
 				    <div class="row">
 				  		<div class="col-md-4 inputGroupContainer">
@@ -119,10 +132,10 @@
 					    	</div>
 				    	</div>
 				    </div>
-				</div>
+				</div> -->
 
 				<!-- mère input-->
-				<div class="form-group">
+<!-- 				<div class="form-group">
 				    <label class="col-md-4 control-label" for="num_bague_mere" >Mère </label> 
 				    <div class="row">
 				  		<div class="col-md-4 inputGroupContainer">
@@ -138,10 +151,10 @@
 					    	</div>
 				    	</div>
 				    </div>
-				</div>
+				</div> -->
 
 				<!-- supplément input-->
-				<div class="form-group">
+<!-- 				<div class="form-group">
 				    <label class="col-md-4 control-label" for="supplement" >Supplément </label> 
 				    <div class="col-md-4 inputGroupContainer">
 				    	<div class="input-group">
@@ -149,13 +162,13 @@
 				 			<textarea name="supplement"  placeholder="Supplément" class = "form-control" id="supplement"></textarea>
 				 	    </div>
 				 	</div>
-				</div>
+				</div> -->
 
 				<!-- image input-->
      		    <div class="form-group">
                     <label class="col-md-4 control-label" for="image" >Image</label> 
 	                <div class="col-md-4">
-	                	<input type="file" name="" value="image de pigeon" id="browse_file form-control-file">
+	                	<input type="file" onchange=" encodeImageFileAsURL(this)" name="image" id="image">
 	                </div>
                 </div> 
 				 

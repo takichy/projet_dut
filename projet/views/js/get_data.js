@@ -4,7 +4,9 @@ function getPigeonById(id) {
         success: function (data) {
             var pigeons = '';
             data.forEach(function (d) {
-                pigeons += `<tr onClick="getvalue(${d.numero_bague})">
+                console.log(d[0]);
+                console.log(${d.image});
+                pigeons += `<tr data-toggle="modal" data-target="#myModal" onClick="getvalue(${d.numero_bague})">
                                 <td>${d.numero_bague}</td>
                                 <td>${d.annee_naissance}</td>
                                 <td>${d.nom_pigeon}</td>
@@ -16,6 +18,7 @@ function getPigeonById(id) {
                                 <td>${d.num_bague_pere}</td>
                                 <td>${d.num_bague_mere}</td>
                                 <td>${d.supplement}</td>
+                                <td>${d.image}</td>
                             </tr>`;
             });
             $('#tablePigeons').html(pigeons)
@@ -25,9 +28,10 @@ function getPigeonById(id) {
 };
 
 function getvalue(id){
-     console.log(id)
+     console.log(id);
+     getPigeonUp(id);
     /*getVaccinationById(sel.value);*/
-}
+};
 
 function getPigeonVaccinerById(id) { 
     $.ajax({

@@ -29,6 +29,9 @@ function send_user(e) {
 function send_nvaqui(e) {
     e.preventDefault();
     console.log($(`form#${e.target.id}`).serialize())
+
+
+
     $.ajax({
         type: 'POST',
         url: 'http://localhost:1337/insertPigeon/1',
@@ -37,6 +40,7 @@ function send_nvaqui(e) {
         },
         data: $(`form#${e.target.id}`).serialize(),
         success: function (data) {
+            console.log(data);
             $('#nvaqui_message_error').removeClass("d-block");
             $('#nvaqui_message_error').addClass("d-none");
             $('#nvaqui_message_success').html("votre message bien envoyer");

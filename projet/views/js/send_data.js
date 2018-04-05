@@ -29,9 +29,6 @@ function send_user(e) {
 function send_nvaqui(e) {
     e.preventDefault();
     console.log($(`form#${e.target.id}`).serialize())
-
-
-
     $.ajax({
         type: 'POST',
         url: 'http://localhost:1337/insertPigeon/1',
@@ -58,29 +55,29 @@ function send_nvaqui(e) {
     return false;
 };
 
-function send_naissance(e) { 
+function send_eclos(e) { 
     e.preventDefault();
     console.log($(`form#${e.target.id}`).serialize())
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:1337/insertNaissance/1',
+        url: 'http://localhost:1337/insertEclos/1',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
         data: $(`form#${e.target.id}`).serialize(),
         success: function (data) {
-            $('#nv_naissance_message_error').removeClass("d-block");
-            $('#nv_naissance_message_error').addClass("d-none");
-            $('#nv_naissance_message_success').html("votre message bien envoyer");
-            $('#nv_naissance_message_success').addClass("d-block");
-            $('#nv_naissance_message_success').removeClass("d-none");
+            $('#eclosion_message_error').removeClass("d-block");
+            $('#eclosion_message_error').addClass("d-none");
+            $('#eclosion_message_success').html("votre message bien envoyer");
+            $('#eclosion_message_success').addClass("d-block");
+            $('#eclosion_message_success').removeClass("d-none");
         },
         error : function (error) {
-            $('#nv_naissance_message_success').addClass("d-none");
-            $('#nv_naissance_message_success').removeClass("d-block");
-            $('#nv_naissance_message_error').html("erreur!! ");
-            $('#nv_naissance_message_error').addClass("d-block");
-            $('#nv_naissance_message_error').removeClass("d-none");
+            $('#eclosion_message_success').addClass("d-none");
+            $('#eclosion_message_success').removeClass("d-block");
+            $('#eclosion_message_error').html("erreur!! ");
+            $('#eclosion_message_error').addClass("d-block");
+            $('#eclosion_message_error').removeClass("d-none");
         },
     });
     return false;
@@ -164,6 +161,38 @@ function send_update(e) {
             $('#update_message_error').addClass("d-block");
             $('#update_message_error').removeClass("d-none");
         },
+    });
+    return false;
+};
+
+function send_eclos_update(e) {
+    e.preventDefault();
+    console.log($(`form#${e.target.id}`).serialize())
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:1337/updateEclos/1',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        data: $(`form#${e.target.id}`).serialize(),
+        success: function (data) {
+            console.log(data);
+            $('#ecloUp_message_error').removeClass("d-block");
+            $('#ecloUp_message_error').addClass("d-none");
+            $('#ecloUp_message_success').html("votre message bien envoyer");
+            $('#ecloUp_message_success').addClass("d-block");
+            $('#ecloUp_message_success').removeClass("d-none");
+            window.location.replace("../projet/");
+        },
+        error : function (error) {
+            $('#ecloUp_message_success').addClass("d-none");
+            $('#ecloUp_message_success').removeClass("d-block");
+            $('#ecloUp_message_error').html("erreur!! ");
+            $('#ecloUp_message_error').addClass("d-block");
+            $('#ecloUp_message_error').removeClass("d-none");
+        },
+       
+
     });
     return false;
 };

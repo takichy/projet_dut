@@ -1,2 +1,2 @@
 <?php
-$vue = "vG.html";
+$vue = "traitement.html";

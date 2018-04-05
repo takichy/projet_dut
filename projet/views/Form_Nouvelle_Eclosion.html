@@ -1,0 +1,184 @@
+<head>
+	<script>
+		getEclosionById(1);
+	</script>
+	<style>
+		tr:hover{background-color: #DCDCDC;}
+	</style>
+</head>
+<body>
+	<div class="container col-md-12" >
+	   	<div class="col-md-6">
+	   		<div id="eclosion_message_success" class="alert alert-success d-none"></div>
+			<div id="eclosion_message_error" class="alert alert-danger d-none"></div>
+			<form class="well form-horizontal" onSubmit="return send_eclos(event);" method="post" id="naissance_form">
+				<fieldset>
+					<legend>Nouvelle Eclosion</legend>
+
+					<!-- Text input date-->
+					<!--<div class="form-group">
+					    <label class="col-md-2 control-label" for="date_nv_naiss" >Date </label> 
+					    <div class="col-md-6 inputGroupContainer">
+					    	<div class="input-group">
+					 			<span class="input-group-addon"><i class="glyphicon "></i></span>
+					 			<input class="form-control" name="date_nv_naiss" type="date" value="2011-08-19" id="date_nv_naiss">
+					 	    </div>
+					 	 </div>
+					</div> -->
+
+					<!-- Text input copain-->
+					<div class="form-group">
+					    <label class="col-md-2 control-label" for="copain" >Copain </label> 
+					    <div class="col-md-6 inputGroupContainer">
+					    	<div class="input-group">
+					 			<span class="input-group-addon"><i class="glyphicon "></i></span>
+					 			<input name="copain" placeholder="Copain" class="form-control"  type="text" id="copain" >
+					 	    </div>
+					 	</div>
+					</div>
+
+					<!-- Text input serie-->
+					<div class="form-group">
+					    <label class="col-md-2 control-label" for="serie" >Série </label> 
+					    <div class="col-md-6 inputGroupContainer">
+					    	<div class="input-group">
+					 			<span class="input-group-addon"><i class="glyphicon "></i></span>
+					 			<input name="serie" placeholder="Série" class="form-control"  type="text" id="serie" >
+					 	    </div>
+					 	</div>
+					</div>
+
+					<!-- Text input nid-->
+					<div class="form-group">
+					    <label class="col-md-2 control-label" for="nid" >Nid </label> 
+					    <div class="col-md-6 inputGroupContainer">
+					    	<div class="input-group">
+					 			<span class="input-group-addon"><i class="glyphicon "></i></span>
+					 			<input name="nid" placeholder="Nid" class="form-control"  type="text" id="nid" >
+					 	    </div>
+					 	</div>
+					</div>
+
+					<!-- Text input pose-->
+					<div class="form-group">
+					    <label class="col-md-2 control-label" for="pose" >Posé </label> 
+					    <div class="col-md-6 inputGroupContainer">
+					    	<div class="input-group">
+					 			<span class="input-group-addon"><i class="glyphicon "></i></span>
+					 	    	<input name="pose" placeholder="Posé" class="form-control"  type="text" id="pose" >
+					 	    </div>
+					 	</div>
+					</div>
+
+					<!-- Text input eclos-->
+					<div class="form-group">
+					    <label class="col-md-2 control-label" for="eclos" >Eclos </label> 
+					    <div class="col-md-6 inputGroupContainer">
+					    	<div class="input-group">
+					 			<span class="input-group-addon"><i class="glyphicon "></i></span>
+					 			<input name="eclos" placeholder="Eclos" class="form-control"  type="text" id="eclos" >
+					 	   </div>
+					 	</div>
+					</div>
+
+				    <!-- Text input commentaire-->
+					<div class="form-group">
+					    <label class="col-md-2 control-label" for="commentaire" >Commentaire </label> 
+					    <div class="col-md-6 inputGroupContainer">
+					    	<div class="input-group">
+					 			<span class="input-group-addon"><i class="glyphicon "></i></span>
+					 			<textarea name="commentaire" placeholder="..." class ="form-control" id="commentaire"></textarea>
+					 	    </div>
+					 	</div>
+					</div>
+
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-md-2 control-label"></label>
+						<div class="col-md-6">
+							<button type="submit" class="btn btn-warning" >Valider <span class="glyphicon glyphicon-send"></span></button>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+	   	</div>
+
+	   	<div class="col-md-6">
+			<div class="well form-horizontal">
+				<fieldset>
+					<legend>Affectation</legend>
+
+					<table class="table">
+						<thead class="thead-dark">
+						  <tr>
+						      <th scope="col">Date</th>
+						      <th scope="col">Série</th>
+						      <th scope="col">Commentaire</th>
+						  </tr>
+						</thead>
+
+						<tbody class="well" id="tableAffectation" >
+						</tbody> 
+					</table>
+				</fieldset>
+			</div>
+	   	</div>
+	</div>
+
+	<!-- modal is here -->
+	<div class="container">
+		<script>
+		</script>
+	    <!-- Modal -->
+		<div class="modal fade" id="eclosionModal" role="dialog">
+	    	<div class="modal-dialog"> 
+
+		     	<!-- Modal content-->
+	            <div class="modal-content">
+
+				    <!-- body modal -->
+				    <div class="modal-body">
+				    	<div id="ecloUp_message_success" class="alert alert-success d-none"></div>
+					    <div id="ecloUp_message_error" class="alert alert-danger d-none"></div>
+					    	<form class="well form-horizontal" onSubmit="return send_eclos_update(event);" method="POST" id="update_acquisition_form">
+								<fieldset>
+									<legend>Affectation des N° Bagues </legend>
+
+									<!-- Text input numero_bague-->
+									<div class="form-group">
+									    <label class="col-md-4 control-label" for="num_bague" >N° de bague </label> 
+									    <div class="col-md-4 inputGroupContainer">
+									    	<div class="input-group">
+									 			<span class="input-group-addon"><i class="glyphicon "></i></span>
+									 			<input name="num_bague" placeholder="N° de bague" class="form-control"  type="text" id="num_bague" >
+									 	    </div>
+									 	</div>
+									</div>
+									<div class="form-group">
+									    <label class="col-md-4 control-label" for="id_eclosion" >id_eclosion</label> 
+									    <div class="col-md-4 inputGroupContainer">
+									    	<div class="input-group">
+									 			<span class="input-group-addon"><i class="glyphicon "></i></span>
+									 			<input name="id_eclosion" placeholder="id_eclosion" class="form-control"  type="text" id="id_eclosion" >
+									 	    </div>
+									 	</div>
+									</div>
+									<!-- Button -->
+									<div class="form-group">
+										<label class="col-md-4 control-label"></label>
+										<div class="col-md-4">
+											<button type="submit" class="btn btn-warning" >Affecter<span class="glyphicon glyphicon-send"></span></button>
+										</div>
+									</div>
+							    </fieldset>
+			                </form>
+				    </div>
+
+				    <!-- footer modal -->
+				    <div class="modal-footer"> 
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

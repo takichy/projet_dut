@@ -1,0 +1,192 @@
+
+<script type="text/javascript">
+    function yesnoCheck() {
+        if(document.getElementById("hey").style.display == "block" || document.getElementById("ifYes").style.display == "none"  ){
+            document.getElementById("hey").style.display = "none";
+            document.getElementById("ifYes").style.display = "block";
+            
+        }else{
+           
+            document.getElementById("ifYes").style.display = "block";
+         }
+    }
+    function yesnoCheck1() {
+        if(document.getElementById("hey").style.display == "none" || document.getElementById("ifYes").style.display == "block"  ){
+            document.getElementById("hey").style.display = "block";
+            document.getElementById("ifYes").style.display = "none";
+            
+        }else{
+           
+            document.getElementById("ifYes").style.display = "none";
+         }
+    
+       
+        
+}
+
+</script>
+
+
+ <!-- type de Nettoyage-->
+ <!-- <div class="  form-group">
+        <label class="col-md-4  control-label" for="type" >type </label> 
+        <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon "></i></span>
+                <select name="produit" class="form-control form-control-lg" id="produit" onchange="yesnoCheck(this)">
+                  <option data-icon="glyphicon" value="entier">entier</option>
+                  <option data-icon="glyphicon"  value="particulier">particulier</option>
+                  
+                  
+                </select>
+             </div>
+         </div>
+    </div> -->
+
+
+    
+
+
+
+        
+<body>
+        <div class="container">
+         <div id="nvaqui_message_success" class="alert alert-success d-none"></div>
+         <div id="nvaqui_message_error" class="alert alert-danger d-none"></div>
+         <form class="well form-horizontal"  method="POST" id="nouvelle_acquisition_form">
+             <fieldset>
+                 <legend> 
+                        <div class="col-md-4">
+                                <button type="button" class="btn btn-lg btn" onclick="yesnoCheck1()" >Ajouter traitement </button>
+                            </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-lg btn" onclick="yesnoCheck()" >liste de traitement </button>
+                        </div>
+                   
+    </legend>
+ 
+
+            <!-- Button -->
+           
+
+
+
+
+
+
+            <!--num-bague pigeon -->
+                <div id="ifYes" style="display: none;">
+                        <div class="form-group">
+                                <label class="col-md-4  control-label" for="num-bague" >num-bague </label> 
+                                <div class="col-md-4 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon "></i></span>
+                                        <select name="produit" class="form-control form-control-lg" id="produit" >
+                                        <option data-icon="glyphicon" >1</option>
+                                        <option data-icon="glyphicon" >2</option>
+                                        
+                                        
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+
+
+
+
+
+
+        <div id="hey" >
+
+                 <!-- date input-->
+                 <div class="form-group">
+                     <div class="row">
+                         <label class="col-md-4 control-label" for="Date" >Date </label> 
+                         <div class="col-md-4 inputGroupContainer">
+                             <div class="input-group">
+                                 <span class="input-group-addon"><i class="glyphicon glyphicon-text-date"></i></span>
+                                 <input class="form-control" name="date" type="date"  id="date">
+                              </div>
+                          </div>
+                     </div></br>
+                     
+                     
+ 
+                 
+ 
+                 <!-- souche input-->
+                 <div class="form-group">
+                     <label class="col-md-4 control-label" for="cause" >Cause </label> 
+                     <div class="col-md-4 inputGroupContainer">
+                         <div class="input-group">
+                              <span class="input-group-addon"></span>
+                              <input name="cause" placeholder="cause" class="form-control"  type="text" id="cause">
+                          </div>
+                      </div>
+                 </div>
+ 
+               
+
+                 <!-- Produit select-->
+                 
+
+                 <div class="form-group">
+                        <label class="col-md-4  control-label" for="produit" >Produit </label> 
+                        <div class="col-md-4 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon "></i></span>
+                                <select name="produit" class="form-control form-control-lg" id="produit">
+                                  <option data-icon="glyphicon ">Anti-parasite</option>
+                                  <option data-icon="glyphicon ">Anti-seplique</option>
+                                  <option data-icon="glyphicon ">....</option>
+                                  
+                                </select>
+                             </div>
+                         </div>
+                </div>
+
+                <!-- name produit -->
+
+                 <div class="form-group">
+                        <label class="col-md-4 control-label" for="name_produit" > </label> 
+                        <div class="col-md-4 inputGroupContainer">
+                            <div class="input-group">
+                                 <span class="input-group-addon"></i></span>
+                                 <input id="produit" name="name_produit" placeholder="le nom du produit" class="form-control"  type="text">
+                             </div>
+                         </div>
+                    </div>
+ 
+
+                    <!-- Text input commentaire-->
+				<div class="form-group">
+                        <label class="col-md-4 control-label" for="commentaire" >Commentaire </label> 
+                        <div class="col-md-4 inputGroupContainer">
+                            <div class="input-group">
+                                 <span class="input-group-addon"><i class="glyphicon "></i></span>
+                                 <textarea name="commentaire" class = "form-control" id="commentaire"></textarea>
+                             </div>
+                         </div>
+                    </div>
+                
+ 
+                  
+                 <!-- Button -->
+                 <div class="form-group">
+                     <label class="col-md-4 control-label"></label>
+                     <div class="col-md-4">
+                         <button type="submit" class="btn btn-warning" >Ajouter <span class="glyphicon glyphicon-send"></span></button>
+                     </div>
+                 </div>
+
+
+        </div>
+
+
+             </fieldset>
+         </form>
+    
+        </div>
+ </body>

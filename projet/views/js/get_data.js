@@ -4,8 +4,6 @@ function getPigeonById(id) {
         success: function (data) {
             var pigeons = '';
             data.forEach(function (d) {
-                console.log(d[0]);
-                console.log(${d.image});
                 pigeons += `<tr data-toggle="modal" data-target="#myModal" onClick="getvalue(${d.numero_bague})">
                                 <td>${d.numero_bague}</td>
                                 <td>${d.annee_naissance}</td>
@@ -27,10 +25,33 @@ function getPigeonById(id) {
     return false;
 };
 
+function getEclosionById(id_use) { 
+    $.ajax({
+        url: `http://localhost:1337/selectEclosion/${id_use}`,
+        success: function (data) {
+            var pigeons = '';
+            data.forEach(function (d) {
+                pigeons += `<tr data-toggle="modal" data-target="#eclosionModal" onClick="getEclos(${d.id_eclosion})">
+                                <td>${d.date}</td>
+                                <td>${d.serie}</td>
+                                <td>${d.commentaire}</td>
+                            </tr>`;
+            });
+            $('#tableAffectation').html(pigeons)
+        }
+    });
+    return false;
+};
+
 function getvalue(id){
      console.log(id);
      getPigeonUp(id);
-    /*getVaccinationById(sel.value);*/
+     /*getVaccinationById(sel.value);*/
+};
+
+function getEclos(id){
+    console.log(id);
+    $('#id_eclosion').val(`${id}`);
 };
 
 function getPigeonVaccinerById(id) { 
@@ -60,8 +81,7 @@ function getPigeonVaccinerById(id) {
         }
     });
     return false;
-};
-*/
+};*/
 
 function getUserById(id) { 
 
@@ -180,3 +200,19 @@ function getVaccinationById(id) {
     });
     return false;
 };
+
+function getUserLogin(username,password) {
+    $.ajax({
+        type: "GET",
+        url: `http://localhost:1337/selectLogin/${username}/${password}`,
+                success: function (data) {
+                    if(data){ 
+                        console.log("success",data); 
+                        window.location.replace("../projet/index.php");   
+
+                     }else{
+                        console.log("error",data);
+                     }
+             }
+     });
+}

@@ -365,7 +365,14 @@
 					<li>
 						<a  href = "index.php?action=C">
 							<span><i class="fas fa-plus"></i></span>
-							<span>Nouvelle Naissance</span>
+							<span>Nouvelle Eclosion</span>
+						</a>
+					</li>
+
+					<li>
+						<a  href = "index.php?action=D">
+							<span><i class="fab fa-telegram-plane"></i></span>
+							<span>Nouvelle pondaison</span>
 						</a>
 					</li>
 
@@ -373,13 +380,6 @@
 						<a  href = "index.php?action=B">
 							<span><i class="fas fa-eye"></i></span>
 				            <span>Mes Pigeons</span>
-						</a>
-					</li>
-
-					<li>
-						<a  href = "index.php?action=D">
-							<span><i class="fab fa-telegram-plane"></i></span>
-							<span>Nouvelle pendue</span>
 						</a>
 					</li>
 
@@ -401,13 +401,6 @@
 						<a  href = "index.php?action=G">
 							<span><i class="fas fa-align-justify"></i></span>
 							<span>Traitement</span>
-						</a>
-					</li>
-
-					<li>
-						<a  href = "index.php?action=H">
-							<span><i class="fas fa-chart-bar"></i></span>
-							<span>Statistique</span>
 						</a>
 					</li>
 

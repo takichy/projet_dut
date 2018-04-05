@@ -1,0 +1,101 @@
+
+<body>
+        <div class="container">
+         <div id="nvaqui_message_success" class="alert alert-success d-none"></div>
+         <div id="nvaqui_message_error" class="alert alert-danger d-none"></div>
+         <form class="well form-horizontal"  method="POST" id="nouvelle_acquisition_form">
+             <fieldset>
+                 <legend>Nouvelle Pendaison</legend>
+ 
+
+				<!-- père input-->
+				<div class="form-group">
+                        <label class="col-md-4 control-label" for="num_bague_Male" >Male </label> 
+                          <div class="row">
+                                <div class="col-md-4 inputGroupContainer">
+                                  <div class="input-group">
+                                      <span class="input-group-addon"><i class="fab fa-earlybirds"></i></span>
+                                      <input id="num_bague_pere" name="num_bague_pere" placeholder="N° Bague de père" class="form-control"  type="text">
+                                  </div>
+                              </div>
+                              <label class=" control-label" for="annee_naiss_pere" ></label> 
+                              <div class="col-md-2 inputGroupContainer">
+                                  <div class="input-group">
+                                      <input name="annee_naiss_pere" placeholder="Année" id="annee_naiss_pere" class="form-control"  type="text">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+      
+                      <!-- femelle input-->
+                      <div class="form-group">
+                          <label class="col-md-4 control-label" for="num_bague_Male" >Femelle </label> 
+                          <div class="row">
+                                <div class="col-md-4 inputGroupContainer">
+                                  <div class="input-group">
+                                      <span class="input-group-addon"><i class="fab fa-earlybirds"></i></span>
+                                      <input id="num_bague_mere" name="num_bague_mere" placeholder="N° Bague de mère" class="form-control"  type="text">
+                                  </div>
+                              </div>
+                              <label class=" control-label" for="annee_naiss_mere" ></label> 
+                              <div class="col-md-2 inputGroupContainer">
+                                  <div class="input-group">
+                                      <input id="annee_naiss_mere" name="annee_naiss_mere" placeholder="Année" class="form-control"  type="text">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                 
+ 
+ 
+               
+
+                  <!-- date oeuf 1 input-->
+                  <div class="form-group">
+                        <div class="row">
+                            <label class="col-md-4 control-label" for="Date-Oeuf" >Date Oeuf 1 </label> 
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-text-date"></i></span>
+                                    <input class="form-control" name="date-oeuf-1" type="date"  id="date-oeuf-1">
+                                 </div>
+                             </div>
+                        </div><br>
+
+                    <!-- date oeuf 1 input-->
+                    <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-4 control-label" for="Date-Oeuf" >Date Oeuf 2 </label> 
+                                <div class="col-md-4 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-text-date"></i></span>
+                                        <input class="form-control" name="date-oeuf-2" type="date"  id="date-oeuf-2">
+                                    </div>
+                                </div>
+                            </div><br>
+                    
+
+                    <!-- Text input commentaire-->
+				<div class="form-group">
+                        <label class="col-md-4 control-label" for="commentaire" >Commentaire </label> 
+                        <div class="col-md-4 inputGroupContainer">
+                            <div class="input-group">
+                                 <span class="input-group-addon"><i class="glyphicon "></i></span>
+                                 <textarea name="commentaire" class = "form-control" id="commentaire"></textarea>
+                             </div>
+                         </div>
+                    </div>
+                
+ 
+                  
+                 <!-- Button -->
+                 <div class="form-group">
+                     <label class="col-md-4 control-label"></label>
+                     <div class="col-md-4">
+                         <button type="submit" class="btn btn-warning" >Ajouter <span class="glyphicon glyphicon-send"></span></button>
+                     </div>
+                 </div>
+             </fieldset>
+         </form>
+        </div>
+ </body>

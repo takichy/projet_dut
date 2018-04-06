@@ -280,3 +280,30 @@ function send_eclos_update(e) {
     });
     return false;
 };
+
+function send_registor(e) { 
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:1337/insertUser',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        data: $(`form#${e.target.id}`).serialize(),
+        success: function (data) {
+            $('#login_message_error').removeClass("d-block");
+            $('#login_message_error').addClass("d-none");
+            $('#login_message_success').html("creation avec succès");
+            $('#login_message_success').addClass("d-block");
+            $('#login_message_success').removeClass("d-none");
+        },
+        error : function (error) {
+            $('#login_message_success').addClass("d-none");
+            $('#login_message_success').removeClass("d-block");
+            $('#login_message_error').html("erreur!! ");
+            $('#login_message_error').addClass("d-block");
+            $('#login_message_error').removeClass("d-none");
+        },
+    });
+    return false;
+};

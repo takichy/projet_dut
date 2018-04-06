@@ -25,7 +25,8 @@
 		<script src="../projet/views/js/send_data.js"></script>
 		<script src="../projet/views/js/get_data.js"></script>
 		<style>
-			.input{
+
+    		.input{
 				z-index: 0;
 			}
 
@@ -397,12 +398,12 @@
 						</a>
 					</li>
 
-					<li>
+					<!-- <li>
 						<a  href = "index.php?action=G">
 							<span><i class="fas fa-align-justify"></i></span>
 							<span>Traitement</span>
 						</a>
-					</li>
+					</li> -->
 
 					<li>
 						<a  href = "index.php?action=I">

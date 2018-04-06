@@ -2,10 +2,10 @@
 -- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:3306
--- Généré le :  ven. 06 avr. 2018 à 02:51
--- Version du serveur :  5.6.34-log
--- Version de PHP :  7.1.5
+-- Host: localhost:3306
+-- Generation Time: Apr 06, 2018 at 05:09 PM
+-- Server version: 5.6.34-log
+-- PHP Version: 7.1.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `db_pigeon`
+-- Database: `db_pigeon`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `contact`
+-- Table structure for table `contact`
 --
 
 CREATE TABLE `contact` (
@@ -38,7 +38,7 @@ CREATE TABLE `contact` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `contact`
+-- Dumping data for table `contact`
 --
 
 INSERT INTO `contact` (`id_contact`, `nom`, `mail`, `telephone`, `objet`, `message`) VALUES
@@ -49,7 +49,7 @@ INSERT INTO `contact` (`id_contact`, `nom`, `mail`, `telephone`, `objet`, `messa
 -- --------------------------------------------------------
 
 --
--- Structure de la table `eclosion`
+-- Table structure for table `eclosion`
 --
 
 CREATE TABLE `eclosion` (
@@ -66,33 +66,33 @@ CREATE TABLE `eclosion` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `eclosion`
+-- Dumping data for table `eclosion`
 --
 
 INSERT INTO `eclosion` (`id_eclosion`, `id_user`, `num_bague`, `date`, `copain`, `serie`, `nid`, `pose`, `eclos`, `commentaire`) VALUES
-(1, 1, NULL, '0000-00-00', 'copain', 'sfdg', 'nid24', 'xfd', 'xdg', 'jhgf'),
-(2, 1, NULL, '0000-00-00', 'copain', 'sfdg', 'nid24', 'xfd', 'xdg', 'jhgf'),
+(1, 1, 758, '0000-00-00', 'copain', 'sfdg', 'nid24', 'xfd', 'xdg', 'jhgf'),
+(2, 1, 5, '0000-00-00', 'copain', 'sfdg', 'nid24', 'xfd', 'xdg', 'jhgf'),
 (3, 1, NULL, '0000-00-00', 'copain', 'sfdg', 'nid24', 'xfd', 'xdg', 'jhgf'),
 (4, 1, NULL, '0000-00-00', 'copain', 'sfdg', 'nid24', 'xfd', 'xdg', 'jhgf'),
-(5, 1, NULL, '0000-00-00', 'copain', 'sfdg', 'nid24', 'xfd', 'xdg', 'jhgf'),
-(6, 1, NULL, '0000-00-00', 'copain', 'sfdg', 'nid24', 'xfd', 'xdg', 'jhgf'),
+(5, 1, 7412, '0000-00-00', 'copain', 'sfdg', 'nid24', 'xfd', 'xdg', 'jhgf'),
+(6, 1, 7415, '0000-00-00', 'copain', 'sfdg', 'nid24', 'xfd', 'xdg', 'jhgf'),
 (7, 1, NULL, '0000-00-00', 'copain', 'sfdg', 'nid24', 'xfd', 'xdg', 'jhgf'),
 (8, 1, NULL, '0000-00-00', 'copain', 'sfdg', 'nid24', 'xfd', 'xdg', 'jhgf'),
 (9, 1, NULL, '0000-00-00', 'copain', 'sfdg', 'nid24', 'xfd', 'xdg', 'jhgf'),
 (10, 1, NULL, '0000-00-00', 'copain', 'sfdg', 'nid24', 'xfd', 'xdg', 'jhgf'),
-(11, 1, NULL, '0000-00-00', 'copain', 'sfdg', 'nid24', 'xfd', 'xdg', 'jhgf'),
+(11, 1, 75396, '0000-00-00', 'copain', 'sfdg', 'nid24', 'xfd', 'xdg', 'jhgf'),
 (12, 1, NULL, '0000-00-00', '', 'N133252444', 'n15', '159', '7589', 'jsjjdj'),
 (13, 1, NULL, '0000-00-00', 'oijhg', 'lkjh', 'lkjhg', 'kjhg', 'kjhgf', 'kjhgfd'),
 (14, 1, NULL, '0000-00-00', '', '', '', '', '', ''),
 (15, 1, NULL, '0000-00-00', '', '', '', '', '', ''),
-(16, 1, NULL, '0000-00-00', '', '', '', '', '', ''),
+(16, 1, 8529, '0000-00-00', '', '', '', '', '', ''),
 (17, 1, NULL, '0000-00-00', 'khjhg', 'jkhjghf', 'khjghfg', 'khjghfg', 'jkhjghfg', 'kjhg'),
 (18, 1, 50, '0000-00-00', 'kk', 'kk', 'kk', 'kk', 'kk', 'kk');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `nettoyage`
+-- Table structure for table `nettoyage`
 --
 
 CREATE TABLE `nettoyage` (
@@ -104,7 +104,7 @@ CREATE TABLE `nettoyage` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `nettoyage`
+-- Dumping data for table `nettoyage`
 --
 
 INSERT INTO `nettoyage` (`id_user`, `date_nettoyage`, `cause_nettoyage`, `produit`, `commentaire`) VALUES
@@ -115,7 +115,7 @@ INSERT INTO `nettoyage` (`id_user`, `date_nettoyage`, `cause_nettoyage`, `produi
 -- --------------------------------------------------------
 
 --
--- Structure de la table `pigeon`
+-- Table structure for table `pigeon`
 --
 
 CREATE TABLE `pigeon` (
@@ -152,7 +152,7 @@ CREATE TABLE `pigeon` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `pigeon`
+-- Dumping data for table `pigeon`
 --
 
 INSERT INTO `pigeon` (`couleur`, `numero_bague`, `id_user`, `annee_naissance`, `sexe`, `etat`, `famille`, `race`, `nom_pigeon`, `source`, `num_bague_pere`, `num_bague_mere`, `annee_naiss_pere`, `annee_naiss_mere`, `supplement`, `image`, `date_nv_naiss`, `copain`, `serie`, `nid`, `commentaire`, `pose`, `eclos`, `date_vaccination`, `description`, `termine_par`, `medication`, `dosage`, `commentaire_vaccination`, `etat_vaccination`) VALUES
@@ -191,7 +191,7 @@ INSERT INTO `pigeon` (`couleur`, `numero_bague`, `id_user`, `annee_naissance`, `
 -- --------------------------------------------------------
 
 --
--- Structure de la table `pondaison`
+-- Table structure for table `pondaison`
 --
 
 CREATE TABLE `pondaison` (
@@ -206,7 +206,7 @@ CREATE TABLE `pondaison` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `pondaison`
+-- Dumping data for table `pondaison`
 --
 
 INSERT INTO `pondaison` (`id_user`, `female`, `male`, `date_accouplement`, `date_oeuf_one`, `date_oeuf_two`, `nid`, `numero_couple`) VALUES
@@ -217,12 +217,13 @@ INSERT INTO `pondaison` (`id_user`, `female`, `male`, `date_accouplement`, `date
 (1, 63, 1, '2011-08-19', NULL, NULL, NULL, 'A4'),
 (1, 56, 1, '2011-08-19', NULL, NULL, NULL, 'B1'),
 (1, 85, 7, '2011-08-11', NULL, NULL, NULL, 'DD1'),
-(1, 55, 1, '2011-08-19', NULL, NULL, NULL, 'M12');
+(1, 55, 1, '2011-08-19', NULL, NULL, NULL, 'M12'),
+(1, 55, 1, '2011-08-19', NULL, NULL, NULL, 'Z1');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -234,20 +235,22 @@ CREATE TABLE `user` (
   `adresse` text NOT NULL,
   `pays` text NOT NULL,
   `ville` text NOT NULL,
-  `code_postal` int(11) NOT NULL
+  `code_postal` int(11) NOT NULL,
+  `password` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `user`
+-- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `nom`, `prenom`, `mail`, `telephone`, `adresse`, `pays`, `ville`, `code_postal`) VALUES
-(1, 'oulidi omali', 'abdelhay', 'abdelhayoulidiomali@gmail.com', 645460088, 'rue 50 boulevard narjis', 'maroc', 'fes', 30080);
+INSERT INTO `user` (`id_user`, `nom`, `prenom`, `mail`, `telephone`, `adresse`, `pays`, `ville`, `code_postal`, `password`) VALUES
+(1, 'oulidi omali', 'abdelhay', 'abdelhayoulidiomali@gmail.com', 645460088, 'rue 50 boulevard narjis', 'maroc', 'fes', 30080, '123456'),
+(2, 'undefined', 'hassane', 'elmiloudihassane@gmail.com', 621866495, 'AV Manama', 'maroc', 'fes', 30060, '987654321');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `vaccination`
+-- Table structure for table `vaccination`
 --
 
 CREATE TABLE `vaccination` (
@@ -264,7 +267,7 @@ CREATE TABLE `vaccination` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `vaccination`
+-- Dumping data for table `vaccination`
 --
 
 INSERT INTO `vaccination` (`id_user`, `numero_bague`, `date_vaccination`, `date_prochaine_vaccination`, `description`, `termine_par`, `medication`, `dosage`, `contre`, `commentaire_vaccination`) VALUES
@@ -274,42 +277,42 @@ INSERT INTO `vaccination` (`id_user`, `numero_bague`, `date_vaccination`, `date_
 (1, 600, '0000-00-00', '2021-09-07', 'gfctx', 'dtku', 'ghj', ':iukty', 'uilyukty', 'ukyjrt');
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `contact`
+-- Indexes for table `contact`
 --
 ALTER TABLE `contact`
   ADD PRIMARY KEY (`id_contact`);
 
 --
--- Index pour la table `eclosion`
+-- Indexes for table `eclosion`
 --
 ALTER TABLE `eclosion`
   ADD PRIMARY KEY (`id_eclosion`),
   ADD UNIQUE KEY `num_bague` (`num_bague`);
 
 --
--- Index pour la table `nettoyage`
+-- Indexes for table `nettoyage`
 --
 ALTER TABLE `nettoyage`
   ADD UNIQUE KEY `cause_nettoyage` (`cause_nettoyage`(50));
 
 --
--- Index pour la table `pigeon`
+-- Indexes for table `pigeon`
 --
 ALTER TABLE `pigeon`
   ADD UNIQUE KEY `numero_bague` (`numero_bague`);
 
 --
--- Index pour la table `pondaison`
+-- Indexes for table `pondaison`
 --
 ALTER TABLE `pondaison`
   ADD UNIQUE KEY `numero_couple` (`numero_couple`);
 
 --
--- Index pour la table `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`),
@@ -317,24 +320,24 @@ ALTER TABLE `user`
   ADD UNIQUE KEY `mail` (`mail`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `contact`
+-- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
   MODIFY `id_contact` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT pour la table `eclosion`
+-- AUTO_INCREMENT for table `eclosion`
 --
 ALTER TABLE `eclosion`
   MODIFY `id_eclosion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
--- AUTO_INCREMENT pour la table `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+  MODIFY `id_user` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -100,6 +100,8 @@
         <!-- </body>
 </html> -->
 
+
+
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -137,6 +139,43 @@
                 
                   }
                 }
+
+
+  //               $(document).ready( function() {
+  //    $(document).on('change', '.btn-file :file', function() {
+  //  var input = $(this),
+  //    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+  //  input.trigger('fileselect', [label]);
+  //  });
+
+  //  $('.btn-file :file').on('fileselect', function(event, label) {
+        
+  //      var input = $(this).parents('.input-group').find(':text'),
+  //          log = label;
+        
+  //      if( input.length ) {
+  //          input.val(log);
+  //      } else {
+  //          if( log ) alert(log);
+  //      }
+      
+  //  });
+  //  function readURL(input) {
+  //      if (input.files && input.files[0]) {
+  //          var reader = new FileReader();
+            
+  //          reader.onload = function (e) {
+  //              $('#img-upload').attr('src', e.target.result);
+  //          }
+            
+  //          reader.readAsDataURL(input.files[0]);
+  //      }
+  //  }
+
+  //  $("#imgInp").change(function(){
+  //      readURL(this);
+  //  });   
+  // });
             </script>
           
 
@@ -153,110 +192,178 @@
           <div class="" style="width: 330px;background-color: #fffdfd;">
             <form class="form-horizontal"   method="Post"   id="nouveau_user_form" style="padding: 15px;">
               <legend class="form-signin-heading">Bienvenu</legend>
-                <!-- mail -->
-                <div class=" form-group">
-                    <div class="col-md-4 inputGroupContainer">
-                      <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                        <input style="width: 238px;" id="username" name="username"  placeholder="Email Address" class="form-control" type="email"  required="" autofocus="">
+                      <!-- mail -->
+                      <div class=" form-group">
+                          <div class="col-md-4 inputGroupContainer">
+                            <div class="input-group">
+                              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                              <input style="width: 238px;" id="username" name="username"  placeholder="Email Address" class="form-control" type="email"  required="" autofocus="">
+                            </div>
+                          </div>
                       </div>
-                    </div>
-                </div>
-                <!--     password -->
-                <div class="form-group">
-                  <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
-                          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                          <input style="width: 238px;" id="password" name="password"  placeholder="Password" required="" class="form-control" type="password" required="" autofocus="">  
-                    </div>
-                  </div>
-                </div>
-
-                <div  >
+                      <!--     password -->
+                      <div class="form-group">
+                        <div class="col-md-4 inputGroupContainer">
+                          <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input style="width: 238px;" id="password" name="password"  placeholder="Password" required="" class="form-control" type="password" required="" autofocus="">  
+                          </div>
+                        </div>
+                      </div>
                 <button type="submit" onclick="take_Data();" class="btn btn-primary"  >Valider <span class="glyphicon glyphicon-send"></span></button>
-                
-                
-                <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#inscription"   >Inscription </button>
-            
-                </div>
-
-
-                
-
-              </form>
-
+                <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#inscription">Inscription </button>
+             </form>
           </div>
         </div>
 
 
 
          <!-- My Modal -->
-         <div class="mod fade  " id="inscription" >
-          <div class="modal-dialog">
-            <div class="modal-content" style="margin-top:-50%;">
-              <div class="modal-header">
-                   <h3>Inscription!!</h3>
-              </div>
+      <!-- modal is here -->
+  <div class="container">
+      <script>
+        /*getvalue();*/
+      </script>
+        <!-- Modal -->
+      <div class="modal fade" id="inscription" role="dialog">
+          <div class="modal-dialog"> 
+             <!-- Modal content-->
+                <div class="modal-content">
+              <!-- body modal -->
+              <div id="login_message_success" class="alert alert-success d-none"></div>
+            <div id="login_message_error" class="alert alert-danger d-none"></div>
               <div class="modal-body">
-                            <!-- formulaire de creation d'un nouveau compte -->     
-                              <div class="" >
-                                <form class="form-horizontal" action=" " method="post"  id="contact_form" style="padding: 15px;">
-                                  
-                            
-                                            <!-- Text input NOM-->
-                                    <div class="form-group">
-                                      <div class="col-md-4 inputGroupContainer">
-                                        <div class="input-group">
-                                          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                          <input style="width: 380px;" name="last_name" placeholder="Nom de famille" class="form-control"  type="text">
-                                        </div>
-                                      </div>
-                                    </div>
-                            
-                                            <!-- Text input PRENOM-->
-                                    <div class="form-group">
-                                      <div class="col-md-4 inputGroupContainer">
-                                        <div class="input-group">
-                                          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                          <input style="width: 380px;" name="last_name" placeholder="Prenom" class="form-control"  type="text">
-                                        </div>
-                                      </div>
-                                    </div>
-                            
-                                            <!-- Text input E-MAIL-->
-                                    <div class="form-group">
-                                      <div class="col-md-4 inputGroupContainer">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                            <input style="width: 380px;" name="email" placeholder="votre E-Mail" class="form-control"  type="email">
-                                        </div>
-                                      </div>
-                                    </div>
-                                            <!--     password -->
-                                    <div class="form-group">
-                                      <div class="col-md-4 inputGroupContainer">
-                                        <div class="input-group">
-                                              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                              <input style="width: 380px;" name="password"  placeholder="nouveau mot de passe"  class="form-control" type="password" >  
-                                        </div>
-                                      </div>
-                                    </div>
-                                </form>
-                              </div>
+                 
+                  <fieldset>
+                    <legend>Inscription!! </legend>
+                    
+                    <!-- formulaire de creation d'un nouveau compte -->     
+<div class="" >
+    <form class="form-horizontal"  onSubmit="return send_registor(event);" method="post"  id="contact_form" style="padding: 15px;">
+      
 
+                <!-- Text input NOM-->
+        <div class="form-group">
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input style="width: 380px;" name="nom" placeholder="Nom de famille" class="form-control"  type="text">
+            </div>
+          </div>
+        </div>
+
+                <!-- Text input PRENOM-->
+        <div class="form-group">
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input style="width: 380px;" name="prenom" placeholder="Prenom" class="form-control"  type="text">
+            </div>
+          </div>
+        </div>
+
+        
+
+                <!-- Text input E-MAIL-->
+        <div class="form-group">
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                <input style="width: 380px;" name="emaill" placeholder="votre E-Mail" class="form-control"  type="email">
+            </div>
+          </div>
+        </div>
+
+               <!--  input number-->
+               <div class="form-group">
+                  <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input style="width: 380px;" name="number" placeholder="Numéro de portable" class="form-control"  type="number">
+                    </div>
+                  </div>
+                </div>
+
+                     <!-- Text input adresse-->
+        <div class="form-group">
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input style="width: 380px;" name="adresse" placeholder="Adresse" class="form-control"  type="text">
               </div>
-
-
-
-              <div class="modal-footer">
-                  <button class="btn btn-lg btn-primary btn-block" onclick="" type="submit" style="width: 200px;">validé</button>
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-              </div>
-
             </div>
           </div>
 
+                <!-- Text input pays-->
+        <div class="form-group">
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input style="width: 380px;" name="pays" placeholder="Pays" class="form-control"  type="text">
+              </div>
+            </div>
+          </div>
+              <!-- Text input Ville-->
+        <div class="form-group">
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input style="width: 380px;" name="ville" placeholder="ville" class="form-control"  type="text">
+              </div>
+            </div>
+          </div>
+            
 
-       </div>
+         <!-- Text input code postal-->
+         <div class="form-group">
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input style="width: 380px;" name="postale" placeholder="code postale" class="form-control"  type="postale">
+              </div>
+            </div>
+          </div>
+                
+                
+                <!--     password -->
+        <div class="form-group">
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                  <input style="width: 380px;" name="passwordd"  placeholder="nouveau mot de passe"  class="form-control" type="password" >  
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" onclick="" type="submit" style="width: 200px;">validé</button>
+    </form>
+  </div>
+
+          <!-- <div class="form-group">
+              <label>Upload You Image</label>
+              <div class="input-group">
+                  <span class="input-group-btn">
+                      <span class="btn btn-default btn-file">
+                          Browse… <input type="file" id="imgInp">
+                      </span>
+                  </span>
+                  <input type="text" class="form-control" readonly>
+              </div><br>
+              <img id='img-upload'/>
+          </div> -->
+  
+              <!-- footer modal -->
+              <div class="modal-footer">
+                  
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+         
   </body>
 </html>
+
+
+
+
+

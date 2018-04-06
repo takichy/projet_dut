@@ -25,6 +25,45 @@ function getPigeonById(id) {
     return false;
 };
 
+function getListVaccinById(id) { 
+    $.ajax({
+        url: `http://localhost:1337/selectListVaccin/${id}`,
+        success: function (data) {
+            var pigeons = '';
+            data.forEach(function (d) {
+                pigeons += `<tr>
+                                <td>${d.numero_bague}</td>
+                                <td>${d.date_vaccination}</td>
+                                <td>${d.date_prochaine_vaccination}</td>
+                                <td>${d.commentaire_vaccination}</td>
+                            </tr>`;
+            });
+            $('#tableVaccin').html(pigeons)
+        }
+    });
+    return false;
+};
+
+function getListVaccinUrgentById(id) { 
+    $.ajax({
+        url: `http://localhost:1337/selectListVaccinUrgent/${id}`,
+        success: function (data) {
+            console.log(data);
+            var pigeons = '';
+            data.forEach(function (d) {
+                pigeons += `<tr>
+                                <td>${d.numero_bague}</td>
+                                <td>${d.date_vaccination}</td>
+                                <td>${d.date_prochaine_vaccination}</td>
+                                <td>${d.commentaire_vaccination}</td>
+                            </tr>`;
+            });
+            $('#tableVaccinUrgent').html(pigeons)
+        }
+    });
+    return false;
+};
+
 function getEclosionById(id_use) { 
     $.ajax({
         url: `http://localhost:1337/selectEclosion/${id_use}`,
@@ -43,10 +82,26 @@ function getEclosionById(id_use) {
     return false;
 };
 
+function getNettoyageById(id) { 
+    $.ajax({
+        url: `http://localhost:1337/selectNettoyage/${id}`,
+        success: function (data) {
+            var pigeons = '';
+            data.forEach(function (d) {
+                pigeons += `<tr>
+                                <td>${d.date_nettoyage}</td>
+                                <td>${d.cause_nettoyage}</td>
+                            </tr>`;
+            });
+            $('#tableListNettoyage').html(pigeons)
+        }
+    });
+    return false;
+};
+
 function getvalue(id){
      console.log(id);
      getPigeonUp(id);
-     /*getVaccinationById(sel.value);*/
 };
 
 function getEclos(id){
@@ -54,34 +109,68 @@ function getEclos(id){
     $('#id_eclosion').val(`${id}`);
 };
 
-function getPigeonVaccinerById(id) { 
+function getFemalePigeonById(id) { 
     $.ajax({
-        url: `http://localhost:1337/selectPigeonVacciner/${id}`,
+        url: `http://localhost:1337/selectPigeonFemale/${id}`,
         success: function (data) {
             console.log(data);
             var pigeons = '';
             data.forEach(function (d) {
                 pigeons += `<option>${d.numero_bague}</option>`;
             });
-            $('#numero_bague').html(pigeons)
+            $('#female').html(pigeons);
+            $('#female_acco').html(pigeons);
         }
     });
     return false;
 };
 
-/*function getAllPigeon() { 
+function getNumBagById(id) { 
     $.ajax({
-        url: `http://localhost:1337/selectAllPigeon`,
+        url: `http://localhost:1337/selectNumBag/${id}`,
         success: function (data) {
+            console.log(data);
             var pigeons = '';
             data.forEach(function (d) {
-                pigeons += `<tr><td>${d.numero_bague}</td><td>${d.annee_naissance}</td><td>${d.nom_pigeon}</td><td>${d.couleur}</td><td>${d.sexe}</td><td>${d.pigeonnier}</td><td>${d.souche}</td><td>${d.etat}</td><td>${d.num_bague_pere}</td><td>${d.num_bague_mere}</td><td>${d.supplement}</td></tr>`;
+                pigeons += `<option>${d.numero_bague}</option>`;
             });
-            $('#tablePigeons').html(pigeons)
+            $('#numero_bague').html(pigeons);
         }
     });
     return false;
-};*/
+};
+
+function getMalePigeonById(id) { 
+    $.ajax({
+        url: `http://localhost:1337/selectPigeonMale/${id}`,
+        success: function (data) {
+            console.log(data);
+            var pigeons = '';
+            data.forEach(function (d) {
+                pigeons += `<option>${d.numero_bague}</option>`;
+            });
+            $('#male').html(pigeons);
+            $('#male_acco').html(pigeons);
+        }
+    });
+    return false;
+};
+
+function getNumeroCoupleById(id) { 
+    $.ajax({
+        url: `http://localhost:1337/selectNumeroCouple/${id}`,
+        success: function (data) {
+            console.log(data);
+            var pigeons = '';
+            data.forEach(function (d) {
+                console.log(d);
+                pigeons += `<option>${d.numero_couple}</option>`;
+            });
+            $('#numero_couple').html(pigeons);
+        }
+    });
+    return false;
+};
 
 function getUserById(id) { 
 
@@ -183,19 +272,14 @@ function getTotalFemalesById(id) {
     return false;
 };
 
-function getVaccinationById(id) {
+function getCoupleById(id,id_use) {
     $.ajax({
-        url: `http://localhost:1337/selectVaccination/${id}`,
+        url: `http://localhost:1337/selectCouple/${id}/${id_use}`,
         success: function (data) {
             var d = data[0];
             console.log(d);
-            $('#pigeonnier').val(`${d.pigeonnier}`);
-            $('#date_vaccination').val(`${d.date_vaccination}`);
-            $('#description').val(`${d.description}`);
-            $('#termine_par').val(`${d.termine_par}`);
-            $('#medication').val(`${d.medication}`);
-            $('#dosage').val(`${d.dosage}`);
-            $('#commentaire_vaccination').val(`${d.commentaire_vaccination}`);
+            $('#female').val(`${d.female}`);
+            $('#male').val(`${d.male}`);
         }
     });
     return false;
@@ -209,10 +293,23 @@ function getUserLogin(username,password) {
                     if(data){ 
                         console.log("success",data); 
                         window.location.replace("../projet/index.php");   
-
                      }else{
                         console.log("error",data);
                      }
              }
      });
 }
+
+/*function getAllPigeon() { 
+    $.ajax({
+        url: `http://localhost:1337/selectAllPigeon`,
+        success: function (data) {
+            var pigeons = '';
+            data.forEach(function (d) {
+                pigeons += `<tr><td>${d.numero_bague}</td><td>${d.annee_naissance}</td><td>${d.nom_pigeon}</td><td>${d.couleur}</td><td>${d.sexe}</td><td>${d.pigeonnier}</td><td>${d.souche}</td><td>${d.etat}</td><td>${d.num_bague_pere}</td><td>${d.num_bague_mere}</td><td>${d.supplement}</td></tr>`;
+            });
+            $('#tablePigeons').html(pigeons)
+        }
+    });
+    return false;
+};*/

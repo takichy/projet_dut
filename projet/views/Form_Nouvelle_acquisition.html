@@ -4,14 +4,12 @@
 		    var file = element.files[0];
 		    var reader = new FileReader();
 	        reader.onloadend = function() {
-         	   console.log('RESULT', reader.result)
-      		  }
-   			 reader.readAsDataURL(file);
-			
-			$('#imageboot').addClass("d-block");
-            $('#imageboot').removeClass("d-none");
-            $('#imageboot').src("images/element");
-           
+				$('#imageboot').removeClass("d-none");
+				$('#imageboot').addClass("d-block");
+				$("#imageboot").attr('src', reader.result);
+				$("#imageinput").attr('value', reader.result);
+      		}
+   			reader.readAsDataURL(file);
 		}
 	</script>
 </head>
@@ -181,18 +179,17 @@
 	     		    <div class="form-group">
 	                    <label class="col-md-4 control-label" for="image" >Image</label> 
 		                <div class="col-md-4">
-		                	<input type="file" onchange=" encodeImageFileAsURL(this)" name="image" id="image">
+		                	<input type="file" onchange="encodeImageFileAsURL(this)" name="image" id="image" size='2550'>
 		                </div>
 	                </div> 
 
-
-
 					<!-- image affichage-->
 					<div class="form-group">
-					    <label class="col-md-4 control-label" for="supplement" ></label> 
+					    <label class="col-md-4 control-label" for="imageinput" ></label> 
 					    <div class="col-md-4 inputGroupContainer">
 					    	<div class="input-group">
-					    		<img style=" width: 175px; height: 139px;" class="d-none img-responsive" src="images/pigeon1.jpg" id="imageboot" alt="Chania">
+								<img style=" width: 175px; height: 139px;" class="d-none img-responsive" src="" id="imageboot" alt="Chania"/>
+								<input class="d-none" value="" name="imageinput" id="imageinput" alt="Chania"/>
 					 		</div>
 					 	</div>
 					</div>

@@ -16,7 +16,7 @@ function getPigeonById(id) {
                                 <td>${d.num_bague_pere}</td>
                                 <td>${d.num_bague_mere}</td>
                                 <td>${d.supplement}</td>
-                                <td>${d.image}</td>
+                                <td><img src="${d.image}" /></td>
                             </tr>`;
             });
             $('#tablePigeons').html(pigeons)
@@ -71,7 +71,7 @@ function getEclosionById(id_use) {
             var pigeons = '';
             data.forEach(function (d) {
                 pigeons += `<tr data-toggle="modal" data-target="#eclosionModal" onClick="getEclos(${d.id_eclosion})">
-                                <td>${d.date}</td>
+                                <td>${moment(d.date).format('DD-MM-YYYY')}</td>
                                 <td>${d.serie}</td>
                                 <td>${d.commentaire}</td>
                             </tr>`;

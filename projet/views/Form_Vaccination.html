@@ -33,6 +33,8 @@
 		    $(lego).css('background-color', '');
 		    var legoo = document.getElementById("legend_formu_three");
 		    $(legoo).css('background-color', '');
+
+		    document.getElementById("footer-bottom").style.position = "relative";
 		};
 
 		function getRappelle(){
@@ -66,6 +68,8 @@
 			var message = document.getElementById("vaccination_message_error");
 			message.classList.add("d-none");
 			message.classList.remove("d-block");
+
+			document.getElementById("footer-bottom").style.position = "fixed";
 		};
 
 		function getListVaccin(){
@@ -99,6 +103,8 @@
 			var message = document.getElementById("vaccination_message_error");
 			message.classList.add("d-none");
 			message.classList.remove("d-block");
+
+			document.getElementById("footer-bottom").style.position = "fixed";
 		};
 	</script>
 </head>

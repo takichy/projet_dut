@@ -332,14 +332,14 @@ function getUserLogin(username,password) {
         url: `http://localhost:1337/selectLogin/${username}/${password}`,
                 success: function (data) {
                     if(data){ 
-                        console.log("success",data); 
+                        console.log("success",data[0]); 
                         window.location.replace("../projet/index.php");   
                      }else{
                         console.log("error",data);
                      }
              }
      });
-}
+};
 
 /*function getAllPigeon() { 
     $.ajax({

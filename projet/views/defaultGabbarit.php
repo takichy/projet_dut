@@ -1,10 +1,14 @@
-﻿<!DOCTYPE html>
+﻿	<!-- session_start();
+	if ($_SESSION['connect'] != "oui"){
+	    header('location: ../../../projet_dut/login/index.php');
+	} -->
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>PFE</title>
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
@@ -138,8 +142,8 @@
 			/* side navigation styles */
 			.side-nav {
 				position: fixed;
-				width: 46%;
-    			height: 950px;
+				width: 100%;
+    			height: 1100px;
 				background-color: #35475e;
 				z-index: 1;
 				display: none;
@@ -198,6 +202,61 @@
 				color: #333;
 				font-size: 18px;
 			}
+
+			/* main box container */
+			.main {
+				display: flex;
+				flex-flow: row wrap;
+			}
+			.widget {
+				flex-basis: 300px;
+				flex-grow: 10;
+				height: 300px;
+				margin: 15px;
+				border-radius: 6px;
+				background-color: #ffffff;
+				position: relative;
+			}
+			.widget .title {
+				background-color: #eef1f7;
+				border-bottom: 1px solid #dfe4ec;
+				padding: 10px;
+				border-top-left-radius: 6px;
+				border-top-right-radius: 6px;
+				color: #617085;
+				font-weight: 600;
+			}
+			.ad {
+				width: 350px;
+				height: 300px;
+				border: 1px solid #ddd;
+			}
+			.ad {
+				position: absolute;
+				width: 300px;
+				height: 250px;
+				border: 1px solid #ddd;
+				left: 50%;
+				transform: translateX(-50%);
+				top: 250px;
+				z-index: 10;
+			}
+			.ad .close {
+				position: absolute;
+				font-family: 'ionicons';
+				width: 20px;
+				height: 20px;
+				color: #fff;
+				background-color: #999;
+				font-size: 20px;
+				left: -20px;
+				top: -1px;
+				display: table-cell;
+				vertical-align: middle;
+				cursor: pointer;
+				text-align: center;
+			}
+
 			/* set element styles to fit tablet and higher(desktop) */
 			@media screen and (min-width: 600px) {
 				.header {
@@ -262,58 +321,11 @@
 				}
 			}
 
-			/* main box container */
-			.main {
-				display: flex;
-				flex-flow: row wrap;
-			}
-			.widget {
-				flex-basis: 300px;
-				flex-grow: 10;
-				height: 300px;
-				margin: 15px;
-				border-radius: 6px;
-				background-color: #ffffff;
-				position: relative;
-			}
-			.widget .title {
-				background-color: #eef1f7;
-				border-bottom: 1px solid #dfe4ec;
-				padding: 10px;
-				border-top-left-radius: 6px;
-				border-top-right-radius: 6px;
-				color: #617085;
-				font-weight: 600;
-			}
-			.ad {
-				width: 350px;
-				height: 300px;
-				border: 1px solid #ddd;
-			}
-			.ad {
-				position: absolute;
-				width: 300px;
-				height: 250px;
-				border: 1px solid #ddd;
-				left: 50%;
-				transform: translateX(-50%);
-				top: 250px;
-				z-index: 10;
-			}
-			.ad .close {
-				position: absolute;
-				font-family: 'ionicons';
-				width: 20px;
-				height: 20px;
-				color: #fff;
-				background-color: #999;
-				font-size: 20px;
-				left: -20px;
-				top: -1px;
-				display: table-cell;
-				vertical-align: middle;
-				cursor: pointer;
-				text-align: center;
+			@media screen and (max-width: 750px){
+				.footer-bottom {
+					background-color: red;
+					position: relative;
+				}
 			}
 		</style>
 
@@ -334,7 +346,10 @@
 		</script>
 	</head>
 	<body>
-		<div class="header" style="width: 231%;" >
+		<?php
+			echo $_SESSION['username'];
+		?>
+		<div class="header">
 		        <div class="logo">
 					<a  href = "index.php?action=A">
 						<i class="fas fa-user"></i>
@@ -342,7 +357,11 @@
 				    </a>
 				</div>
 			   <a href="#" class="nav-trigger"><span></span></a>
+				<div id="logout" style="margin-left: 90%;">
+					<button type="submit" class="btn btn-warning" ><a href='../projet/actions/logout.php'>Deconnexion</a></button>
+				</div>
 		</div>
+
 
 		<div class="side-nav">
 
@@ -421,11 +440,11 @@
 			</div>
 		</div>
 
-		<div class="footer-bottom" style="width: 231%;">
+		<div class="footer-bottom" id="footer-bottom">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-						<div class="copyright">
+						<div class="copyright text-center">
 							© 2018, webpigeon, All rights reserved
 						</div>
 					</div>

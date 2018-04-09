@@ -2,6 +2,7 @@ function getPigeonById(id) {
     $.ajax({
         url: `http://localhost:1337/selectPigeon/${id}`,
         success: function (data) {
+            console.log(data);
             var pigeons = '';
             data.forEach(function (d) {
                 pigeons += `<tr data-toggle="modal" data-target="#myModal" onClick="getvalue(${d.numero_bague})">
@@ -10,13 +11,14 @@ function getPigeonById(id) {
                                 <td>${d.nom_pigeon}</td>
                                 <td>${d.couleur}</td>
                                 <td>${d.sexe}</td>
-                                <td>${d.pigeonnier}</td>
-                                <td>${d.souche}</td>
+                                <td>${d.source}</td>
+                                <td>${d.famille}</td>
+                                <td>${d.race}</td>
                                 <td>${d.etat}</td>
                                 <td>${d.num_bague_pere}</td>
                                 <td>${d.num_bague_mere}</td>
                                 <td>${d.supplement}</td>
-                                <td><img src="${d.image}" /></td>
+                                <td style="width:15%;" ><img style ="width: 100%; height: 100px;" src="${d.image}" /></td>
                             </tr>`;
             });
             $('#tablePigeons').html(pigeons)
@@ -33,12 +35,31 @@ function getListVaccinById(id) {
             data.forEach(function (d) {
                 pigeons += `<tr>
                                 <td>${d.numero_bague}</td>
-                                <td>${d.date_vaccination}</td>
-                                <td>${d.date_prochaine_vaccination}</td>
+                                <td>${moment(d.date_vaccination).format('DD-MM-YYYY')}</td>
+                                <td>${moment(d.date_prochaine_vaccination).format('DD-MM-YYYY')}</td>
                                 <td>${d.commentaire_vaccination}</td>
                             </tr>`;
             });
             $('#tableVaccin').html(pigeons)
+        }
+    });
+    return false;
+};
+
+function getTraitementById(id) { 
+    $.ajax({
+        url: `http://localhost:1337/selectListTrait/${id}`,
+        success: function (data) {
+            var pigeons = '';
+            data.forEach(function (d) {
+                pigeons += `<tr>
+                                <td>${d.numero_traitement}</td>
+                                <td>${moment(d.date_traitement).format('DD-MM-YYYY')}</td>
+                                <td>${d.traitement_concerne}</td>
+                                <td>${d.commentaire_traitement}</td>
+                            </tr>`;
+            });
+            $('#tableTrait').html(pigeons)
         }
     });
     return false;
@@ -53,8 +74,8 @@ function getListVaccinUrgentById(id) {
             data.forEach(function (d) {
                 pigeons += `<tr>
                                 <td>${d.numero_bague}</td>
-                                <td>${d.date_vaccination}</td>
-                                <td>${d.date_prochaine_vaccination}</td>
+                                <td>${moment(d.date_vaccination).format('DD-MM-YYYY')}</td>
+                                <td>${moment(d.date_prochaine_vaccination).format('DD-MM-YYYY')}</td>
                                 <td>${d.commentaire_vaccination}</td>
                             </tr>`;
             });
@@ -89,7 +110,7 @@ function getNettoyageById(id) {
             var pigeons = '';
             data.forEach(function (d) {
                 pigeons += `<tr>
-                                <td>${d.date_nettoyage}</td>
+                                <td>${moment(d.date_nettoyage).format('DD-MM-YYYY')}</td>
                                 <td>${d.cause_nettoyage}</td>
                             </tr>`;
             });
@@ -135,6 +156,24 @@ function getNumBagById(id) {
                 pigeons += `<option>${d.numero_bague}</option>`;
             });
             $('#numero_bague').html(pigeons);
+        }
+    });
+    return false;
+};
+
+function getTraitementPigeonById(id) { 
+    $.ajax({
+        url: `http://localhost:1337/selectNumBag/${id}`,
+        success: function (data) {
+            console.log(data);
+            var pig = 'Tous';
+            var pigeons = '';
+            pigeons += `<option>${pig}</option>`;
+            $('#traitement_concerne').html(pigeons);
+            data.forEach(function (d) {
+                pigeons += `<option>${d.numero_bague}</option>`;
+            });
+            $('#traitement_concerne').html(pigeons);
         }
     });
     return false;
@@ -198,13 +237,15 @@ function getPigeonUp(id) {
         success: function (data) {
             var d = data[0];
             console.log(d);
+            $('#couleur').val(`${d.couleur}`);
             $('#numero_bague').val(`${d.numero_bague}`);
             $('#annee_naissance').val(`${d.annee_naissance}`);
             $('#sexe').val(`${d.sexe}`);
             $('#etat').val(`${d.etat}`);
-            $('#souche').val(`${d.souche}`);
+            $('#famille').val(`${d.famille}`);
+            $('#race').val(`${d.race}`);
             $('#nom_pigeon').val(`${d.nom_pigeon}`);
-            $('#pigeonnier').val(`${d.pigeonnier}`);
+            $('#source').val(`${d.source}`);
             $('#num_bague_pere').val(`${d.num_bague_pere}`);
             $('#annee_naiss_pere').val(`${d.annee_naiss_pere}`);
             $('#num_bague_mere').val(`${d.num_bague_mere}`);

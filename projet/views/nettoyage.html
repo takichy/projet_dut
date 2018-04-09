@@ -18,6 +18,7 @@
         }
 
         function getListNettoyage(){
+
             getNettoyageById(1);
           console.log('je suis sur getListNettoyage');
           var lisNett = document.getElementById("form_list_nettoyage");
@@ -35,6 +36,16 @@
           
           var lego = document.getElementById("legend_formu_two");
           $(lego).css('background-color', '#DCDCDC');
+
+
+        var mess = document.getElementById("nettoyage_message_success");
+        mess.classList.add("d-none");
+        mess.classList.remove("d-block");
+
+        var message = document.getElementById("nettoyage_message_error");
+        message.classList.add("d-none");
+        message.classList.remove("d-block");
+
         }
     </script>
 
@@ -92,7 +103,7 @@
                 </div> 
 
                 <!-- Text input commentaire-->
-				<div class="form-group col-md-12">
+				        <div class="form-group col-md-12">
                         <label class="col-md-4 control-label" for="commentaire" >Commentaire </label> 
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">

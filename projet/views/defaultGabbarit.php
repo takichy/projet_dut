@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
 <html>
-	
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="utf-8">
@@ -334,9 +333,8 @@
 			})
 		</script>
 	</head>
-	
 	<body>
-		<div class="header">
+		<div class="header" style="width: 231%;" >
 		        <div class="logo">
 					<a  href = "index.php?action=A">
 						<i class="fas fa-user"></i>
@@ -399,12 +397,12 @@
 						</a>
 					</li>
 
-					<!-- <li>
+					<li>
 						<a  href = "index.php?action=G">
 							<span><i class="fas fa-align-justify"></i></span>
 							<span>Traitement</span>
 						</a>
-					</li> -->
+					</li>
 
 					<li>
 						<a  href = "index.php?action=I">
@@ -423,7 +421,7 @@
 			</div>
 		</div>
 
-		<div class="footer-bottom">
+		<div class="footer-bottom" style="width: 231%;">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">

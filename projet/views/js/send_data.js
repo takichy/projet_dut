@@ -54,6 +54,34 @@ function send_nettoyage(e) {
     return false;
 };
 
+function send_Traitement(e) { 
+    e.preventDefault();
+    console.log($(`form#${e.target.id}`).serialize())
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:1337/insertTraitement/1',
+         headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        data: $(`form#${e.target.id}`).serialize(),
+        success: function (data) {
+            $('#traitement_message_error').removeClass("d-block");
+            $('#traitement_message_error').addClass("d-none");
+            $('#traitement_message_success').html("votre message bien envoyer");
+            $('#traitement_message_success').addClass("d-block");
+            $('#traitement_message_success').removeClass("d-none");
+        },
+        error : function (error) {
+            $('#traitement_message_success').addClass("d-none");
+            $('#traitement_message_success').removeClass("d-block");
+            $('#traitement_message_error').html("erreur!! ");
+            $('#traitement_message_error').addClass("d-block");
+            $('#traitement_message_error').removeClass("d-none");
+        },
+    });
+    return false;
+};
+
 function send_nvaqui(e) {
     e.preventDefault();
     console.log($(`form#${e.target.id}`).serialize())
@@ -122,6 +150,7 @@ function send_pondaison(e) {
         },
         data: $(`form#${e.target.id}`).serialize(),
         success: function (data) {
+            console.log(data);
             $('#pondaison_message_error').removeClass("d-block");
             $('#pondaison_message_error').addClass("d-none");
             $('#pondaison_message_success').html("votre message bien envoyer");

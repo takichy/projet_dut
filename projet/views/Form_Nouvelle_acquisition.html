@@ -20,6 +20,7 @@
 		<form class="well form-horizontal" onSubmit="return send_nvaqui(event);" method="POST" id="nouvelle_acquisition_form">
 			<fieldset>
 				<legend>Nouvelle Acquisition</legend>
+
 					<!-- couleur input-->
 					<div class="form-group">
 						<label class="col-md-4 control-label" for="couleur" >Couleur </label> 
@@ -31,7 +32,7 @@
 					 	</div>
 					</div>
 						
-						<!-- numero de bague input-->
+					<!-- numero de bague input-->
 					<div class="form-group">
 						<label class="col-md-4 control-label" for="numero_bague" ></label> 
 				  		<div class="col-md-4 inputGroupContainer">
@@ -47,7 +48,12 @@
 				    	<label class="col-md-4 control-label" for="annee_naissance" ></label> 
 				    	<div class="col-md-4 inputGroupContainer">
 					    	<div class="input-group">
-					    		<span class="input-group-addon"><i class="fab fa-earlybirds"></i></span>
+					    		<div class="input-group-addon">
+					    		 <span class="fa-layers fa-fw" style="background:MistyRose">
+								    <i class="fas fa-calendar"></i>
+									<span class="fa-layers-text fa-inverse" data-fa-transform="shrink-8 down-3" style="font-weight:900">18</span>
+								  </span>
+								</div>
 					    		<input name="annee_naissance" placeholder="Année" id="annee_naissance" class="form-control"  type="text">
 					    	</div>
 				    	</div>
@@ -73,7 +79,7 @@
 						<label class="col-md-4 control-label" for="etat" >État </label> 
 						<div class="col-md-4 inputGroupContainer">
 					    	<div class="input-group">
-					    		<span class="input-group-addon"><i class="glyphicon "></i></span>
+					    		<span class="input-group-addon"><i class="glyphicon glyphicon-th-list"></i></span>
 								<select name="etat" class="form-control form-control-lg" id="etat">
 								  <option data-icon="glyphicon ">Active</option>
 								  <option data-icon="glyphicon ">Vendu</option>
@@ -90,7 +96,7 @@
 					    <label class="col-md-4 control-label" for="famile" >Famille </label> 
 					    <div class="col-md-4 inputGroupContainer">
 					    	<div class="input-group">
-					 			<span class="input-group-addon"><i class="glyphicon "></i></span>
+					 			<span class="input-group-addon"><i class="glyphicon glyphicon-group" ></i></span>
 					 			<input name="famille" placeholder="famille de pigeon" class="form-control"  type="text" id="famille">
 					 	    </div>
 					 	</div>
@@ -112,7 +118,7 @@
 					    <label class="col-md-4 control-label" for="nom_pigeon" > </label> 
 					    <div class="col-md-4 inputGroupContainer">
 					    	<div class="input-group">
-					 			<span class="input-group-addon"><i class="glyphicon "></i></span>
+					 			<span class="input-group-addon"><i class="glyphicon glyphicon-nameplate"></i></span>
 					 			<input id="nom_pigeon" name="nom_pigeon" placeholder="Nom de pigeon" class="form-control"  type="text">
 					 	    </div>
 					 	</div>
@@ -123,7 +129,7 @@
 					    <label class="col-md-4 control-label" for="source">Source </label> 
 					    <div class="col-md-4 inputGroupContainer">
 					    	<div class="input-group">
-					 			<span class="input-group-addon"><i class="glyphicon glyphicon-user "></i></span>
+					 			<span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
 					 			<input id="source" name="source" placeholder="source de pigeon" class="form-control"  type="text">
 					 	    </div>
 					 	</div>
@@ -145,8 +151,13 @@
 					    	<label class="col-md-4 control-label" for="annee_naiss_pere" ></label> 
 					    	<div class="col-md-4 inputGroupContainer">
 						    	<div class="input-group">
-						    		<span class="input-group-addon"><i class="fab fa-earlybirds"></i></span>
-						    		<input name="annee_naiss_pere" placeholder="Année" id="annee_naiss_pere" class="form-control"  type="text">
+						    		<div class="input-group-addon">
+							    		<span class="fa-layers fa-fw" style="background:MistyRose">
+											<i class="fas fa-calendar"></i>
+											<span class="fa-layers-text fa-inverse" data-fa-transform="shrink-8 down-3" style="font-weight:900">27</span>
+										</span>
+									</div>
+							    	<input name="annee_naiss_pere" placeholder="Année" id="annee_naiss_pere" class="form-control"  type="text">
 						    	</div>
 					    	</div>
 					</div>
@@ -167,7 +178,12 @@
 				    	<label class="col-md-4 control-label" for="annee_naiss_mere" ></label> 
 				    	<div class="col-md-4 inputGroupContainer">
 					    	<div class="input-group">
-					    		<span class="input-group-addon"><i class="fab fa-earlybirds"></i></span>
+					    		<div class="input-group-addon">
+						    		<span class="fa-layers fa-fw" style="background:MistyRose">
+										<i class="fas fa-calendar"></i>
+										<span class="fa-layers-text fa-inverse" data-fa-transform="shrink-8 down-3" style="font-weight:900">27</span>
+									</span>
+								</div>
 					    		<input id="annee_naiss_mere" name="annee_naiss_mere" placeholder="Année" class="form-control"  type="text">
 					    	</div>
 				    	</div>

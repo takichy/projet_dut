@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 09, 2018 at 01:41 PM
+-- Generation Time: Apr 10, 2018 at 03:38 PM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.1.5
 
@@ -69,10 +69,10 @@ CREATE TABLE `eclosion` (
 
 INSERT INTO `eclosion` (`id_eclosion`, `id_user`, `num_bague`, `date`, `copain`, `serie`, `nid`, `pose`, `eclos`, `commentaire`) VALUES
 (23, 1, 8, '2018-03-31', 'kjhg', 'N789', 'poiuj', 'iuyfg', 'khjghfx', 'kfhjgdhfg'),
-(24, 1, NULL, '2011-08-19', 'oiuhgf', 'N74', 'hgfd', 'fdsd', 'ghfgdfs', 'fgdfsd'),
+(24, 1, 20, '2011-08-19', 'oiuhgf', 'N74', 'hgfd', 'fdsd', 'ghfgdfs', 'fgdfsd'),
 (25, 1, NULL, '2018-04-08', 'oiuhgf', 'opiouigyu', 'uogy_fit', 'iouilyukftj', 'piouiyt', 'puioyitu'),
 (26, 1, 5, '2011-08-19', '', '', '', '', '', ''),
-(27, 1, NULL, '2017-03-02', 'copain', 'serie', 'nid', 'posé', 'eclos', 'commentaire eclosion\r\n'),
+(27, 1, 15, '2017-03-02', 'copain', 'serie', 'nid', 'posé', 'eclos', 'commentaire eclosion\r\n'),
 (28, 1, NULL, '2011-08-19', 'hgf', 'iujhygt', 'iuyt', 'iuytgf', 'ikuyt', 'likujyth'),
 (29, 1, NULL, '2011-08-19', 'hgf', 'iujhygt', 'iuyt', 'iuytgf', 'ikuyt', 'likujyth'),
 (30, 1, NULL, '2011-08-19', 'hgf', 'iujhygt', 'iuyt', 'iuytgf', 'ikuyt', 'likujyth'),
@@ -179,7 +179,8 @@ INSERT INTO `pondaison` (`id_user`, `female`, `male`, `date_accouplement`, `date
 (1, 1, 4, '2018-04-01', '2018-01-26', '2018-01-27', 'Echangé', 'A3'),
 (1, 1, 4, '2011-08-19', '2018-01-26', '2018-01-27', 'Echangé', 'A4'),
 (1, 1, 4, '2018-01-19', '2018-01-26', '2018-01-27', 'Echangé', 'A5'),
-(1, 5, 125408, '2017-04-01', NULL, NULL, NULL, 'A6');
+(1, 5, 125408, '2017-04-01', NULL, NULL, NULL, 'A6'),
+(1, 5, 4, '2018-03-19', '2018-08-19', '2012-08-19', 'Echangé', 'A9');
 
 -- --------------------------------------------------------
 
@@ -229,7 +230,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nom`, `prenom`, `mail`, `telephone`, `adresse`, `pays`, `ville`, `code_postal`, `password`) VALUES
-(1, 'oulidi omali', 'abdelhay', 'abdelhayoulidiomali@gmail.com', 645460088, 'rue 50 boulevard narjis', 'maroc', 'fes', 30080, '123456'),
+(1, 'oulidi omali', 'abdelhay', 'abdelhayoulidiomali@gmail.com', 645460088, 'rue 50 boulevard narjis', 'maroc', 'meknes', 30080, '123456'),
 (2, 'undefined', 'hassane', 'elmiloudihassane@gmail.com', 621866495, 'AV Manama', 'maroc', 'fes', 30060, '987654321');
 
 -- --------------------------------------------------------

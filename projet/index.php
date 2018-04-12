@@ -1,5 +1,4 @@
 <?php
-
 		if (empty($_GET["action"])) $action = "A";
         else $action = $_GET["action"]; 
 

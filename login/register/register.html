@@ -14,53 +14,95 @@
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="../../projet/views/js/send_data.js"></script>
+  <script src="../../projet/views/js/get_data.js"></script>
 </head>
 
 <body class="bg-dark">
   <div class="container">
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Créer un comptet</div>
+      <div id="registor_message_error" class="alert alert-danger d-none"></div>
       <div class="card-body">
-        <form>
-
+        <!-- inscription form -->
+        <form onSubmit="return send_registor(event);" method="POST" id="registor_form">
+          <!-- nom and prenom input -->
           <div class="form-group">
             <div class="form-row">
+              <!-- nom de famille -->
               <div class="col-md-6">
-                <label for="exampleInputName">Nom de famille</label>
-                <input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="nom de famille">
+                <label for="nom">Nom de famille</label>
+                <input class="form-control" id="nom" name="nom" type="text" aria-describedby="nameHelp" placeholder="nom de famille">
               </div>
+              <!-- prenom -->
               <div class="col-md-6">
-                <label for="exampleInputLastName">prenom</label>
-                <input class="form-control" id="exampleInputLastName" type="text" aria-describedby="nameHelp" placeholder="prénom">
+                <label for="prenom">prenom</label>
+                <input class="form-control" id="prenom" name="prenom" type="text" placeholder="prénom">
               </div>
             </div>
           </div>
 
+          <!-- adresse email input -->
           <div class="form-group">
-            <label for="exampleInputEmail1">Addresse email</label>
-            <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Votre adresse email">
+            <label for="email">Addresse email</label>
+            <input class="form-control" id="email" name="email" type="email" placeholder="Votre adresse email">
           </div>
 
+          <!-- telephone and adresse input -->
           <div class="form-group">
-
+              <div class="form-row">
+                <!-- telephone -->
+                <div class="col-md-6">
+                  <label for="phone">Telephone</label>
+                  <input class="form-control" id="phone" name="phone" type="number" placeholder="Telephone">
+                </div>
+                <!-- adresse -->
+                <div class="col-md-6">
+                  <label for="adresse">Adresse</label>
+                  <input class="form-control" id="adresse" name="adresse" type="text" placeholder="Adresse ">
+                </div>
+              </div>
           </div>
 
+          <!-- pays and ville input -->
+          <div class="form-group">
+              <div class="form-row">
+                <!-- pays -->
+                <div class="col-md-6">
+                  <label for="pays">Pays</label>
+                  <input class="form-control" id="pays" name="pays" type="text" placeholder="pays">
+                </div>
+                <!-- ville -->
+                <div class="col-md-6">
+                  <label for="ville">Ville</label>
+                  <input class="form-control" id="ville" name="ville" type="text" placeholder="ville ">
+                </div>
+              </div>
+          </div>
 
+          <!-- code postal and mot de passe input -->
           <div class="form-group">
             <div class="form-row">
-              <div class="col-md-6">
-                <label for="exampleInputPassword1">Mot de passe</label>
-                <input class="form-control" id="exampleInputPassword1" type="password" placeholder="mot de passe">
-              </div>
-              <div class="col-md-6">
-                <label for="phone">Telephone</label>
-                <input class="form-control" id="phone" type="number" placeholder="Numéro de telephone ">
-              </div>
+                <!-- code postal -->
+                <div class="col-md-6">
+                    <label for="code_postal">Code postal</label>
+                    <input class="form-control" id="code_postal" name="code_postal" type="number" placeholder="code postal ">
+                </div>
+                <!-- mot de passe -->
+                <div class="col-md-6">
+                  <label for="password">Mot de passe</label>
+                  <input class="form-control" id="password" name="password" type="password" placeholder="mot de passe">
+                </div>
             </div>
           </div>
 
-          <a class="btn btn-primary btn-block" href="../login.html">Inscription</a>
+          <!--send data button -->
+          <button style="width: 600px; height:40px;" class="btn btn-lg btn-primary btn-block" type="submit">Inscription</button>
         </form>
+
+        <!-- login and forget password pages -->
         <div class="text-center">
           <a class="d-block small mt-3" href="../login.html">Page de connexion</a>
           <a class="d-block small" href="../forgot-password/forgot-password.html">Vous n'arrivez pas à vous connecter ?</a>
@@ -68,11 +110,7 @@
       </div>
     </div>
   </div>
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
 </body>
 
 </html>

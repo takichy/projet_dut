@@ -1,8 +1,4 @@
-﻿	<!-- session_start();
-	if ($_SESSION['connect'] != "oui"){
-	    header('location: ../../../projet_dut/login/index.php');
-	} -->
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -346,22 +342,17 @@
 		</script>
 	</head>
 	<body>
-		<?php
-			echo $_SESSION['username'];
-		?>
 		<div class="header">
-		        <div class="logo">
-					<a  href = "index.php?action=A">
-						<i class="fas fa-user"></i>
-						<span>USER</span>
-				    </a>
-				</div>
-			   <a href="#" class="nav-trigger"><span></span></a>
-				<div id="logout" style="margin-left: 90%;">
-					<button type="submit" class="btn btn-warning" ><a href='../projet/actions/logout.php'>Deconnexion</a></button>
-				</div>
+	        <div class="logo">
+				<a  href = "index.php?action=A">
+					<i class="fas fa-user"></i>
+					<span>USER</span>
+			    </a>
+			</div>
+			<div id="logout" style="margin-left: 90%;">
+				<a href="../login/login.html" ><button style="height:44px; width:133px;  background-color: Transparent; color:white;  outline:none; border: none; " type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-log-out"></span>Déconnexion</button></a>
+			</div>
 		</div>
-
 
 		<div class="side-nav">
 
@@ -382,16 +373,16 @@
 					</li>
 
 					<li>
-						<a  href = "index.php?action=C">
-							<span><i class="fas fa-plus"></i></span>
-							<span>Nouvelle Eclosion</span>
+						<a  href = "index.php?action=D">
+							<span><i class="fab fa-telegram-plane"></i></span>
+							<span>Nouvelle pondaison</span>
 						</a>
 					</li>
 
 					<li>
-						<a  href = "index.php?action=D">
-							<span><i class="fab fa-telegram-plane"></i></span>
-							<span>Nouvelle pondaison</span>
+						<a  href = "index.php?action=C">
+							<span><i class="fas fa-plus"></i></span>
+							<span>Nouvelle Eclosion</span>
 						</a>
 					</li>
 

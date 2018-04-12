@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 10, 2018 at 03:38 PM
+-- Generation Time: Apr 12, 2018 at 01:14 AM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.1.5
 
@@ -222,16 +222,19 @@ CREATE TABLE `user` (
   `pays` text NOT NULL,
   `ville` text NOT NULL,
   `code_postal` int(11) NOT NULL,
-  `password` text NOT NULL
+  `password` text NOT NULL,
+  `role` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `nom`, `prenom`, `mail`, `telephone`, `adresse`, `pays`, `ville`, `code_postal`, `password`) VALUES
-(1, 'oulidi omali', 'abdelhay', 'abdelhayoulidiomali@gmail.com', 645460088, 'rue 50 boulevard narjis', 'maroc', 'meknes', 30080, '123456'),
-(2, 'undefined', 'hassane', 'elmiloudihassane@gmail.com', 621866495, 'AV Manama', 'maroc', 'fes', 30060, '987654321');
+INSERT INTO `user` (`id_user`, `nom`, `prenom`, `mail`, `telephone`, `adresse`, `pays`, `ville`, `code_postal`, `password`, `role`) VALUES
+(1, 'oulidi omali', 'abdelhay', 'abdelhayoulidiomali@gmail.com', 645460088, 'rue 50 boulevard narjis', 'maroc', 'meknes', 30080, '123456', ''),
+(2, 'hassane', 'hassane', 'elmiloudihassane@gmail.com', 621866495, 'AV Manama', 'maroc', 'fes', 30060, '987654321', ''),
+(3, 'OULIDI', 'Ayyoub', 'ayyoub@gmail.com', 663566903, 'rue mamouni', 'france', 'toulouse', 30000, '123456789', ''),
+(12, 'omali', 'ayyoub', 'ayyouboulidiomali@gmail.com', 663566978, 'bloc V8 google', 'France', 'france', 30201, '123456789', '');
 
 -- --------------------------------------------------------
 
@@ -330,7 +333,7 @@ ALTER TABLE `eclosion`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
+  MODIFY `id_user` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

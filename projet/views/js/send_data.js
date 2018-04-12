@@ -3,7 +3,7 @@ function send_user(e) {
     console.log($(`form#${e.target.id}`).serialize())
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:1337/insertUser/1',
+        url: `http://localhost:1337/insertUser/${localStorage.getItem("userId")}`,
          headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -31,7 +31,7 @@ function send_nettoyage(e) {
     console.log($(`form#${e.target.id}`).serialize())
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:1337/insertNettoyage/1',
+        url: `http://localhost:1337/insertNettoyage/${localStorage.getItem("userId")}`,
          headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -59,7 +59,7 @@ function send_Traitement(e) {
     console.log($(`form#${e.target.id}`).serialize())
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:1337/insertTraitement/1',
+        url: `http://localhost:1337/insertTraitement/${localStorage.getItem("userId")}`,
          headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -87,7 +87,7 @@ function send_nvaqui(e) {
     console.log($(`form#${e.target.id}`).serialize())
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:1337/insertPigeon/1',
+        url: `http://localhost:1337/insertPigeon/${localStorage.getItem("userId")}`,
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -116,7 +116,7 @@ function send_eclos(e) {
     console.log($(`form#${e.target.id}`).serialize())
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:1337/insertEclos/1',
+        url: `http://localhost:1337/insertEclos/${localStorage.getItem("userId")}`,
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -144,7 +144,7 @@ function send_pondaison(e) {
     console.log($(`form#${e.target.id}`).serialize())
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:1337/updatePondaison/1',
+        url: `http://localhost:1337/updatePondaison/${localStorage.getItem("userId")}`,
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -173,7 +173,7 @@ function send_accouplement(e) {
     console.log($(`form#${e.target.id}`).serialize())
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:1337/insertAccouplement/1',
+        url: `http://localhost:1337/insertAccouplement/${localStorage.getItem("userId")}`,
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -227,7 +227,7 @@ function send_vaccination(e) {
     e.preventDefault();
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:1337/insertVaccination/1',
+        url: `http://localhost:1337/insertVaccination/${localStorage.getItem("userId")}`,
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -255,7 +255,7 @@ function send_update(e) {
     console.log($(`form#${e.target.id}`).serialize())
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:1337/updatePigeon/1',
+        url: `http://localhost:1337/updatePigeon/${localStorage.getItem("userId")}`,
          headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -283,7 +283,7 @@ function send_eclos_update(e) {
     console.log($(`form#${e.target.id}`).serialize())
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:1337/updateEclos/1',
+        url: `http://localhost:1337/updateEclos/${localStorage.getItem("userId")}`,
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },

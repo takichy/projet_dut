@@ -9,11 +9,11 @@
 	</style>
 
 	<script>
-		getNumBagById(1);
+		getNumBagById(localStorage.getItem("userId"));
 
 		function getNvVaccin(){
 		    console.log('je suis sur getNvVaccin');
-		    getNumBagById(1);
+		    getNumBagById(localStorage.getItem("userId"));
 
 		  	var vacc = document.getElementById("vaccination_form");
 		    var rapp = document.getElementById("rappelle_form");
@@ -38,7 +38,7 @@
 		};
 
 		function getRappelle(){
-			getListVaccinUrgentById(1);
+			getListVaccinUrgentById(localStorage.getItem("userId"));
 
 		    console.log('je suis sur getRappelle');
 
@@ -75,7 +75,7 @@
 		function getListVaccin(){
 			console.log('je suis sur getListVaccin');
 
-			getListVaccinById(1);
+			getListVaccinById(localStorage.getItem("userId"));
 
 		  	var vacc = document.getElementById("vaccination_form");
 		    var rapp = document.getElementById("rappelle_form");

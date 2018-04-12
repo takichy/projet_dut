@@ -35,7 +35,7 @@
     };
 
     function getPondaison(){
-      getNumeroCoupleById(1);
+      getNumeroCoupleById(localStorage.getItem("userId"));
       console.log('je suis sur getPondaison');
       var accoup = document.getElementById("form_accouplement");
 
@@ -62,7 +62,7 @@
 
     function getvalPond(sel){
       console.log(sel.value);
-      getCoupleById(sel.value,1);
+      getCoupleById(sel.value,localStorage.getItem("userId"));
       
       /*var num = document.getElementById("numero_couple");
       var male = document.getElementById("male");
@@ -74,9 +74,9 @@
       }*/
     };
 
-    getNumeroCoupleById(1);
-    getFemalePigeonById(1);
-    getMalePigeonById(1);
+    getNumeroCoupleById(localStorage.getItem("userId"));
+    getFemalePigeonById(localStorage.getItem("userId"));
+    getMalePigeonById(localStorage.getItem("userId"));
   </script>
 </head>
 <body>

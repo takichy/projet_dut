@@ -1,15 +1,15 @@
 <head>
 	<script src="Views/js/lumino.glyphs.js"></script>
 	<script>
-		getPigeonById(1);
+		getPigeonById(localStorage.getItem("userId"));
 		/*getAllPigeon();*/
-		getTotalById(1);
-		getTotalMalesById(1);
-		getTotalJeunesById(1);
-		getTotalFemalesById(1);
+		getTotalById(localStorage.getItem("userId"));
+		getTotalMalesById(localStorage.getItem("userId"));
+		getTotalJeunesById(localStorage.getItem("userId"));
+		getTotalFemalesById(localStorage.getItem("userId"));
 	</script>
 	<style>
-	 		.tr: {
+	 		.tr {
 	 			color: blue;
 	 		}
 

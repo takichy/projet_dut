@@ -316,13 +316,17 @@
 					margin-left: 200px;
 				}
 			}
+
+			.currentClass {
+				color: red !important;
+			}
 		</style>
 
 		<script>
 			$(document).ready(function() {
-			$('.nav-trigger').click(function() {
-				$('.side-nav').toggleClass('visible');
-			});
+				const id = window.location.search.substring(8, window.location.search.length);
+
+				$(`.myNavTrigger${id}`).children('a:first-of-type').addClass('currentClass');
 			});
 		</script>
 		
@@ -333,12 +337,18 @@
 				})
 			})
 		</script>
+
+		<script type="text/javascript">
+			function myTrigger(e) {
+				console.log("tata", e);
+			}
+		</script>
 	</head>
 	<body>
 
 		<div class="header">
-		        <div class="logo">
-					<a  href = "index.php?action=A">
+		        <div class="logo myNavTriggerA">
+					<a  href = "?action=A">
 						<i class="fas fa-user"></i>
 						<span>USER</span>
 				    </a>
@@ -350,67 +360,66 @@
 		</div>
 
 		<div class="side-nav">
-
-			<div class="logo">
-				<a  href = "index.php?action=A">
+			<div class="logo myNavTriggerA">
+				<a  href = "?action=A">
 					<i class="fas fa-user"></i>
-					<font color="white"><span>USER</span></font>
+					<span>USER</span>
 			    </a>
 			</div>
 
 			<nav>
 				<ul>
-					<li>
-						<a  href = "index.php?action=A1">
+					<li class="myNavTriggerA1">
+						<a  href = "?action=A1">
 							<span><i class="fab fa-themeisle"></i></span>
 							<span>Nouvelle acquisition</span>
 						</a>
 					</li>
 
-					<li>
-						<a  href = "index.php?action=D">
+					<li class="myNavTriggerD">
+						<a  href = "?action=D">
 							<span><i class="fab fa-telegram-plane"></i></span>
 							<span>Nouvelle pondaison</span>
 						</a>
 					</li>
 
-					<li>
-						<a  href = "index.php?action=C">
+					<li class="myNavTriggerC">
+						<a  href = "?action=C">
 							<span><i class="fas fa-plus"></i></span>
 							<span>Nouvelle Eclosion</span>
 						</a>
 					</li>
 
-					<li>
-						<a  href = "index.php?action=B">
+					<li class="myNavTriggerB">
+						<a  href = "?action=B">
 							<span><i class="fas fa-eye"></i></span>
 				            <span>Mes Pigeons</span>
 						</a>
 					</li>
 
-					<li>
-						<a  href = "index.php?action=E">
+					<li class="myNavTriggerE">
+						<a  href = "?action=E">
 							<span><i class="fas fa-align-justify"></i></span>
 							<span>Nettoyage</span>
 						</a>
 					</li>
 
-					<li>
-						<a  href = "index.php?action=F">
+					<li class="myNavTriggerF">
+						<a  href = "?action=F">
 							<span><i class="fas fa-align-justify"></i></span>
 							<span>Vaccination</span>
 						</a>
 					</li>
 
-					<li>
-						<a  href = "index.php?action=G">
+					<li class="myNavTriggerG">
+						<a  href = "?action=G">
 							<span><i class="fas fa-align-justify"></i></span>
 							<span>Traitement</span>
 						</a>
 					</li>
 
-					<li>
-						<a  href = "index.php?action=I">
+					<li class="myNavTriggerI">
+						<a  href = "?action=I">
 							<span><i class="fas fa-envelope"></i></span>
 							<span>Contact</span>
 						</a>

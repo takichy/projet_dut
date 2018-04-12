@@ -1,11 +1,11 @@
 <head>
     <script>
-        getTraitementPigeonById(1);
+        getTraitementPigeonById(localStorage.getItem("userId"));
         
         function getTraitement(){
 
           console.log('je suis sur getTraitement');
-          getTraitementPigeonById(1);
+          getTraitementPigeonById(localStorage.getItem("userId"));
 
           var trai = document.getElementById("list_form_traitement");
           trai.classList.add("d-none");
@@ -20,7 +20,7 @@
         }
 
         function getListTraitement(){
-          getTraitementById(1);
+          getTraitementById(localStorage.getItem("userId"));
           console.log('je suis sur get ListTraitement');
           var trai = document.getElementById("list_form_traitement");
           

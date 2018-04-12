@@ -19,7 +19,7 @@
 
         function getListNettoyage(){
 
-            getNettoyageById(1);
+            getNettoyageById(localStorage.getItem("userId"));
           console.log('je suis sur getListNettoyage');
           var lisNett = document.getElementById("form_list_nettoyage");
           

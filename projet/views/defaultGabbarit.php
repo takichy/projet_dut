@@ -316,13 +316,6 @@
 					margin-left: 200px;
 				}
 			}
-
-			@media screen and (max-width: 750px){
-				.footer-bottom {
-					background-color: red;
-					position: relative;
-				}
-			}
 		</style>
 
 		<script>
@@ -342,13 +335,15 @@
 		</script>
 	</head>
 	<body>
+
 		<div class="header">
-	        <div class="logo">
-				<a  href = "index.php?action=A">
-					<i class="fas fa-user"></i>
-					<span>USER</span>
-			    </a>
-			</div>
+		        <div class="logo">
+					<a  href = "index.php?action=A">
+						<i class="fas fa-user"></i>
+						<span>USER</span>
+				    </a>
+				</div>
+			   <a href="#" class="nav-trigger"><span></span></a>
 			<div id="logout" style="margin-left: 90%;">
 				<a href="../login/login.html" ><button style="height:44px; width:133px;  background-color: Transparent; color:white;  outline:none; border: none; " type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-log-out"></span>Déconnexion</button></a>
 			</div>
@@ -435,7 +430,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-						<div class="copyright text-center">
+						<div class="copyright">
 							© 2018, webpigeon, All rights reserved
 						</div>
 					</div>

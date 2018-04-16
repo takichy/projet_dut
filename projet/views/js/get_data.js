@@ -328,19 +328,22 @@ function getCoupleById(id,id_use) {
 
 function getUserLogin(username,password) {
     $.ajax({
-        type: "GET",
         url: `http://localhost:1337/selectLogin/${username}/${password}`,
                 success: function (data) {
-                    if(data){ 
+                    if(data.id_user){
+                        console.log(data);
                         localStorage.setItem("userId", data.id_user);
-                        window.location.replace("../projet/index.php");   
-                     }else{
-                        console.log("error",data);
+                        window.location.replace("../projet/index.php"); 
+                    }else{
                         $("#login_message_error").html("votre mot de passe ou E-mail est incorrecte!! ");
                         $("#login_message_error").addClass("d-block");
                         $("#login_message_error").removeClass("d-none");
-                        
-                     }
-             }
+                    }  
+                },
+                error : function (e) {
+                    $("#login_message_error").html("les champs est vide ");
+                    $("#login_message_error").addClass("d-block");
+                    $("#login_message_error").removeClass("d-none");
+                },
      });
 };

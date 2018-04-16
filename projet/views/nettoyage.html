@@ -18,8 +18,7 @@
         }
 
         function getListNettoyage(){
-
-            getNettoyageById(localStorage.getItem("userId"));
+          getNettoyageById(localStorage.getItem("userId"));
           console.log('je suis sur getListNettoyage');
           var lisNett = document.getElementById("form_list_nettoyage");
           
@@ -37,15 +36,16 @@
           var lego = document.getElementById("legend_formu_two");
           $(lego).css('background-color', '#DCDCDC');
 
+          var mess = document.getElementById("nettoyage_message_success");
+          mess.classList.add("d-none");
+          mess.classList.remove("d-block");
 
-        var mess = document.getElementById("nettoyage_message_success");
-        mess.classList.add("d-none");
-        mess.classList.remove("d-block");
-
-        var message = document.getElementById("nettoyage_message_error");
-        message.classList.add("d-none");
-        message.classList.remove("d-block");
-
+          var message = document.getElementById("nettoyage_message_error");
+          message.classList.add("d-none");
+          message.classList.remove("d-block");
+          
+          var foot = document.getElementById('footer-bottom');
+          $(foot).css('position','relative');
         }
     </script>
 
@@ -54,6 +54,9 @@
       #legend_formu_one:hover{cursor: pointer;}
       #legend_formu_two:hover{background-color: #DCDCDC;}
       #legend_formu_two:hover{cursor: pointer;}
+      .footer-bottom.footer-bottom{
+        position: fixed;
+      }
     </style>
 </head>
 <body>
@@ -128,7 +131,6 @@
                 <!-- Form Name legend -->
                 <legend id="legend_formu_one" class="col-md-4" onclick="getNettoyage()">Nettoyage</legend>
                 <legend id="legend_formu_two" class="col-md-4" onclick="getListNettoyage()">List des Nettoyages</legend>
-
                 <table class="table table-hover:black table-bordered">
                     <thead class="thead-dark">
                       <tr>

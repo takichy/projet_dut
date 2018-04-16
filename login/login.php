@@ -46,7 +46,7 @@
                     <label for="password">Mot de passe</label>
                     <input class="form-control" id="password" name="password" type="password" placeholder="mot de passe">
                   </div>
-                  <button type="submit" class="btn btn-lg btn-primary btn-block"  onclick="take_Data();" >Connexion</button>
+                  <button type="button" class="btn btn-lg btn-primary btn-block"  onclick="take_Data();" >Connexion</button>
                 </form>
                 <div class="text-center">
                   <a class="d-block small mt-3" href="register/register.html">Crée un compte</a>

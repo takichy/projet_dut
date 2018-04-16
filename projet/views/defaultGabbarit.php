@@ -32,7 +32,6 @@
 
 			.footer-bottom {
 				bottom: 0;
-				/*position: fixed;*/
 				margin-top: 90px;
 			    background-color: #233245;
 			    min-height: 30px;
@@ -320,6 +319,17 @@
 			.currentClass {
 				color: red !important;
 			}
+			#buttno{
+				height:44px; 
+				width:133px;  
+				background-color: Transparent; 
+				color:white;  
+				outline:none; 
+				border: none;
+			}			
+			#logout{
+				margin-left: 90%;
+			}
 		</style>
 
 		<script>
@@ -327,6 +337,14 @@
 				const id = window.location.search.substring(8, window.location.search.length);
 
 				$(`.myNavTrigger${id}`).children('a:first-of-type').addClass('currentClass');
+			});
+		</script>
+
+		<script>
+			$(document).ready(function() {
+			$('.nav-trigger').click(function() {
+				$('.side-nav').toggleClass('visible');
+			});
 			});
 		</script>
 		
@@ -350,20 +368,17 @@
 		        <div class="logo myNavTriggerA">
 					<a  href = "?action=A">
 						<i class="fas fa-user"></i>
-						<span>USER</span>
+						<span>Utilisateur</span>
 				    </a>
 				</div>
 			   <a href="#" class="nav-trigger"><span></span></a>
-			<div id="logout" style="margin-left: 90%;">
-				<a href="../login/login.html" ><button style="height:44px; width:133px;  background-color: Transparent; color:white;  outline:none; border: none; " type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-log-out"></span>Déconnexion</button></a>
-			</div>
 		</div>
 
 		<div class="side-nav">
 			<div class="logo myNavTriggerA">
 				<a  href = "?action=A">
 					<i class="fas fa-user"></i>
-					<span>USER</span>
+					<span>Utilisateur</span>
 			    </a>
 			</div>
 

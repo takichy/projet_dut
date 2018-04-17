@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿<?php
+session_start();
+		// echo $_SESSION['connect'];
+if($_SESSION['connect'] != "oui"){
+	header('location: ../../projet_dut/login/login1.php');
+}
+?>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -319,17 +326,19 @@
 			.currentClass {
 				color: red !important;
 			}
-			#buttno{
+			#logout_button{
 				height:44px; 
 				width:133px;  
 				background-color: Transparent; 
 				color:white;  
 				outline:none; 
 				border: none;
+				margin-left: -105px;
+   				color: chocolate;
 			}			
 			#logout{
 				margin-left: 90%;
-			}
+			} 
 		</style>
 
 		<script>
@@ -372,6 +381,10 @@
 				    </a>
 				</div>
 			   <a href="#" class="nav-trigger"><span></span></a>
+	   		   	<div id="logout">
+					<a href='../projet/actions/logout.php'><button id="logout_button" type="button" class="btn btn-default btn-sm">
+		       		<span class="glyphicon glyphicon-log-out"></span> Déconnexion </button></a>	
+				</div>
 		</div>
 
 		<div class="side-nav">
@@ -450,7 +463,7 @@
 			</div>
 		</div>
 
-		<div class="footer-bottom" id="footer-bottom">
+		<!-- <div class="footer-bottom" id="footer-bottom">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -460,6 +473,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
+
 	</body>
 </html>

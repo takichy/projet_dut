@@ -26,9 +26,7 @@
           var password = document.getElementById('password').value;
 
           getUserLogin(username,password); 
-          <?php
-               php();
-              ?>
+        
         }
       }
     </script>
@@ -58,13 +56,5 @@
           </div>
         </div>
     </div>
-    <?php
-        function php(){
-          session_start();
-          // if(isset($_POST['username'])){
-          $_SESSION['connect']="oui";
-        // }
-        }
-      ?>
   </body>
 </html>

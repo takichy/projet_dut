@@ -335,13 +335,13 @@ function getUserLogin(username,password) {
                         localStorage.setItem("userId", data.id_user);
                         window.location.replace("../projet/index.php"); 
                     }else{
-                        $("#login_message_error").html("votre mot de passe ou E-mail est incorrecte!! ");
+                        $("#login_message_error").html("Le mot de passe entré est incorrect.");
                         $("#login_message_error").addClass("d-block");
                         $("#login_message_error").removeClass("d-none");
                     }  
                 },
                 error : function (e) {
-                    $("#login_message_error").html("les champs est vide ");
+                    $("#login_message_error").html("Le mot de passe entré est incorrect.");
                     $("#login_message_error").addClass("d-block");
                     $("#login_message_error").removeClass("d-none");
                 },

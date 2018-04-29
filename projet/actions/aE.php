@@ -1,2 +1,0 @@
-<?php
-$vue = "nettoyage.html";

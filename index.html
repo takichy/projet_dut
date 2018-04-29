@@ -1,0 +1,461 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>renaut</title>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="js/style.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment.min.js"></script>
+		<script src="js/send_data.js"></script>
+		<script src="js/get_data.js"></script>
+	</head>
+	<body>
+		<div class="header">
+		        <div class="logo myNavTriggerA">
+					<a  href = "?action=A">
+						<i class="fas fa-user"></i>
+						<span class="lang" key="utilisateur"></span>
+				    </a>
+				</div>
+		</div>
+
+		<div class="main-content">
+			<div class="main">
+				<div class="container d-block" id="form_modif" style="margin-left: -8%; width: 100%;" >
+				<div id="produit_message_success" class="alert alert-success d-none"></div>
+				<div id="produit_message_error" class="alert alert-danger d-none"></div>
+				
+				<form class="well form-horizontal d-block" onSubmit="return send_produit(event);" method="POST" id="produit_form">
+					<fieldset>
+						<!-- Form Name legend -->
+						<legend id="legend_formu_one" class="col-md-3" onclick="getNvProduit()">Ajouter produit</legend>
+						<legend id="legend_formu_two" class="col-md-3" onclick="getlivraison()">Priorité de livraison</legend>
+						<legend id="legend_formu_three" class="col-md-3" onclick="getInfoProduit()">Information de produit</legend>
+						<legend id="legend_formu_four" class="col-md-3" onclick="getMouvementStock()">Mouvement de stock</legend>
+
+						<!-- Text input code MABEC-->
+						<div class="form-group">
+						    <label class="col-md-4 control-label" for="code_MABEC" >Code MABEC</label> 
+						    <div class="col-md-4 inputGroupContainer">
+						        <div class="input-group">
+						    		<span class="input-group-addon"><i class="glyphicon "></i></span>
+									<input class="form-control" placeholder="code MABEC" type="text" id="code_MABEC" name="code_MABEC">
+						 	    </div>
+						    </div>
+						</div>
+
+						<!-- Text input designation-->
+						<div class="form-group">
+						    <label class="col-md-4 control-label" for="designation">Désignation</label>  
+						    <div class="col-md-4 inputGroupContainer">
+							    <div class="input-group">
+							 		<span class="input-group-addon"><i class="glyphicon "></i></span>
+							 		<input  placeholder="Désignation" class ="form-control" id="designation" name="designation"/>
+							    </div>
+						    </div>
+						</div>
+
+						<!-- Text input couleur de stockage-->
+						<div class="form-group">
+						    <label class="col-md-4 control-label" for="couleur_stockage">Couleur de stockage</label>  
+						    <div class="col-md-4 inputGroupContainer">
+							    <div class="input-group">
+							        <span class="input-group-addon"><i class="glyphicon"></i></span>
+									<input id="couleur_stockage" name="couleur_stockage" placeholder="Couleur de stockage" class="form-control" type="text">
+							    </div>
+						    </div>
+						</div>
+
+						<!-- Text input temperature de stockage-->
+		 				<div class="form-group">
+		 					<div class="row">
+		 						<label class="col-md-4 control-label" for="temperature">Temperatir de stockage</label> 
+		 						
+		 						<div class="col-md-2">
+		 							<label class="control-label" for="temperatir_stockage_min"></label>
+			  						<div class="inputGroupContainer">
+								    	<div class="input-group">
+								        	<span class="input-group-addon"><i class="glyphicon"></i></span>
+								        	<input id="temperatir_stockage_min" name="temperatir_stockage_min" placeholder="Min" class="form-control" type="text">
+								    	</div>
+								    </div>
+		 						</div>
+
+		 						<div class="col-md-2">
+		 							<label class="control-label" for="temperatir_stockage_max"></label>
+			  						<div class="inputGroupContainer">
+								    	<div class="input-group">
+								        	<span class="input-group-addon"><i class="glyphicon"></i></span>
+								        	<input id="temperatir_stockage_max" name="temperatir_stockage_max" placeholder="Max" class="form-control" type="text">
+								    	</div>
+								    </div>
+		 						</div>
+							</div>
+						</div>
+
+						<!-- Text input emplacement-->
+						<div class="form-group">
+						    <label class="col-md-4 control-label" for="emplacement" >Emplacement</label> 
+						    <div class="col-md-4 inputGroupContainer">
+						        <div class="input-group">
+						    		<span class="input-group-addon"><i class="glyphicon "></i></span>
+									<input class="form-control" type="text" placeholder="Emplacement" id="emplacement" name="emplacement">
+						 	    </div>
+						    </div>
+						</div>
+
+						<!-- Text input date d'entrée-->
+						<div class="form-group">
+						    <label class="col-md-4 control-label" for="date_entree">Date d'entrée</label>  
+						    <div class="col-md-4 inputGroupContainer">
+							    <div class="input-group">
+							 		<span class="input-group-addon"><i class="glyphicon "></i></span>
+							 		<input class="form-control" type="date" id="date_entree" name="date_entree">
+							    </div>
+						    </div>
+						</div>
+
+						<!-- Text input date de peremption -->
+						<div class="form-group">
+						    <label class="col-md-4 control-label" for="date_peremption">date de péremption</label>  
+						    <div class="col-md-4 inputGroupContainer">
+							    <div class="input-group">
+							 		<span class="input-group-addon"><i class="glyphicon "></i></span>
+							 		<input class="form-control" type="date" id="date_peremption" name="date_peremption">
+							    </div>
+						    </div>
+						</div>
+
+						<!-- Text input Quantite physique -->
+						<div class="form-group">
+						    <label class="col-md-4 control-label" for="quantite_physique" >Quantité physique</label> 
+						    <div class="col-md-4 inputGroupContainer">
+						        <div class="input-group">
+						    		<span class="input-group-addon"><i class="glyphicon "></i></span>
+									<input class="form-control" type="text" placeholder="Quantité physique" id="quantite_physique" name="quantite_physique">
+						 	    </div>
+						    </div>
+						</div>
+
+						<!-- Button -->
+						<div class="form-group">
+							<label class="col-md-4 control-label"></label>
+							<div class="col-md-4">
+								<button type="submit" class="btn btn-warning" >Ajouter<span class="glyphicon glyphicon-send"></span></button>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+
+				<form class="well form-horizontal d-none" method="POST" id="livraison_form">
+					<fieldset>
+						<!-- Form Name legend -->
+						<legend id="legend_formu_one" class="col-md-3" onclick="getNvProduit()">Ajouter produit</legend>
+						<legend id="legend_formu_two" class="col-md-3" onclick="getlivraison()">Priorité de livraison</legend>
+						<legend id="legend_formu_three" class="col-md-3" onclick="getInfoProduit()">Information de produit</legend>
+						<legend id="legend_formu_four" class="col-md-3" onclick="getMouvementStock()">Mouvement de stock</legend>
+
+						<table class="table table-hover:black table-bordered">
+							<thead class="thead-dark">
+							  <tr>
+							      <th scope="col">Code MABEC</th>
+							      <th scope="col">Date d'entrée</th>
+							      <th scope="col">Date de péremption</th>
+							      <th scope="col">Quantité sur stock</th>
+							      <th scope="col">Emplacement</th>
+							  </tr>
+							</thead>
+
+							<tbody class="well" id="tableProduitUrgent" >
+							</tbody> 
+						</table>
+					</fieldset>
+				</form>
+
+			    <form class="well form-horizontal d-none" method="POST" id="information_form">
+					<fieldset>
+						<!-- Form Name legend -->
+						<legend id="legend_formu_one" class="col-md-3" onclick="getNvProduit()">Ajouter produit</legend>
+						<legend id="legend_formu_two" class="col-md-3" onclick="getlivraison()">Priorité de livraison</legend>
+						<legend id="legend_formu_three" class="col-md-3" onclick="getInfoProduit()">Information de produit</legend>
+						<legend id="legend_formu_four" class="col-md-3" onclick="getMouvementStock()">Mouvement de stock</legend>
+						<div>
+							<!-- Text input code MABEC-->
+							<div class="form-group">
+							    <label class="col-md-4 control-label" for="code_mabec" >code MABEC</label> 
+							    <div class="col-md-4 inputGroupContainer">
+							        <div class="input-group">
+							    		<span class="input-group-addon"><i class="glyphicon "></i></span>
+										<select class="form-control form-control-lg" id="code_mabec" name="code_mabec" onchange="getCodeMa(this);">
+											<option data-icon="glyphicon" value=""></option>
+										</select>
+							 	    </div>
+							    </div>
+							</div>
+
+							<!-- Text input date de peremption-->
+							<!-- <div class="form-group">
+							    <label class="col-md-4 control-label" for="date_perem">date de péremption</label>  
+							    <div class="col-md-4 inputGroupContainer">
+								    <div class="input-group">
+								 		<span class="input-group-addon"><i class="glyphicon "></i></span>
+								 		<input class="form-control form-control-lg" type="text" id="date_perem" name="date_perem" readonly/>
+								    </div>
+							    </div>
+							</div>
+							 -->
+							<!-- Text input emplacement-->
+							<div class="form-group">
+							    <label class="col-md-4 control-label" for="emplac" >Emplacement</label> 
+							    <div class="col-md-4 inputGroupContainer">
+							        <div class="input-group">
+							    		<span class="input-group-addon"><i class="glyphicon "></i></span>
+										<input class="form-control form-control-lg" type="text" placeholder="Emplacement" id="emplac" name="emplac" readonly/>
+							 	    </div>
+							    </div>
+							</div>
+
+							<!-- Text input Quantité physique-->
+							<div class="form-group">
+							    <label class="col-md-4 control-label" for="quantite_phy" >Quantité physique</label> 
+							    <div class="col-md-4 inputGroupContainer">
+							        <div class="input-group">
+							    		<span class="input-group-addon"><i class="glyphicon "></i></span>
+										<input class="form-control form-control-lg" type="text" placeholder="Quantité physique" id="quantite_phy" name="quantite_phy" readonly/>
+							 	    </div>
+							    </div>
+							</div>
+
+							<!-- Text input lot 1-->
+			 				<div class="form-group">
+			 					<div class="row">
+			 						<label class="col-md-1 control-label" for="" style="background-color: red; width: 5px; margin-left: 10%;" ></label>
+			 						<label class="col-md-1 control-label" for="lot_1" >lot 1</label> 
+			 						<div class="col-md-8" style="margin-left: 2%">				
+				 						<div class="col-md-4">
+					  						<div class="inputGroupContainer">
+										    	<div class="input-group">
+										        	<span class="input-group-addon"><i class="glyphicon"></i></span>
+										        	<input id="lot_1" name="lot_1" placeholder="Quantité" class="form-control" type="text" readonly/>
+										    	</div>
+										    </div>
+				 						</div>
+
+				 						<div class="col-md-4">
+					  						<div class="inputGroupContainer">
+										    	<div class="input-group">
+										        	<span class="input-group-addon"><i class="glyphicon"></i></span>
+										        	<input id="date_lot_1" name="date_lot_1" class="form-control" type="date" readonly/>
+										    	</div>
+										    </div>
+				 						</div>
+				 					</div>
+								</div>
+							</div>
+
+							<!-- Text input lot 2-->
+			 				<div class="form-group">
+			 					<div class="row">
+			 						<label class="col-md-1 control-label" for="" style="background-color: yellow; width: 5px; margin-left: 10%;" ></label>
+			 						<label class="col-md-1 control-label" for="lot_2" >lot 2</label> 
+			 						<div class="col-md-8" style="margin-left: 2%">				
+				 						<div class="col-md-4">
+					  						<div class="inputGroupContainer">
+										    	<div class="input-group">
+										        	<span class="input-group-addon"><i class="glyphicon"></i></span>
+										        	<input id="lot_2" name="lot_2" placeholder="Quantité" class="form-control" type="text" readonly/>
+										    	</div>
+										    </div>
+				 						</div>
+
+				 						<div class="col-md-4">
+					  						<div class="inputGroupContainer">
+										    	<div class="input-group">
+										        	<span class="input-group-addon"><i class="glyphicon"></i></span>
+										        	<input id="date_lot_2" name="date_lot_2" class="form-control" type="date" readonly/>
+										    	</div>
+										    </div>
+				 						</div>
+				 					</div>
+								</div>
+							</div>
+
+							<!-- Text input lot 3-->
+			 				<div class="form-group">
+			 					<div class="row">
+			 						<label class="col-md-1 control-label" for="" style="background-color: green; width: 5px; margin-left: 10%;" ></label>
+			 						<label class="col-md-1 control-label" for="lot_3" >lot 3</label> 
+			 						<div class="col-md-8" style="margin-left: 2%">				
+				 						<div class="col-md-4">
+					  						<div class="inputGroupContainer">
+										    	<div class="input-group">
+										        	<span class="input-group-addon"><i class="glyphicon"></i></span>
+										        	<input id="lot_3" name="lot_3" placeholder="Quantité" class="form-control" type="text" readonly/>
+										    	</div>
+										    </div>
+				 						</div>
+
+				 						<div class="col-md-4">
+					  						<div class="inputGroupContainer">
+										    	<div class="input-group">
+										        	<span class="input-group-addon"><i class="glyphicon"></i></span>
+										        	<input id="date_lot_3" name="date_lot_3" class="form-control" type="date" readonly/>
+										    	</div>
+										    </div>
+				 						</div>
+				 					</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+
+			    <form class="well form-horizontal d-none" method="POST" id="stock_form">
+					<fieldset>
+						<!-- Form Name legend -->
+						<legend id="legend_formu_one" class="col-md-3" onclick="getNvProduit()">Ajouter produit</legend>
+						<legend id="legend_formu_two" class="col-md-3" onclick="getlivraison()">Priorité de livraison</legend>
+						<legend id="legend_formu_three" class="col-md-3" onclick="getInfoProduit()">Information de produit</legend>
+						<legend id="legend_formu_four" class="col-md-3" onclick="getMouvementStock()">Mouvement de stock</legend>
+					
+						<div class="col-md-6">
+
+							<!-- Text input legend-->
+							<div class="form-group">
+							    <label class="col-md-2 control-label" for="date_entree" style="color: red;">Entrée :</label>  
+							</div>
+
+							<!-- Text input code MABEC-->
+							<div class="form-group">
+							    <label class="col-md-2 control-label" for="code_mab" >Code MABEC</label> 
+							    <div class="col-md-4 inputGroupContainer">
+							        <div class="input-group">
+							    		<span class="input-group-addon"><i class="glyphicon "></i></span>
+										<select class="form-control form-control-lg" id="code_mab" name="code_mab">
+										  <option data-icon="glyphicon" value="" ></option>
+										</select>
+							 	    </div>
+							    </div>
+							</div>
+
+							<!-- Text input date d'entrée-->
+							<div class="form-group">
+							    <label class="col-md-2 control-label" for="date_entree">Date d'entrée</label>  
+							    <div class="col-md-4 inputGroupContainer">
+								    <div class="input-group">
+								 		<span class="input-group-addon"><i class="glyphicon "></i></span>
+								 		<input class="form-control" type="date" id="date_entree" name="date_entree">
+								    </div>
+							    </div>
+							</div>
+
+							<!-- Text input Quantité physique-->
+							<div class="form-group">
+							    <label class="col-md-2 control-label" for="quantite_physique" >Quantité entrée</label> 
+							    <div class="col-md-4 inputGroupContainer">
+							        <div class="input-group">
+							    		<span class="input-group-addon"><i class="glyphicon "></i></span>
+										<input class="form-control" type="text" placeholder="Quantité physique" id="quantite_physique" name="quantite_physique">
+							 	    </div>
+							    </div>
+							</div>
+
+							<!-- Text input date de vaccination-->
+							<div class="form-group">
+							    <label class="col-md-2 control-label" for="date_peremption">date de péremption</label>  
+							    <div class="col-md-4 inputGroupContainer">
+								    <div class="input-group">
+								 		<span class="input-group-addon"><i class="glyphicon "></i></span>
+								 		<input class="form-control" type="date" id="date_peremption" name="date_peremption">
+								    </div>
+							    </div>
+							</div>
+
+							<!-- Button -->
+							<div class="form-group">
+								<label class="col-md-4 control-label"></label>
+								<div class="col-md-4">
+									<button type="submit" class="btn btn-warning" >Ajouter<span class="glyphicon glyphicon-send"></span></button>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+
+							<!-- Text input legend-->
+							<div class="form-group">
+							    <label class="col-md-2 control-label" for="date_entree" style="color: red;">Sortie :</label>  
+							</div>
+
+							<!-- Text input code MABEC-->
+							<div class="form-group">
+							    <label class="col-md-2 control-label" for="code_m" >Code MABEC</label> 
+							    <div class="col-md-4 inputGroupContainer">
+							        <div class="input-group">
+							    		<span class="input-group-addon"><i class="glyphicon "></i></span>
+										<select class="form-control form-control-lg" id="code_m" name="code_m">
+										  <option data-icon="glyphicon" value="" ></option>
+										</select>
+							 	    </div>
+							    </div>
+							</div>
+
+							<!-- Text input date d'entrée-->
+							<div class="form-group">
+							    <label class="col-md-2 control-label" for="date_entree">Date de sortie</label>  
+							    <div class="col-md-4 inputGroupContainer">
+								    <div class="input-group">
+								 		<span class="input-group-addon"><i class="glyphicon "></i></span>
+								 		<input class="form-control" type="date" id="date_entree" name="date_entree">
+								    </div>
+							    </div>
+							</div>
+
+							<!-- Text input Quantité physique-->
+							<div class="form-group">
+							    <label class="col-md-2 control-label" for="quantite_physique" >Quantité sortie</label> 
+							    <div class="col-md-4 inputGroupContainer">
+							        <div class="input-group">
+							    		<span class="input-group-addon"><i class="glyphicon "></i></span>
+										<input class="form-control" type="text" placeholder="Quantité sortie" id="quantite_physique" name="quantite_physique">
+							 	    </div>
+							    </div>
+							</div>
+
+							<!-- Text input lots du stockage-->
+			 				<div class="form-group">
+			 					<label class="col-md-2 control-label" for="lots_du_stockage">Lots:</label> 
+			 					<div class="col-md-4 inputGroupContainer">
+							        <div class="input-group">
+							    		<span class="input-group-addon"><i class="glyphicon "></i></span>
+										<select class="form-control form-control-lg" id="code_mabec" name="code_mabec">
+										  <option data-icon="glyphicon" value="" >Lot1</option>
+										  <option data-icon="glyphicon" value="" >Lot2</option>
+										  <option data-icon="glyphicon" value="" >Lot3</option>
+										</select>
+							 	    </div>
+							    </div>
+							</div>
+
+							<!-- Button -->
+							<div class="form-group">
+								<label class="col-md-4 control-label"></label>
+								<div class="col-md-4">
+									<button type="submit" class="btn btn-warning" >Valider<span class="glyphicon glyphicon-send"></span></button>
+								</div>
+							</div>
+						</div>
+
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<!-- /.container -->
+	</body>
+</html>
